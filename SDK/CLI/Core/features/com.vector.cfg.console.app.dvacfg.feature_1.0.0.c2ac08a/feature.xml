@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feature
+      id="com.vector.cfg.console.app.dvacfg.feature"
+      label="DaVinci CLI Adaptive"
+      version="1.0.0.qualifier"
+      provider-name="Vector Informatik GmbH">
+
+   <description>
+      DaVinci CLI Adaptive command line application.
+   </description>
+
+   <copyright>
+      (c) Copyright Vector Informatik GmbH. All Rights Reserved.
+   </copyright>
+
+   <license url="https://www.vector.com">
+      Vector Group License Agreement
+
+This software is licensed under the terms and conditions of „Delivery and maintenance of software products” of Vector Group, see www.vector.com
+   </license>
+
+   <includes
+         id="com.vector.cfg.core.amsr.feature"
+         version="0.0.0"/>
+
+   <includes
+         id="com.vector.cfg.gen.core.amsr.feature"
+         version="0.0.0"/>
+
+   <includes
+         id="com.vector.cfg.console.app.dvacfg.external.feature"
+         version="0.0.0"/>
+
+   <includes
+         id="com.vector.cfg.easycom.feature"
+         version="0.0.0"/>
+
+   <plugin
+         id="com.vector.cfg.app.workspace"
+         version="0.0.0"/>
+
+   <plugin
+         id="com.vector.cfg.console.branding.dvacfg"
+         version="0.0.0"/>
+
+   <plugin
+         id="com.vector.cfg.console.app.mexmigration.impl"
+         version="0.0.0"/>
+
+</feature>

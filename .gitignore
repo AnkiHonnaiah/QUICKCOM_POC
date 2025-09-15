@@ -1,0 +1,43 @@
+# Build directories
+build/
+bin/
+obj/
+dist/
+out/
+Debug/
+Release/
+
+# CMake cache
+CMakeCache.txt
+CMakeFiles/
+
+# Logs
+*.log
+*.tmp
+
+# IDE / Editor files
+.vscode/
+.idea/
+*.swp
+
+# Python cache (if you use scripts)
+__pycache__/
+*.pyc
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Generated files
+*.exe
+*.dll
+*.so
+*.a
+*.lib
+*.o
+
+# Packaging
+*.zip
+*.tar
+*.gz
+*.7z

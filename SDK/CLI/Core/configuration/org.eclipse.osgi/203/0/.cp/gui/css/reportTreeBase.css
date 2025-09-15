@@ -1,0 +1,201 @@
+<![CDATA[
+##############################################################################################################################
+##                                                                                                                          ##
+##                                              CSS-Report Tree Base                                                                                    ##
+##                                                                                                                          ##
+############################################################################################################################## 
+]]>
+      
+<style>
+     a:link {
+         color: blue;
+         text-decoration: none;
+     }
+     a:visited {
+         color: blue;
+         text-decoration: none;
+     }
+     a:active {
+         color: blue;
+         text-decoration: none;
+     }
+     a:focus {
+         color: red;
+         text-decoration: underline;
+     }
+     a:hover {
+       background-color: rgb(255, 255, 147);
+    }
+     /*
+     ############################################################################################
+     #                                                                                                                                      #
+     #                                        FONTS Base                                                                  #
+     #                                                                                                                                      #
+     ############################################################################################
+     */
+    .node-width {
+        width: auto;
+    }
+    .node-hide {
+        display:none;
+    }
+    .node-show {
+        display:block;
+    }
+    .size-L-width {
+        width: 300px;
+    }
+    .overview-font {
+        font-size: 0.9em;
+        font-weight: bold;
+        font-family: 'Verdana';
+        margin: 10px;
+    }
+    .root-elem{
+        font-size: 15px;
+        padding-left: 25px;
+        font-weight: bold;
+        font-family: 'Verdana';
+    }
+    .elem{
+        font-size: 12px;
+        padding-left: 25px;
+        padding-top: 1px;
+        padding-bottom: 1px;
+        font-weight: normal;
+        font-family: 'Verdana';
+        text-align: left;
+    }
+    .format-std{
+    font-size: 12px;
+        font-weight: normal;
+        font-family: 'Verdana';
+    }
+    .root-div {
+        padding-left: 15px;
+    }
+    .node-height {
+        height: 25px;
+    }
+    .indent-node {
+        padding-left: 25px;
+    }
+    .space-to-icon {
+        padding-left: 15px;
+    }
+    .space-to-icon-extended {
+        padding-left: 50px;
+    }
+    .space-to-text {
+        padding-left: 50px;
+    }
+    .pointer {
+        cursor: pointer;
+    }
+    .cursor {
+        cursor: initial;
+    }
+    .no-padding 
+    {
+        padding: 0 !important
+    }
+     /*
+     ############################################################################################
+     #                                                                                                                                      #
+     #                               TOOLTIPS and TABLE HOVER                                                             #
+     #                                                                                                                                      #
+     ############################################################################################
+     */ 
+    .tooltip {
+        vertical-align: top;
+        position: relative;
+        display: inline-block;
+        border-bottom: 1px;
+        font-size: 1em;
+        font-weight: bold;
+        vertical-align: right;
+        min-width: 50px;
+    }
+    .tooltip .tooltiptext {
+        visibility: hidden;
+        width: 20em;
+        background-color: #555;
+        color: #fff;
+        text-align: center;
+        border-radius: 6px;
+        padding: 5px 0;
+        position: absolute;
+        z-index: 1;
+        bottom: 125%;
+        left: 50%;
+        margin-left: -60px;
+        opacity: 0;
+        transition: opacity 1s;
+    }
+    .tooltip:hover .tooltiptext {
+        visibility: visible;
+        opacity: 1;
+    }
+    .hoverTable {
+      border-collapse:collapse; 
+    }
+    .hoverTable tr {
+      position: relative;
+    }
+    .hoverTable tr:hover {
+      background-color: #c2dffe;
+    }
+
+     
+     /*
+     ############################################################################################
+     #                                                                                                                                      #
+     #                                      ICONS   Base                                                                          #
+     #                                                                                                                                      #
+     # For icon convert to base64 String use https://www.base64-image.de/                                   #
+     #                                                                                                                                      #
+     ############################################################################################
+     */
+    .open-node-icon {
+        background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAgAAAAQCAQAAACBg/b2AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH2wcNDjYL4DcndgAAAB10RVh0Q29tbWVudABDcmVhdGVkIHdpdGggVGhlIEdJTVDvZCVuAAAAIklEQVR42mNgoAdgZPiPLsCAIsTIyMCAJMSIkPmPrpW2AACcYQUBOCtMHwAAAABJRU5ErkJggg==') !important;
+        width: 15px;
+        height: 20px;
+        background-repeat: no-repeat;
+    }
+    .close-node-icon {
+        background-image:  url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAgAAAAQCAYAAAArij59AAAAAXNSR0IArs4c6QAAAAZiS0dEAP8A/wD/oL2nkwAAAAlwSFlzAAAOxAAADsQBlSsOGwAAAAd0SU1FB9wLBgg0KHsfEowAAAAddEVYdENvbW1lbnQAQ3JlYXRlZCB3aXRoIFRoZSBHSU1Q72QlbgAAAD5JREFUKM9j/P//PwM+wMRAAFBRwZEjR/4TNAGbIgwr0BVhdQOyIvJ8YWNjw4hTAbIkhgJ0SQYGBgbGQRAXAEN+FWSBOmp/AAAAAElFTkSuQmCC') !important;
+        width: 15px;
+        height: 20px;
+        background-repeat: no-repeat;
+    }
+    .icon-project-settings{
+        background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAB4ElEQVR4nMWSPWsUURSGn3vm3tmsmfEDFmMXG0VBljSSQlArETGNCkEQLLW3EdPoKoKYP2BlIyns7ANR1CIgQhBEQTCCRZQEV9HM7Nw7cyxm3Q0GI1a+cOFwLufhPR/wv2UAxned0UFCpE4bA8Dy6kOzFcD+Cl4uz5E0LaFUVCF2woHxi391UANEAIjvTxJv+BTbZv++y2qiCGNt/SKL9ONXz2/U7va2pnXta669IuiPzOv3da+FL3UrtY92dODApglP1yyRASsGK3B94hQG2EYgpuLWm3msAQHEgDQawxbEOuIIHix+4mO3B4CzgYWV+UE751vHuPnuMU5qgE3SDYA4phHBpSNjWDE4gZlO4NG17YgVpjpdDHB7YpJmmtNMc06mOedO71YLYJyjERnuPVvhw5faQeICAFOdLgBzq082beDu2VbfgYsZieDK8T1YA1bg6mwJQLF0glAlBE0JmlCZHSiOehobWxD6xfUQXd+B0qAKGX69S5EX5FlJVYEqFJEZAi5M38GI1JcowsE+oPd5kTz39DKll1dkWUVZgqoyOuJqwNLCzKZzbR8+pADeB0qveF/hvRKCUpW1g2ZcDE/5d43t/MaL16O8fV8QWyV2ipOAjSqMUYyBhvtT9T/oJ/OGxfPcT0HAAAAAAElFTkSuQmCC') !important;
+        background-repeat: no-repeat;
+    }
+    .icon-project-setting {
+        background-image:  url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAABYElEQVR4nMWTu0pDQRCGv5m9HMXYqKBWBgS1srUQVPARLGwES7EUWwux8xGsbETwOUxjY+ELqGChiKjgNSfJWOxJYgQvkMKFYWfZnW/+GXbEzOhmaVfRgAcoDyy1ZIgqICACwPntkfwKADi9OKTU66nVDTOIQZkaW/2bAjRVEvdniJ8u1U8zObFu4hzifTLn0cI/q2wLZkZ5aNnuHt/svVqz59fcnl5yq+Z1+2lNz+2YmSUFvr/E8Z3HCXgVvIJXw0ud0DxLMgVUQLOsXYL6QHRwcHLD1cN7q4TyQMbG/EgKVvAiBE0AX+r/BIiRzMHa7DBe06NmxqQmqXDWIKigKohzbYCEQOaEvco1l/dtBeODGVuLowUEaBi16hshpGa2FYRIj4PNhZHOrIXvCoCq0DBHnlcRJ19KaMpuNZGiqQVAQFHURUQi0OgErCzvIqrpJxb7d35fLzSnQP59mLoGfACge3H2xxgNOgAAAABJRU5ErkJggg==') !important;
+        background-repeat: no-repeat;
+    }
+    .icon-transparent {
+        background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAAadEVYdFNvZnR3YXJlAFBhaW50Lk5FVCB2My41LjEwMPRyoQAAACBJREFUOE9j+P//PwMlmCLNIItHDRgNg9F0AMmEA58XAMWt/R/F69ERAAAAAElFTkSuQmCC') !important;
+        background-repeat: no-repeat;
+    }
+     
+    .icon-MExecutableImpl
+    {
+        background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAByklEQVR4nN1RT0gUcRT+bHbnIj8XZFsGIrAQpT8s/uagc1ILofXQ4CFylzZwYPao7lHpYBcxD4JGXUKEoIg6FCsiXiQPHRTKoVhImw0k0B1yWzJ3ZR1n9nmTcVn1KPRu7z3e974/wHmXUG3IuZ5sCTcvsTrlU/hm81pdQClY1urymWic632KopmynDA310V60KvSz2WRZDlhtrVqJud636kAiqKZGz8YZb4x+rsB2v4OyhqgLylGK+8YtbVqZuXNBS9t2/ah7AKh4C5Wv0oYHFFhpCUEA7sou8CB4wPnerLq9+7uWOmPJVIxB1qal0iWE2kAkOVEevaFROYc6PMrkbo6YqWT9Hc+jKtUsEDxqEreXbRHpfUU6P5dlTjXO6sCRCKx0u9fIv3bBC2mjjP48EyitfeglRmRutqPMziKkTGl8PptS+OdW2b9lUt5XLu6FXJx+3F/78fQ9csWsjmGgefxzN6+f8wb6ZGJhjE9KfodlF0gu8UQbrIwPjiLGw0WrDxD2QX8ggPDmJ70MvB5m31bGNUG7j2yD3x4M/GyceRpBMPxBSSnohm/4MB2hNFK6TUnGJq8WF98sp2vjQQDxYXcTu1Q5ef/qA4BvmvDGyVq2rcAAAAASUVORK5CYII=') !important;
+        background-repeat: no-repeat;
+    }
+    
+    .icon-MMachineImpl 
+    {
+        background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAABJElEQVR4nK2SPUpDQRSFv4lp3IGVnaW1K0gZcAXWdj50DbaSxi1YWmgj5CWCCNlAUBFSiKZRVJQYcWbujMW8DO8Pn6AHBu7vmXMvF/4IBeC9J0l2/W+ber0DpZQCoJ1PrHW3EfOFGI0zBrE6+FYjWuPE8nYzKpC18o4Tg7MWJzazM38Rs6aipqAgFBr2NjcAeHidI84zeZxxPhjixDYQSPjt7vkDcR5xnvuXeU5dowKDE8PR2QgxOu4gjlKjoLSDoEDERDu8QCy2YYTp5XGloAnxDso4HNx68znjaTJmf2dLVRqzO2hVOnNwIrVz59FAYHEiPxK0gdozXl5dB+Dq4oRkel135ioSAHQ63Zjp909ZWXoHYFzKLfIFBeUgQJqmtQ3/jm9si87gPEBHiAAAAABJRU5ErkJggg==') !important;
+        background-repeat: no-repeat;
+    }
+
+    .icon-MSoftwareClusterImpl 
+    {
+        background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAmklEQVR4nLVSwQ3EIAxzKjYiM9GZYKZ0Jt8LStvQ0jtdJB5E2IltgB9LACDGxG/A21Yk1ItZljdg1ZUAEPqmaDlsQkvSA7why+w0y6VNfUVQwYgUjySMgLXMsqiCloW6Jt+rGBNJ4u6c39TkXAme1lFKFwm7YWiuS5FjOomNbPHAI8MeN5gy7ElCI5n8mW6MZ3CveUgwo/cv9QHoqXuXPUaJQgAAAABJRU5ErkJggg==') !important;
+        background-repeat: no-repeat;
+    }
+</style>

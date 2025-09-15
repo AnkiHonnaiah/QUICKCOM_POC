@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<AUTOSAR xmlns="http://autosar.org/schema/r4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://autosar.org/schema/r4.0 AUTOSAR_00049.xsd">
+  <AR-PACKAGES>
+    <AR-PACKAGE>
+      <SHORT-NAME>MICROSAR</SHORT-NAME>
+      <AR-PACKAGES>
+        <AR-PACKAGE UUID="0bdb538a-3fc2-4643-8897-171a15a4a207">
+          <SHORT-NAME>ADAPTIVE</SHORT-NAME>
+          <ELEMENTS>
+            <SDG-DEF UUID="fcd04f96-1068-4b97-a8cc-5184f4336068">
+              <SHORT-NAME>EventGroupEntryEndpointOptionExtension</SHORT-NAME>
+              <SDG-CLASSES>
+                <SDG-CLASS UUID="696c3561-55e0-4f4e-99c3-18337bf237ba">
+                  <SHORT-NAME>EventGroupEntryEndpointOptionType</SHORT-NAME>
+                  <ATTRIBUTES>
+                    <SDG-PRIMITIVE-ATTRIBUTE UUID="e1c20438-29ce-436e-b1e6-2ec819fb1e1b">
+                      <SHORT-NAME>ipV4Address</SHORT-NAME>
+                      <DESC>
+                        <L-2 L="FOR-ALL">An IPv4 Address (string representation).</L-2>
+                      </DESC>
+                      <CATEGORY>STRING</CATEGORY>
+                      <LOWER-MULTIPLICITY>0</LOWER-MULTIPLICITY>
+                      <UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+                    </SDG-PRIMITIVE-ATTRIBUTE>
+                    <SDG-PRIMITIVE-ATTRIBUTE UUID="c5c694af-3065-4654-b892-e9fa69766879">
+                      <SHORT-NAME>ipV6Address</SHORT-NAME>
+                      <DESC>
+                        <L-2 L="FOR-ALL">An IPv6 Address (string representation).</L-2>
+                      </DESC>
+                      <CATEGORY>STRING</CATEGORY>
+                      <LOWER-MULTIPLICITY>0</LOWER-MULTIPLICITY>
+                      <UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+                    </SDG-PRIMITIVE-ATTRIBUTE>
+                    <SDG-PRIMITIVE-ATTRIBUTE UUID="c8e87da3-8711-493e-871f-a29abdcd278b">
+                      <SHORT-NAME>port</SHORT-NAME>
+                      <DESC>
+                        <L-2 L="FOR-ALL">A port.</L-2>
+                      </DESC>
+                      <CATEGORY>INTEGER</CATEGORY>
+                      <LOWER-MULTIPLICITY>0</LOWER-MULTIPLICITY>
+                      <UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+                    </SDG-PRIMITIVE-ATTRIBUTE>
+                  </ATTRIBUTES>
+                </SDG-CLASS>
+                <SDG-CLASS UUID="2235ff3c-14c8-48a4-9df1-52eec1c3572e">
+                  <SHORT-NAME>EventGroupEntryEndpointOption</SHORT-NAME>
+                  <EXTENDS-META-CLASS>SomeipServiceInstanceToMachineMapping</EXTENDS-META-CLASS>
+                  <ATTRIBUTES>
+                    <SDG-AGGREGATION-WITH-VARIATION UUID="e31a0952-d9ac-45de-a3a5-999ae562423f">
+                      <SHORT-NAME>tcpEndpointOption</SHORT-NAME>
+                      <DESC>
+                        <L-2 L="FOR-ALL">An optional TCP endpoint. If configured, it will be used as endpoint option in the
+                          subscribe eventgroup message.</L-2>                        
+                      </DESC>
+                      <LOWER-MULTIPLICITY>0</LOWER-MULTIPLICITY>
+                      <UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+                      <UPPER-MULTIPLICITY-INFINITE>false</UPPER-MULTIPLICITY-INFINITE>
+                      <SUB-SDG-REF DEST="SDG-CLASS">/MICROSAR/ADAPTIVE/EventGroupEntryEndpointOptionExtension/EventGroupEntryEndpointOptionType</SUB-SDG-REF>
+                    </SDG-AGGREGATION-WITH-VARIATION>
+                    <SDG-AGGREGATION-WITH-VARIATION UUID="f73bd828-9f92-46c7-a9c8-948e88d619e0">
+                      <SHORT-NAME>udpEndpointOption</SHORT-NAME>
+                      <DESC>
+                        <L-2 L="FOR-ALL">An optional UDP endpoint. If configured, it will be used as endpoint option in the
+                          subscribe eventgroup message.</L-2>
+                      </DESC>
+                      <LOWER-MULTIPLICITY>0</LOWER-MULTIPLICITY>
+                      <UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+                      <UPPER-MULTIPLICITY-INFINITE>false</UPPER-MULTIPLICITY-INFINITE>
+                      <SUB-SDG-REF DEST="SDG-CLASS">/MICROSAR/ADAPTIVE/EventGroupEntryEndpointOptionExtension/EventGroupEntryEndpointOptionType</SUB-SDG-REF>
+                    </SDG-AGGREGATION-WITH-VARIATION>
+                  </ATTRIBUTES>
+                </SDG-CLASS>
+              </SDG-CLASSES>
+            </SDG-DEF>
+          </ELEMENTS>
+        </AR-PACKAGE>
+      </AR-PACKAGES>
+    </AR-PACKAGE>
+  </AR-PACKAGES>
+</AUTOSAR>

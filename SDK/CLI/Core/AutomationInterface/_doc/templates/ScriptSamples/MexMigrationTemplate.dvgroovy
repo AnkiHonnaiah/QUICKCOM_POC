@@ -1,0 +1,47 @@
+import com.vector.cfg.model.asr.extension.instance.access.IMexExtension
+import com.vector.cfg.model.mdf.ar4x.adaptiveplatform.applicationdesign.applicationstructure.MIExecutable
+import com.vector.cfg.model.mdf.ar4x.adaptiveplatform.applicationdesign.portinterface.MIServiceInterface
+
+import static com.vector.cfg.automation.api.ScriptApi.*
+
+//daVinci enables the IDE code completion support
+daVinci {
+    scriptDescription "Migrates MEX data (AdminData) when SdgDefs have changed"
+
+    // The script task implements the migration of the complete MEX model to SdgDef version 2.0.0
+    scriptTask("ExtensionModelName_2.0.0", DV_MEX_MIGRATION) {
+
+        taskDescription("Migrates MEX values of MEX model 'ExtensionModelName' to version 2.0.0")
+
+        code { IMexExtension extension ->
+
+            // ------------------------------------------
+            // Migrate depending on the parent object type
+            def extendedParentObject = extension.parent
+            if (extendedParentObject instanceof MIExecutable) {
+                // migrate the Executable related part of this MEX model
+            }
+            if (extendedParentObject instanceof MIServiceInterface) {
+                // migrate the ServiceInterface related part of this MEX model
+            }
+
+            // ------------------------------------------
+            // Migrate depending on the SdgClass name
+            def sdgClassName = extension.name
+            if (sdgClassName == "sdgClass1") {
+                // migrate ...
+            }
+            if (sdgClassName == "sdgClass2") {
+                // migrate ...
+            }
+
+            // ------------------------------------------
+            // Finally set the Sdg's MEX version
+            extension.version = "2.0.0"
+
+        }
+
+    }
+
+}
+

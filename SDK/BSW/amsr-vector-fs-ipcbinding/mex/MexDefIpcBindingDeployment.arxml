@@ -1,0 +1,307 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<AUTOSAR xmlns="http://autosar.org/schema/r4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://autosar.org/schema/r4.0 AUTOSAR_00049.xsd">
+  <AR-PACKAGES>
+    <AR-PACKAGE>
+      <SHORT-NAME>MICROSAR</SHORT-NAME>
+      <AR-PACKAGES>
+        <AR-PACKAGE>
+          <SHORT-NAME>ADAPTIVE</SHORT-NAME>
+          <ELEMENTS>
+            <SDG-DEF>
+              <SHORT-NAME>UserDefinedIpcBindingExtensionModel</SHORT-NAME>
+              <ADMIN-DATA>
+                <SDGS>
+                  <SDG GID="DvMex-version">
+                    <SD>1.1.0</SD>
+                  </SDG>
+                </SDGS>
+              </ADMIN-DATA>
+              <SDG-CLASSES>
+                <SDG-CLASS>
+                  <SHORT-NAME>ProvidedIpcBindingServiceInstanceExtension</SHORT-NAME>
+                  <EXTENDS-META-CLASS>ProvidedUserDefinedServiceInstance</EXTENDS-META-CLASS>
+                  <ATTRIBUTES>
+                    <SDG-AGGREGATION-WITH-VARIATION>
+                      <SHORT-NAME>userDefinedIpcBinding</SHORT-NAME>
+                      <LOWER-MULTIPLICITY>0</LOWER-MULTIPLICITY>
+                      <UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+                      <VARIATION>false</VARIATION>
+                      <SUB-SDG-REF DEST="SDG-CLASS">/MICROSAR/ADAPTIVE/UserDefinedIpcBindingExtensionModel/ProvidedIpcBindingServiceInstance</SUB-SDG-REF>
+                    </SDG-AGGREGATION-WITH-VARIATION>
+                  </ATTRIBUTES>
+                </SDG-CLASS>
+                <SDG-CLASS>
+                  <SHORT-NAME>ProvidedIpcBindingServiceInstance</SHORT-NAME>
+                  <DESC>
+                    <L-2 L="FOR-ALL">Stores the IpcBinding data of the ProvidedUserDefinedServiceInstance</L-2>
+                  </DESC>
+                  <ATTRIBUTES>
+                    <SDG-PRIMITIVE-ATTRIBUTE>
+                      <SHORT-NAME>serviceInstanceId</SHORT-NAME>
+                      <DESC>
+                        <L-2 L="FOR-ALL">The service instance ID (32 bit unsigned integer)</L-2>
+                      </DESC>
+                      <CATEGORY>INTEGER</CATEGORY>
+                      <LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+                      <UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+                      <MAX>0xFFFFFFFE</MAX>
+                      <MIN>0</MIN>
+                    </SDG-PRIMITIVE-ATTRIBUTE>
+                    <SDG-PRIMITIVE-ATTRIBUTE>
+                      <SHORT-NAME>expectedClientIntegrityLevel</SHORT-NAME>
+                      <DESC>
+                        <L-2 L="FOR-ALL">The expected client integrity level (QM, ASIL_A, ASIL_B, ASIL_C or ASIL_D). Default: QM.</L-2>
+                      </DESC>
+                      <CATEGORY>ENUMERATION</CATEGORY>
+                      <ADMIN-DATA>
+                        <SDGS>
+                          <SDG GID="literals">
+                            <SD>QM</SD>
+                            <SD>ASIL_A</SD>
+                            <SD>ASIL_B</SD>
+                            <SD>ASIL_C</SD>
+                            <SD>ASIL_D</SD>
+                          </SDG>
+                        </SDGS>
+                      </ADMIN-DATA>
+                      <LOWER-MULTIPLICITY>0</LOWER-MULTIPLICITY>
+                      <UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+                    </SDG-PRIMITIVE-ATTRIBUTE>
+                    <SDG-PRIMITIVE-ATTRIBUTE>
+                      <SHORT-NAME>serviceOfferTimeToLive</SHORT-NAME>
+                      <DESC>
+                        <L-2 L="FOR-ALL">The service offer time-to-live in seconds (32 bit unsigned integer)
+HINT: This parameter is deprecated and not used anymore (AMSR-28887). The parameter can be removed without any replacement. </L-2>
+                      </DESC>
+                      <CATEGORY>INTEGER</CATEGORY>
+                      <LOWER-MULTIPLICITY>0</LOWER-MULTIPLICITY>
+                      <UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+                      <MAX>0xFFFFFFFF</MAX>
+                      <MIN>0</MIN>
+                    </SDG-PRIMITIVE-ATTRIBUTE>
+                    <SDG-PRIMITIVE-ATTRIBUTE>
+                      <SHORT-NAME>domain</SHORT-NAME>
+                      <DESC>
+                        <L-2 L="FOR-ALL">The domain number of the used IPC endpoint (32 bit unsigned integer)</L-2>
+                      </DESC>
+                      <CATEGORY>INTEGER</CATEGORY>
+                      <LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+                      <UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+                      <MAX>0xFFFFFFFF</MAX>
+                      <MIN>0</MIN>
+                    </SDG-PRIMITIVE-ATTRIBUTE>
+                    <SDG-PRIMITIVE-ATTRIBUTE>
+                      <SHORT-NAME>port</SHORT-NAME>
+                      <DESC>
+                        <L-2 L="FOR-ALL">The port number of the used IPC endpoint (32 bit unsigned integer)</L-2>
+                      </DESC>
+                      <CATEGORY>INTEGER</CATEGORY>
+                      <LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+                      <UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+                      <MAX>0xFFFFFFFF</MAX>
+                      <MIN>0</MIN>
+                    </SDG-PRIMITIVE-ATTRIBUTE>
+                  </ATTRIBUTES>
+                </SDG-CLASS>
+                <SDG-CLASS>
+                  <SHORT-NAME>RequiredIpcBindingServiceInstanceExtension</SHORT-NAME>
+                  <EXTENDS-META-CLASS>RequiredUserDefinedServiceInstance</EXTENDS-META-CLASS>
+                  <ATTRIBUTES>
+                    <SDG-AGGREGATION-WITH-VARIATION>
+                      <SHORT-NAME>userDefinedIpcBinding</SHORT-NAME>
+                      <LOWER-MULTIPLICITY>0</LOWER-MULTIPLICITY>
+                      <UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+                      <VARIATION>false</VARIATION>
+                      <SUB-SDG-REF DEST="SDG-CLASS">/MICROSAR/ADAPTIVE/UserDefinedIpcBindingExtensionModel/RequiredIpcBindingServiceInstance</SUB-SDG-REF>
+                    </SDG-AGGREGATION-WITH-VARIATION>
+                  </ATTRIBUTES>
+                </SDG-CLASS>
+                <SDG-CLASS>
+                  <SHORT-NAME>RequiredIpcBindingServiceInstance</SHORT-NAME>
+                  <DESC>
+                    <L-2 L="FOR-ALL">Stores the IpcBinding data of the RequiredUserDefinedServiceInstance</L-2>
+                  </DESC>
+                  <ATTRIBUTES>
+                    <SDG-PRIMITIVE-ATTRIBUTE>
+                      <SHORT-NAME>serviceInstanceId</SHORT-NAME>
+                      <DESC>
+                        <L-2 L="FOR-ALL">The service instance ID (32 bit unsigned integer or 'ALL')</L-2>
+                      </DESC>
+                      <CATEGORY>STRING</CATEGORY>
+                      <LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+                      <UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+                      <PATTERN>[0-9]*|ALL</PATTERN>
+                    </SDG-PRIMITIVE-ATTRIBUTE>
+                    <SDG-PRIMITIVE-ATTRIBUTE>
+                      <SHORT-NAME>minorVersion</SHORT-NAME>
+                      <DESC>
+                        <L-2 L="FOR-ALL">The required minor version (32 bit unsigned integer or 'ANY').
+The required major version is defined by IpcBindingServiceInterfaceDeployment.serviceInterfaceVersion.majorVersion.
+The specified IpcBindingServiceInterfaceDeployment.serviceInterfaceVersion.minorVersion is irrelevant for the required service instance search.</L-2>
+                      </DESC>
+                      <CATEGORY>STRING</CATEGORY>
+                      <LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+                      <UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+                      <PATTERN>[0-9]*|ANY</PATTERN>
+                    </SDG-PRIMITIVE-ATTRIBUTE>
+                    <SDG-PRIMITIVE-ATTRIBUTE>
+                      <SHORT-NAME>expectedServerIntegrityLevel</SHORT-NAME>
+                      <DESC>
+                        <L-2 L="FOR-ALL">The expected server integrity level (QM, ASIL_A, ASIL_B, ASIL_C or ASIL_D). Default: QM.</L-2>
+                      </DESC>
+                      <CATEGORY>ENUMERATION</CATEGORY>
+                      <ADMIN-DATA>
+                        <SDGS>
+                          <SDG GID="literals">
+                            <SD>QM</SD>
+                            <SD>ASIL_A</SD>
+                            <SD>ASIL_B</SD>
+                            <SD>ASIL_C</SD>
+                            <SD>ASIL_D</SD>
+                          </SDG>
+                        </SDGS>
+                      </ADMIN-DATA>
+                      <LOWER-MULTIPLICITY>0</LOWER-MULTIPLICITY>
+                      <UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+                    </SDG-PRIMITIVE-ATTRIBUTE>
+                  </ATTRIBUTES>
+                </SDG-CLASS>
+                <SDG-CLASS>
+                  <SHORT-NAME>Version</SHORT-NAME>
+                  <ATTRIBUTES>
+                    <SDG-PRIMITIVE-ATTRIBUTE>
+                      <SHORT-NAME>major</SHORT-NAME>
+                      <DESC>
+                        <L-2 L="FOR-ALL">The major version (32 bit unsigned integer)</L-2>
+                      </DESC>
+                      <CATEGORY>INTEGER</CATEGORY>
+                      <LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+                      <UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+                      <MAX>0xFFFFFFFF</MAX>
+                      <MIN>0</MIN>
+                    </SDG-PRIMITIVE-ATTRIBUTE>
+                    <SDG-PRIMITIVE-ATTRIBUTE>
+                      <SHORT-NAME>minor</SHORT-NAME>
+                      <DESC>
+                        <L-2 L="FOR-ALL">The minor version (32 bit unsigned integer) of all offered service instances.
+This minor version is only relevant for skeleton-side service offers.</L-2>
+                      </DESC>
+                      <CATEGORY>INTEGER</CATEGORY>
+                      <LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+                      <UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+                      <MAX>0xFFFFFFFE</MAX>
+                      <MIN>0</MIN>
+                    </SDG-PRIMITIVE-ATTRIBUTE>
+                  </ATTRIBUTES>
+                </SDG-CLASS>
+                <SDG-CLASS>
+                  <SHORT-NAME>IpcBindingServiceInterfaceDeploymentExtension</SHORT-NAME>
+                  <EXTENDS-META-CLASS>UserDefinedServiceInterfaceDeployment</EXTENDS-META-CLASS>
+                  <ATTRIBUTES>
+                    <SDG-AGGREGATION-WITH-VARIATION>
+                      <SHORT-NAME>userDefinedIpcBinding</SHORT-NAME>
+                      <LOWER-MULTIPLICITY>0</LOWER-MULTIPLICITY>
+                      <UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+                      <VARIATION>false</VARIATION>
+                      <SUB-SDG-REF DEST="SDG-CLASS">/MICROSAR/ADAPTIVE/UserDefinedIpcBindingExtensionModel/IpcBindingServiceInterfaceDeployment</SUB-SDG-REF>
+                    </SDG-AGGREGATION-WITH-VARIATION>
+                  </ATTRIBUTES>
+                </SDG-CLASS>
+                <SDG-CLASS>
+                  <SHORT-NAME>IpcBindingServiceInterfaceDeployment</SHORT-NAME>
+                  <DESC>
+                    <L-2 L="FOR-ALL">Stores the IpcBinding data of the UserDefinedServiceInterfaceDeployment</L-2>
+                  </DESC>
+                  <ATTRIBUTES>
+                    <SDG-PRIMITIVE-ATTRIBUTE>
+                      <SHORT-NAME>serviceInterfaceId</SHORT-NAME>
+                      <DESC>
+                        <L-2 L="FOR-ALL">The service interface ID (32 bit unsigned integer)</L-2>
+                      </DESC>
+                      <CATEGORY>INTEGER</CATEGORY>
+                      <LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+                      <UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+                      <MAX>0xFFFFFFFF</MAX>
+                      <MIN>0</MIN>
+                    </SDG-PRIMITIVE-ATTRIBUTE>
+                    <SDG-AGGREGATION-WITH-VARIATION>
+                      <SHORT-NAME>serviceInterfaceVersion</SHORT-NAME>
+                      <LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+                      <UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+                      <VARIATION>false</VARIATION>
+                      <SUB-SDG-REF DEST="SDG-CLASS">/MICROSAR/ADAPTIVE/UserDefinedIpcBindingExtensionModel/Version</SUB-SDG-REF>
+                    </SDG-AGGREGATION-WITH-VARIATION>
+                  </ATTRIBUTES>
+                </SDG-CLASS>
+                <SDG-CLASS>
+                  <SHORT-NAME>IpcBindingEventDeploymentExtension</SHORT-NAME>
+                  <EXTENDS-META-CLASS>UserDefinedEventDeployment</EXTENDS-META-CLASS>
+                  <ATTRIBUTES>
+                    <SDG-AGGREGATION-WITH-VARIATION>
+                      <SHORT-NAME>userDefinedIpcBinding</SHORT-NAME>
+                      <LOWER-MULTIPLICITY>0</LOWER-MULTIPLICITY>
+                      <UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+                      <VARIATION>false</VARIATION>
+                      <SUB-SDG-REF DEST="SDG-CLASS">/MICROSAR/ADAPTIVE/UserDefinedIpcBindingExtensionModel/IpcBindingEventDeployment</SUB-SDG-REF>
+                    </SDG-AGGREGATION-WITH-VARIATION>
+                  </ATTRIBUTES>
+                </SDG-CLASS>
+                <SDG-CLASS>
+                  <SHORT-NAME>IpcBindingEventDeployment</SHORT-NAME>
+                  <DESC>
+                    <L-2 L="FOR-ALL">Stores the IpcBinding data of the UserDefinedEventDeployment</L-2>
+                  </DESC>
+                  <ATTRIBUTES>
+                    <SDG-PRIMITIVE-ATTRIBUTE>
+                      <SHORT-NAME>eventId</SHORT-NAME>
+                      <DESC>
+                        <L-2 L="FOR-ALL">The event ID (32 bit unsigned integer)</L-2>
+                      </DESC>
+                      <CATEGORY>INTEGER</CATEGORY>
+                      <LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+                      <UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+                      <MAX>0xFFFFFFFF</MAX>
+                      <MIN>0</MIN>
+                    </SDG-PRIMITIVE-ATTRIBUTE>
+                  </ATTRIBUTES>
+                </SDG-CLASS>
+                <SDG-CLASS>
+                  <SHORT-NAME>IpcBindingMethodDeploymentExtension</SHORT-NAME>
+                  <EXTENDS-META-CLASS>UserDefinedMethodDeployment</EXTENDS-META-CLASS>
+                  <ATTRIBUTES>
+                    <SDG-AGGREGATION-WITH-VARIATION>
+                      <SHORT-NAME>userDefinedIpcBinding</SHORT-NAME>
+                      <LOWER-MULTIPLICITY>0</LOWER-MULTIPLICITY>
+                      <UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+                      <VARIATION>false</VARIATION>
+                      <SUB-SDG-REF DEST="SDG-CLASS">/MICROSAR/ADAPTIVE/UserDefinedIpcBindingExtensionModel/IpcBindingMethodDeployment</SUB-SDG-REF>
+                    </SDG-AGGREGATION-WITH-VARIATION>
+                  </ATTRIBUTES>
+                </SDG-CLASS>
+                <SDG-CLASS>
+                  <SHORT-NAME>IpcBindingMethodDeployment</SHORT-NAME>
+                  <DESC>
+                    <L-2 L="FOR-ALL">Stores the IpcBinding data of the UserDefinedMethodDeployment</L-2>
+                  </DESC>
+                  <ATTRIBUTES>
+                    <SDG-PRIMITIVE-ATTRIBUTE>
+                      <SHORT-NAME>methodId</SHORT-NAME>
+                      <DESC>
+                        <L-2 L="FOR-ALL">The method ID (32 bit unsigned integer)</L-2>
+                      </DESC>
+                      <CATEGORY>INTEGER</CATEGORY>
+                      <LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+                      <UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+                      <MAX>0xFFFFFFFF</MAX>
+                      <MIN>0</MIN>
+                    </SDG-PRIMITIVE-ATTRIBUTE>
+                  </ATTRIBUTES>
+                </SDG-CLASS>
+              </SDG-CLASSES>
+            </SDG-DEF>
+          </ELEMENTS>
+        </AR-PACKAGE>
+      </AR-PACKAGES>
+    </AR-PACKAGE>
+  </AR-PACKAGES>
+</AUTOSAR>

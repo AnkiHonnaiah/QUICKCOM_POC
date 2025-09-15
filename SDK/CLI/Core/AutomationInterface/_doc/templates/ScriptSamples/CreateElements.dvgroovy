@@ -1,0 +1,59 @@
+import com.vector.cfg.model.access.AsrPath
+import com.vector.cfg.model.mdf.ar4x.adaptiveplatform.applicationdesign.portinterface.MIServiceInterface
+import com.vector.cfg.model.mdf.ar4x.swcomponenttemplate.portinterface.MIArgumentDataPrototype
+import com.vector.cfg.model.mdf.ar4x.swcomponenttemplate.portinterface.MIClientServerOperation
+import com.vector.cfg.model.mdf.model.autosar.base.MIARPackage
+
+import static com.vector.cfg.automation.api.ScriptApi.*
+
+//daVinci enables the IDE code completion support
+daVinci {
+    scriptDescription "Create elements, like a package and a service interface"
+
+    /*
+     * Task: CreatePackageAndServiceInterface
+     * Type: DV_PROJECT
+     * -------------------------------------------------------------------------------------------------------
+     * The task shows how to create a new model elements.
+     * For more details please refer to section "Model" in the Automation Documentation.
+     * -------------------------------------------------------------------------------------------------------
+     */
+    scriptTask("CreatePackageAndServiceInterface", DV_PROJECT) {
+
+        taskDescription 'Creates a subpackage including a service interface'
+
+        code {
+            // Change the root package name to an existing package
+            def path = AsrPath.create("/basic", MIARPackage)
+            def rootPackage = mdfModel(path)
+            if (rootPackage) {
+                transaction {
+                    // Using the particular MI type instead of "def" helps with code completion if the IDE can't infer the type
+                    // Use List.byNameOrCreate to get or add an element of a particular name to a list
+                    MIARPackage subPackage = rootPackage.subPackage.byNameOrCreate("servicesPackage")
+
+                    // List.byNameOrCreate() accepts a type as first parameter if you want to add a particular subtype to the typed list
+                    MIServiceInterface serviceInterface = subPackage.element.byNameOrCreate(MIServiceInterface, "MyNewServiceInterface")
+                    MIClientServerOperation someMethod = serviceInterface.method.byNameOrCreate("someMethod")
+                    MIArgumentDataPrototype inParameter = someMethod.argument.byNameOrCreate("inParameter")
+                    inParameter.direction = "IN"
+                    //.<property name>OrCreate creates a single object at a property if it doesn't exist yet. In this case it is the ARRef object.
+                    inParameter.typeOrCreate.value = "/AUTOSAR/StdTypes/bool" // use .refTarget if you have the target as an object
+                    someMethod.fireAndForget = true
+                }
+
+                def newInterface = mdfModel("/basic/servicesPackage/MyNewServiceInterface")
+                if (newInterface) {
+                    scriptLogger.info "MyNewServiceInterface is created successfully."
+                } else {
+                    scriptLogger.info "MyNewServiceInterface is not created."
+                }
+
+                // In case the project shall be saved, uncomment the line below.
+                // saveProject()
+            } else {
+                scriptLogger.error "This script expects a package at $path.autosarPathString which was not found."
+            }
+        }
+    }
+}

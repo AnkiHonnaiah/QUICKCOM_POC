@@ -1,0 +1,204 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<AUTOSAR xmlns="http://autosar.org/schema/r4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://autosar.org/schema/r4.0 AUTOSAR_00049.xsd">
+  <AR-PACKAGES>
+    <AR-PACKAGE>
+      <SHORT-NAME>MICROSAR</SHORT-NAME>
+      <AR-PACKAGES>
+        <AR-PACKAGE UUID="0bdb538a-3fc2-4643-8897-171a15a4a207">
+          <SHORT-NAME>ADAPTIVE</SHORT-NAME>
+          <ELEMENTS>
+            <SDG-DEF>
+              <SHORT-NAME>Mex4SignalToService</SHORT-NAME>
+              <SDG-CLASSES>
+                <SDG-CLASS>
+                  <SHORT-NAME>Mex4SomeipEventDeployment</SHORT-NAME>
+                  <EXTENDS-META-CLASS>SomeipEventDeployment</EXTENDS-META-CLASS>
+                  <ATTRIBUTES>
+                    <SDG-AGGREGATION-WITH-VARIATION>
+                      <SHORT-NAME>machineSubscribers</SHORT-NAME>
+                      <DESC>
+                        <L-2 L="FOR-ALL">This optional attribute represents different endpoints are
+                         providing the service</L-2>
+                      </DESC>
+                      <LOWER-MULTIPLICITY>0</LOWER-MULTIPLICITY>
+                      <UPPER-MULTIPLICITY-INFINITE>true</UPPER-MULTIPLICITY-INFINITE>
+                      <SUB-SDG-REF DEST="SDG-CLASS">/MICROSAR/ADAPTIVE/Mex4SignalToService/MachineSubscriber</SUB-SDG-REF>
+                    </SDG-AGGREGATION-WITH-VARIATION>
+                    <SDG-AGGREGATION-WITH-VARIATION>
+                      <SHORT-NAME>pduHeaderExtensionTx</SHORT-NAME>
+                      <DESC>
+                        <L-2 L="FOR-ALL">This optional attribute provides fields for the PDU header extension. If enabled all fields must be set.</L-2>
+                      </DESC>
+                      <LOWER-MULTIPLICITY>0</LOWER-MULTIPLICITY>
+                      <UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+                      <UPPER-MULTIPLICITY-INFINITE>false</UPPER-MULTIPLICITY-INFINITE>
+                      <SUB-SDG-REF DEST="SDG-CLASS">/MICROSAR/ADAPTIVE/Mex4SignalToService/PduHeaderExtensionFieldsTx</SUB-SDG-REF>
+                    </SDG-AGGREGATION-WITH-VARIATION>
+                    <SDG-PRIMITIVE-ATTRIBUTE>
+                      <SHORT-NAME>hasPduHeaderExtensionRx</SHORT-NAME>
+                      <DESC>
+                        <L-2 L="FOR-ALL">This optional attribute specifies a flag to indicate if the PDU header extension shall be considered during reception. The flag is automatically set to true if pduHeaderExtensionTx is enabled.</L-2>
+                      </DESC>
+                      <CATEGORY>BOOLEAN</CATEGORY>
+                      <LOWER-MULTIPLICITY>0</LOWER-MULTIPLICITY>
+                      <UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+                    </SDG-PRIMITIVE-ATTRIBUTE>
+                    <SDG-PRIMITIVE-ATTRIBUTE>
+                      <SHORT-NAME>mappingMultiplePdusIsAllowed</SHORT-NAME>
+                      <DESC>
+                        <L-2 L="FOR-ALL">This optional attribute represents mapping of PduIds to one event.
+                        E.g With True, mapping Mutliple PduIds are enabled.</L-2>
+                      </DESC>
+                      <CATEGORY>BOOLEAN</CATEGORY>
+                      <LOWER-MULTIPLICITY>0</LOWER-MULTIPLICITY>
+                      <UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+                    </SDG-PRIMITIVE-ATTRIBUTE>
+                    <SDG-PRIMITIVE-ATTRIBUTE>
+                      <SHORT-NAME>requiredPduIdRemapping</SHORT-NAME>
+                      <DESC>
+                        <L-2 L="FOR-ALL">This optional attribute represents a list of PDUIds should be added
+                         for the EventDeployment corresponding to the burst.</L-2>
+                      </DESC>
+                      <CATEGORY>INTEGER</CATEGORY>
+                      <LOWER-MULTIPLICITY>0</LOWER-MULTIPLICITY>
+                      <UPPER-MULTIPLICITY-INFINITE>true</UPPER-MULTIPLICITY-INFINITE>
+                    </SDG-PRIMITIVE-ATTRIBUTE>
+                  </ATTRIBUTES>
+                </SDG-CLASS>
+                <SDG-CLASS>
+                  <SHORT-NAME>MachineSubscriber</SHORT-NAME>
+                  <ATTRIBUTES>
+                    <SDG-AGGREGATION-WITH-VARIATION>
+                      <SHORT-NAME>subscribers</SHORT-NAME>
+                      <DESC>
+                        <L-2 L="FOR-ALL"> This optional attribute represent different 
+                        endpoints that are subscribing to the service</L-2>
+                      </DESC>
+                      <LOWER-MULTIPLICITY>0</LOWER-MULTIPLICITY>
+                      <UPPER-MULTIPLICITY-INFINITE>true</UPPER-MULTIPLICITY-INFINITE>
+                      <SUB-SDG-REF DEST="SDG-CLASS">/MICROSAR/ADAPTIVE/Mex4SignalToService/Subscriber</SUB-SDG-REF>
+                    </SDG-AGGREGATION-WITH-VARIATION>
+                    <SDG-FOREIGN-REFERENCE>
+                      <SHORT-NAME>serviceInstanceToMachineMappingRef</SHORT-NAME>
+                      <DESC>
+                        <L-2 L="FOR-ALL"> This optional attribute represents the 
+                        SomeipServiceInstanceToMachineMapping Autosar Object</L-2>
+                      </DESC>
+                      <LOWER-MULTIPLICITY>0</LOWER-MULTIPLICITY>
+                      <UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+                      <DEST-META-CLASS>ServiceInstanceToMachineMapping</DEST-META-CLASS>
+                    </SDG-FOREIGN-REFERENCE>
+                  </ATTRIBUTES>
+                </SDG-CLASS>
+                <SDG-CLASS>
+                  <SHORT-NAME>Subscriber</SHORT-NAME>
+                  <ATTRIBUTES>
+                    <SDG-PRIMITIVE-ATTRIBUTE>
+                      <SHORT-NAME>ipAddress</SHORT-NAME>
+                      <DESC>
+                        <L-2 L="FOR-ALL"> This attribute provides the ipAddress of the Subscriber.</L-2>
+                      </DESC>
+                      <CATEGORY>STRING</CATEGORY>
+                      <LOWER-MULTIPLICITY>0</LOWER-MULTIPLICITY>
+                      <UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+                    </SDG-PRIMITIVE-ATTRIBUTE>
+                    <SDG-PRIMITIVE-ATTRIBUTE>
+                      <SHORT-NAME>port</SHORT-NAME>
+                      <DESC>
+                        <L-2 L="FOR-ALL"> This attribute provides the port of the Subscriber.</L-2>
+                      </DESC>
+                      <CATEGORY>INTEGER</CATEGORY>
+                      <LOWER-MULTIPLICITY>0</LOWER-MULTIPLICITY>
+                      <UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+                    </SDG-PRIMITIVE-ATTRIBUTE>
+                    <SDG-PRIMITIVE-ATTRIBUTE>
+                      <SHORT-NAME>pduId</SHORT-NAME>
+                      <DESC>
+                        <L-2 L="FOR-ALL"> This optional attribute provides the Provided PDU Remapping.</L-2>
+                      </DESC>
+                      <CATEGORY>INTEGER</CATEGORY>
+                      <LOWER-MULTIPLICITY>0</LOWER-MULTIPLICITY>
+                      <UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+                    </SDG-PRIMITIVE-ATTRIBUTE>
+                    <SDG-FOREIGN-REFERENCE>
+                      <SHORT-NAME>eventGroupRef</SHORT-NAME>
+                      <DESC>
+                        <L-2 L="FOR-ALL"> This optional attribute represents the Event Group Object.</L-2>
+                      </DESC>
+                      <LOWER-MULTIPLICITY>0</LOWER-MULTIPLICITY>
+                      <UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+                      <DEST-META-CLASS>SomeipEventGroup</DEST-META-CLASS>
+                    </SDG-FOREIGN-REFERENCE>
+                  </ATTRIBUTES>
+                </SDG-CLASS>
+                <SDG-CLASS>
+                  <SHORT-NAME>Mex4SomeipServiceInstanceToMachineMapping</SHORT-NAME>
+                  <EXTENDS-META-CLASS>SomeipServiceInstanceToMachineMapping</EXTENDS-META-CLASS>
+                </SDG-CLASS>
+                <SDG-CLASS>
+                  <SHORT-NAME>PduHeaderExtensionFieldsTx</SHORT-NAME>
+                  <ATTRIBUTES>
+                    <SDG-PRIMITIVE-ATTRIBUTE>
+                      <SHORT-NAME>clientId</SHORT-NAME>
+                      <DESC>
+                        <L-2 L="FOR-ALL"> This attribute provides the client id for the PDU header extension.</L-2>
+                      </DESC>
+                      <CATEGORY>INTEGER</CATEGORY>
+                      <LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+                      <UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+                    </SDG-PRIMITIVE-ATTRIBUTE>
+                    <SDG-PRIMITIVE-ATTRIBUTE>
+                      <SHORT-NAME>sessionId</SHORT-NAME>
+                      <DESC>
+                        <L-2 L="FOR-ALL"> This attribute provides the session id for the PDU header extension.</L-2>
+                      </DESC>
+                      <CATEGORY>INTEGER</CATEGORY>
+                      <LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+                      <UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+                    </SDG-PRIMITIVE-ATTRIBUTE>
+                    <SDG-PRIMITIVE-ATTRIBUTE>
+                      <SHORT-NAME>protocolVersion</SHORT-NAME>
+                      <DESC>
+                        <L-2 L="FOR-ALL"> This attribute provides the protocol version for the PDU header extension.</L-2>
+                      </DESC>
+                      <CATEGORY>INTEGER</CATEGORY>
+                      <LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+                      <UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+                    </SDG-PRIMITIVE-ATTRIBUTE>
+                    <SDG-PRIMITIVE-ATTRIBUTE>
+                      <SHORT-NAME>interfaceVersion</SHORT-NAME>
+                      <DESC>
+                        <L-2 L="FOR-ALL"> This attribute provides the interface version for the PDU header extension.</L-2>
+                      </DESC>
+                      <CATEGORY>INTEGER</CATEGORY>
+                      <LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+                      <UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+                    </SDG-PRIMITIVE-ATTRIBUTE>
+                    <SDG-PRIMITIVE-ATTRIBUTE>
+                      <SHORT-NAME>messageType</SHORT-NAME>
+                      <DESC>
+                        <L-2 L="FOR-ALL"> This attribute provides the message type for the PDU header extension.</L-2>
+                      </DESC>
+                      <CATEGORY>INTEGER</CATEGORY>
+                      <LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+                      <UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+                    </SDG-PRIMITIVE-ATTRIBUTE>
+                    <SDG-PRIMITIVE-ATTRIBUTE>
+                      <SHORT-NAME>returnCode</SHORT-NAME>
+                      <DESC>
+                        <L-2 L="FOR-ALL"> This attribute provides the return code for the PDU header extension.</L-2>
+                      </DESC>
+                      <CATEGORY>INTEGER</CATEGORY>
+                      <LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+                      <UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+                    </SDG-PRIMITIVE-ATTRIBUTE>
+                  </ATTRIBUTES>
+                </SDG-CLASS>
+              </SDG-CLASSES>
+            </SDG-DEF>
+          </ELEMENTS>
+        </AR-PACKAGE>
+      </AR-PACKAGES>
+    </AR-PACKAGE>
+  </AR-PACKAGES>
+</AUTOSAR>

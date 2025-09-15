@@ -1,0 +1,44 @@
+import com.vector.cfg.automation.scripting.api.project.IProjectRef
+import java.nio.file.Paths
+
+import static com.vector.cfg.automation.api.ScriptApi.*
+
+//daVinci enables the IDE code completion support
+daVinci {
+    scriptDescription "Create a new adaptive project programmatically"
+
+    /*
+     * Task: CreateAdaptiveProject
+     * Type: DV_APPLICATION
+     * -------------------------------------------------------------------------------------------------------
+     * The task shows how to create a new adaptive project.
+     * For more details please refer to section "Creating a new Adaptive Project" in the Automation Documentation.
+     * -------------------------------------------------------------------------------------------------------
+     */
+    scriptTask('CreateAdaptiveProject', DV_APPLICATION) {
+        taskDescription "Creates an adaptive project called 'NewProject'"
+
+        code {
+
+            IProjectRef newProject = projects.createAdaptiveProject {
+                name 'NewProject'
+
+                // Use this if you have files(*.arxml) to import for the new project
+                // filesToImport = [Paths.get("/Model/model.arxml"), Paths.get("/Model/model2.arxml")]
+
+                // Use this if the new project depends on existing projects
+                // referencedProjects = [Paths.get("/MyProject/.adpa/MyProject.adpa"), Paths.get("/MyProject2/.adpa/MyProject2.adpa")]
+
+                // Use this to specify the location of the new project. If not used, the project will be created in
+                // the default location, which is <WORKSPACE_PATH>/<PROJECT_NAME>
+                // projectLocation = Paths.get("/home/Projects/NewProject")
+            }
+
+            if (newProject) {
+                scriptLogger.info "Adpa file location of created project: ${newProject.projectFilePath.toAbsolutePath()}."
+            } else {
+                scriptLogger.error "Project creation failed."
+            }
+        }
+    }
+}

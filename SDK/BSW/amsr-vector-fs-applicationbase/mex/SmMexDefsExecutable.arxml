@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<AUTOSAR xmlns="http://autosar.org/schema/r4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://autosar.org/schema/r4.0 AUTOSAR_00049.xsd">
+  <AR-PACKAGES>
+    <AR-PACKAGE>
+      <SHORT-NAME>MICROSAR</SHORT-NAME>
+      <AR-PACKAGES>
+        <AR-PACKAGE UUID="0bdb538a-3fc2-4643-8897-171a15a4a207">
+          <SHORT-NAME>ADAPTIVE</SHORT-NAME>
+          <ELEMENTS>
+            <SDG-DEF>
+              <SHORT-NAME>SmExtensionModel</SHORT-NAME>
+              <ADMIN-DATA>
+                <SDGS>
+                  <SDG GID="DvMex-version">
+                    <SD>1.0.0</SD>
+                  </SDG>
+                </SDGS>
+              </ADMIN-DATA>
+              <SDG-CLASSES>
+                <SDG-CLASS>
+                  <SHORT-NAME>SmExecutableExtension</SHORT-NAME>
+                  <EXTENDS-META-CLASS>Executable</EXTENDS-META-CLASS>
+                  <ATTRIBUTES>
+                    <SDG-PRIMITIVE-ATTRIBUTE UUID="15681862-d6f1-4f56-b098-460925239be5">
+                      <SHORT-NAME>useSmApi</SHORT-NAME>
+                      <DESC>
+                        <L-2 L="FOR-ALL">This attribute indicates usage of the StateManager component</L-2>
+                      </DESC>
+                      <CATEGORY>BOOLEAN</CATEGORY>
+                      <LOWER-MULTIPLICITY>0</LOWER-MULTIPLICITY>
+                      <UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+                    </SDG-PRIMITIVE-ATTRIBUTE>
+                  </ATTRIBUTES>
+                </SDG-CLASS>
+              </SDG-CLASSES>
+            </SDG-DEF>
+          </ELEMENTS>
+        </AR-PACKAGE>
+      </AR-PACKAGES>
+    </AR-PACKAGE>
+  </AR-PACKAGES>
+</AUTOSAR>

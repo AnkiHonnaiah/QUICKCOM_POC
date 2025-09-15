@@ -1,0 +1,26 @@
+/*
+ * AutomationInterface bootstrap
+ */
+apply from: 'dvCfgAutomationBootstrap.gradle'
+
+// Uncomment these lines to remove the version number of the created jar-file for MEX migration
+// project.version = ""
+// project.archivesBaseName = "${project.name}"
+
+
+/*
+ * AutomationInterface configuration
+ */
+dvCfgAutomation {
+    classes project.ext.automationClasses
+    allowBetaApiUsage true
+}
+
+/*
+ * AutomationInterface repositories
+ */
+repositories {
+    // Define the Maven Central repository to resolve dependencies from Maven Central.
+    mavenCentral()
+    // Add other repositories here if needed.
+}

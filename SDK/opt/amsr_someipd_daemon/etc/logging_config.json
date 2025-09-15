@@ -1,0 +1,16 @@
+
+{
+  "version" : "1.00.00",
+  "app" : {
+    "name" : "someipd",
+    "id" : "VSom",
+    "descr" : "SOME/IP communication daemon",
+    "version" : "1.0.0",
+    "level" : "info"
+  },
+  "sinks" : {
+    "console" : {
+      "enabled" : true
+    }
+  }
+}

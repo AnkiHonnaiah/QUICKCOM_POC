@@ -1,0 +1,405 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feature
+      id="com.vector.cfg.core.model.feature"
+      label="AUTOSAR Model for DaVinci Products"
+      version="1.0.0.qualifier"
+      provider-name="Vector Informatik GmbH">
+
+   <description>
+      AUTOSAR model for DaVinci products.
+   </description>
+
+   <copyright>
+      (c) Copyright Vector Informatik GmbH. All Rights Reserved.
+   </copyright>
+
+   <license url="https://www.vector.com">
+      Vector Group License Agreement
+
+      This software is licensed under the terms and conditions of „Delivery and maintenance of software products” of Vector Group, see www.vector.com
+   </license>
+
+   <includes
+         id="com.vector.cfg.model.mdf.feature"
+         version="0.0.0"/>
+
+   <includes
+         id="com.vector.cfg.util.feature"
+         version="0.0.0"/>
+
+   <requires>
+      <import plugin="org.eclipse.osgi.services"/>
+      <import plugin="org.apache.commons.io"/>
+      <import plugin="org.apache.commons.lang"/>
+      <import plugin="org.eclipse.core.databinding"/>
+      <import plugin="org.eclipse.core.databinding.observable"/>
+      <import plugin="org.eclipse.core.databinding.property"/>
+      <import plugin="org.eclipse.jdt.core"/>
+      <import plugin="org.eclipse.text"/>
+      <import plugin="org.eclipse.core.commands"/>
+      <import plugin="org.apache.servicemix.bundles.jdom"/>
+      <import plugin="com.sun.xml.bind.jaxb-osgi"/>
+      <import plugin="com.sun.xml.bind.jaxb-impl"/>
+      <import plugin="org.osgi.service.cm"/>
+      <import plugin="org.osgi.service.component"/>
+      <import plugin="org.osgi.service.device"/>
+      <import plugin="org.osgi.service.event"/>
+      <import plugin="org.osgi.service.metatype"/>
+      <import plugin="org.osgi.service.provisioning"/>
+      <import plugin="org.osgi.service.upnp"/>
+      <import plugin="org.osgi.service.useradmin"/>
+      <import plugin="org.osgi.service.wireadmin"/>
+      <import plugin="org.osgi.util.function"/>
+      <import plugin="org.osgi.util.promise"/>
+      <import plugin="org.eclipse.jdt.core.compiler.batch"/>
+      <import plugin="org.glassfish.hk2.osgi-resource-locator"/>
+      <import plugin="org.eclipse.equinox.http.service.api"/>
+      <import plugin="org.osgi.service.http.whiteboard"/>
+      <import plugin="org.eclipse.jetty.toolchain.jetty-servlet-api"/>
+   </requires>
+
+   <plugin
+         id="org.hsqldb"
+         version="0.0.0"/>
+
+   <plugin
+         id="com.zaxxer.SparseBitSet"
+         version="0.0.0"/>
+
+   <plugin
+         id="com.google.gson"
+         version="0.0.0"/>
+
+   <plugin
+         id="com.ning.compress-lzf"
+         version="0.0.0"/>
+
+   <plugin
+         id="com.vector.cfg.model"
+         version="0.0.0"/>
+
+   <plugin
+         id="com.vector.cfg.persistency.parser"
+         version="0.0.0"/>
+
+   <plugin
+         id="com.vector.cfg.model.unit"
+         version="0.0.0"/>
+
+   <plugin
+         id="com.vector.cfg.model.rules.if"
+         version="0.0.0"/>
+
+   <plugin
+         id="com.vector.cfg.model.rules.impl"
+         version="0.0.0"/>
+
+   <plugin
+         id="com.vector.cfg.persistency.parser.latest"
+         version="0.0.0"/>
+
+   <plugin
+         id="com.vector.cfg.automation.scripting.base"
+         version="0.0.0"/>
+
+   <plugin
+         id="com.vector.cfg.model.mdf"
+         version="0.0.0"/>
+
+   <plugin
+         id="com.vector.cfg.model.mdf.asr.base"
+         version="0.0.0"/>
+
+   <plugin
+         id="com.vector.cfg.model.mdf.asr.latest.api"
+         version="0.0.0"/>
+
+   <plugin
+         id="com.vector.cfg.model.mdf.asr.latest"
+         version="0.0.0"/>
+
+   <plugin
+         id="com.vector.cfg.model.asr.formula.api"
+         version="0.0.0"/>
+
+   <plugin
+         id="com.vector.cfg.persistency.base"
+         version="0.0.0"/>
+
+   <plugin
+         id="com.vector.cfg.persistency.preferences"
+         version="0.0.0"/>
+
+   <plugin
+         id="com.vector.cfg.persistency.project"
+         version="0.0.0"/>
+
+   <plugin
+         id="com.vector.cfg.persistency.jaxb"
+         version="0.0.0"/>
+
+   <plugin
+         id="com.vector.cfg.app.changenotification"
+         version="0.0.0"/>
+
+   <plugin
+         id="com.vector.cfg.persistency.base.contribution"
+         version="0.0.0"/>
+
+   <plugin
+         id="com.vector.cfg.persistency.exporter"
+         version="0.0.0"/>
+
+   <plugin
+         id="com.vector.cfg.model.asr.variance.api"
+         version="0.0.0"/>
+
+   <plugin
+         id="com.vector.cfg.model.asr.annotation.api"
+         version="0.0.0"/>
+
+   <plugin
+         id="com.vector.cfg.model.asr.annotation"
+         version="0.0.0"/>
+
+   <plugin
+         id="com.vector.cfg.mdf.meta"
+         version="0.0.0"/>
+
+   <plugin
+         id="com.vector.cfg.workflow.annotations.update"
+         version="0.0.0"/>
+
+   <plugin
+         id="com.vector.cfg.workflow.annotations.diff"
+         version="0.0.0"/>
+
+   <plugin
+         id="com.vector.cfg.persistency.annotations.copypaste"
+         version="0.0.0"/>
+
+   <plugin
+         id="com.vector.cfg.model.base"
+         version="0.0.0"/>
+
+   <plugin
+         id="com.vector.cfg.model.base.compare.if"
+         version="0.0.0"/>
+
+   <plugin
+         id="com.vector.cfg.model.base.compare.impl"
+         version="0.0.0"/>
+
+   <plugin
+         id="com.vector.cfg.model.asr.api"
+         version="0.0.0"/>
+
+   <plugin
+         id="com.vector.cfg.model.asr.ecuc"
+         version="0.0.0"/>
+
+   <plugin
+         id="com.vector.cfg.model.asr.ecuc.api"
+         version="0.0.0"/>
+
+   <plugin
+         id="com.vector.cfg.model.uow.api"
+         version="0.0.0"/>
+
+   <plugin
+         id="com.vector.cfg.model.uow"
+         version="0.0.0"/>
+
+   <plugin
+         id="com.vector.cfg.model.asr.variance"
+         version="0.0.0"/>
+
+   <plugin
+         id="com.vector.cfg.model.asr.view.api"
+         version="0.0.0"/>
+
+   <plugin
+         id="com.vector.cfg.model.base.api"
+         version="0.0.0"/>
+
+   <plugin
+         id="com.vector.cfg.persistency.parser.contribution"
+         version="0.0.0"/>
+
+   <plugin
+         id="com.vector.cfg.persistency.project.contribution"
+         version="0.0.0"/>
+
+   <plugin
+         id="com.vector.cfg.persistency.addons.contribution"
+         version="0.0.0"/>
+
+   <plugin
+         id="com.vector.cfg.persistency.addons.exportfilter"
+         version="0.0.0"/>
+
+   <plugin
+         id="com.vector.cfg.persistency.model.traverser"
+         version="0.0.0"/>
+
+   <plugin
+         id="com.vector.cfg.meta.traverser.if"
+         version="0.0.0"/>
+
+   <plugin
+         id="com.vector.cfg.meta.traverser.impl"
+         version="0.0.0"/>
+
+   <plugin
+         id="com.vector.cfg.model.umm.if"
+         version="0.0.0"/>
+
+   <plugin
+         id="com.vector.cfg.model.umm.impl"
+         version="0.0.0"/>
+
+   <plugin
+         id="com.vector.cfg.model.umm.contribution.fw"
+         version="0.0.0"/>
+
+   <plugin
+         id="com.vector.cfg.model.umm.contribution.if"
+         version="0.0.0"/>
+
+   <plugin
+         id="com.vector.cfg.model.umm.internal.if"
+         version="0.0.0"/>
+
+   <plugin
+         id="com.vector.cfg.model.scopes.def.contribution.if"
+         version="0.0.0"/>
+
+   <plugin
+         id="com.vector.cfg.model.scopes.def.contribution.fw"
+         version="0.0.0"/>
+
+   <plugin
+         id="com.vector.cfg.model.scopes.impl"
+         version="0.0.0"/>
+
+   <plugin
+         id="com.vector.cfg.model.scopes.if"
+         version="0.0.0"/>
+
+   <plugin
+         id="com.vector.cfg.model.s2s.if"
+         version="0.0.0"/>
+
+   <plugin
+         id="com.vector.cfg.model.s2s.impl"
+         version="0.0.0"/>
+
+   <plugin
+         id="com.vector.cfg.model.access.if"
+         version="0.0.0"/>
+
+   <plugin
+         id="com.vector.cfg.model.asr.iref.if"
+         version="0.0.0"/>
+
+   <plugin
+         id="com.vector.cfg.model.asr.iref.impl"
+         version="0.0.0"/>
+
+   <plugin
+         id="com.vector.cfg.model.asr.iref.fw"
+         version="0.0.0"/>
+
+   <plugin
+         id="com.vector.cfg.model.asr.iref.contribution.fw"
+         version="0.0.0"/>
+
+   <plugin
+         id="com.vector.cfg.model.asr.iref.contribution.if"
+         version="0.0.0"/>
+
+   <plugin
+         id="com.vector.cfg.core.sip"
+         version="0.0.0"/>
+
+   <plugin
+         id="com.vector.cfg.model.si.if"
+         version="0.0.0"/>
+
+   <plugin
+         id="com.vector.cfg.model.system.abstraction.base"
+         version="0.0.0"/>
+
+   <plugin
+         id="com.vector.cfg.model.asr.extension.instance.access.if"
+         version="0.0.0"/>
+
+   <plugin
+         id="com.vector.cfg.model.asr.extension.instance.access.impl"
+         version="0.0.0"/>
+
+   <plugin
+         id="com.vector.cfg.model.asr.extension.if"
+         version="0.0.0"/>
+
+   <plugin
+         id="com.vector.cfg.mdf.meta.asr.extension.if"
+         version="0.0.0"/>
+
+   <plugin
+         id="com.vector.cfg.mdf.meta.asr.extension.impl"
+         version="0.0.0"/>
+
+   <plugin
+         id="com.vector.cfg.model.asr.extension.impl"
+         version="0.0.0"/>
+
+   <plugin
+         id="com.vector.cfg.model.mdf.asr.latest.umm.if"
+         version="0.0.0"/>
+
+   <plugin
+         id="com.vector.cfg.model.si.fw"
+         version="0.0.0"/>
+
+   <plugin
+         id="com.vector.cfg.model.mdf.asr.latest.umm.impl"
+         version="0.0.0"/>
+
+   <plugin
+         id="com.vector.cfg.model.vis.if"
+         version="0.0.0"/>
+
+   <plugin
+         id="com.vector.cfg.model.vis.impl"
+         version="0.0.0"/>
+
+   <plugin
+         id="org.apache.felix.scr"
+         version="0.0.0"/>
+         
+   <plugin
+         id="com.vector.cfg.business.wizards.if"
+         version="0.0.0"/>
+         
+   <plugin
+         id="com.vector.cfg.business.wizards.impl"
+         version="0.0.0"/>
+         
+   <plugin
+         id="com.vector.cfg.business.wizards.util"
+         version="0.0.0"/>
+
+   <plugin
+         id="license-lib-java"
+         version="0.0.0"/>
+
+   <plugin
+         id="com.vector.cfg.model.comgrant.if"
+         version="0.0.0"/>
+
+   <plugin
+         id="com.vector.cfg.model.comgrant.impl"
+         version="0.0.0"/>
+
+</feature>

@@ -1,0 +1,16 @@
+
+{
+  "format_version" : "1.00.00",
+  "target" : "/vector/example/amsr_ipc_service_discovery_daemon_process",
+  "files" : [
+    {
+      "filename" : "logging_config.json",
+      "checksum" : [
+        2644683074725223506
+      ],
+      "algorithm" : "CRC64",
+      "block_length" : 4194304
+    }
+  ]
+}
+JQ)¨5T8

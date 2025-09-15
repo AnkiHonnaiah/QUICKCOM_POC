@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feature
+      id="com.vector.cfg.automation.amsr.feature"
+      label="DaVinci CLI Adaptive Automation Interface"
+      version="1.0.0.qualifier"
+      provider-name="Vector Informatik GmbH">
+
+   <description>
+      Automation interface for DaVinci CLI Adaptive.
+   </description>
+
+   <copyright>
+      (c) Copyright Vector Informatik GmbH. All Rights Reserved.
+   </copyright>
+
+   <license url="https://www.vector.com">
+      Vector Group License Agreement
+
+This software is licensed under the terms and conditions of „Delivery and maintenance of software products” of Vector Group, see www.vector.com
+   </license>
+
+   <includes
+         id="com.vector.cfg.automation.feature"
+         version="0.0.0"/>
+
+   <includes
+         id="com.vector.cfg.gen.core.feature"
+         version="0.0.0"/>
+
+   <plugin
+         id="com.vector.cfg.automation.classloading.amsr"
+         version="0.0.0"/>
+
+   <plugin
+         id="com.vector.cfg.model.asr.extension.groovy.util"
+         version="0.0.0"/>
+
+   <plugin
+         id="com.vector.cfg.persistency.adpa.migration.impl"
+         version="0.0.0"/>
+
+   <plugin
+         id="com.vector.cfg.model.asr.dext.if"
+         version="0.0.0"/>
+
+   <plugin
+         id="com.vector.cfg.project.creation.amsr"
+         version="0.0.0"/>
+
+   <plugin
+         id="com.vector.cfg.persistency.project.amsr"
+         version="0.0.0"/>
+
+   <plugin
+         id="com.vector.cfg.project.creation"
+         version="0.0.0"/>
+
+   <plugin
+         id="com.vector.cfg.persistency.arxml.resources.amsr"
+         version="0.0.0"/>
+
+   <plugin
+         id="com.vector.cfg.project.amsr"
+         version="0.0.0"/>
+
+   <plugin
+         id="com.vector.cfg.gen.core.genusage.groovy"
+         version="0.0.0"/>
+
+</feature>

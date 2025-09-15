@@ -1,0 +1,16 @@
+
+{
+  "version" : "1.00.00",
+  "app" : {
+    "name" : "amsr_ipc_service_discovery_daemon_process",
+    "id" : "VIsd",
+    "descr" : "The IpcServiceDiscovery daemon",
+    "version" : "",
+    "level" : "info"
+  },
+  "sinks" : {
+    "console" : {
+      "enabled" : true
+    }
+  }
+}

@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<AUTOSAR xmlns="http://autosar.org/schema/r4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://autosar.org/schema/r4.0 AUTOSAR_00049.xsd">
+  <AR-PACKAGES>
+    <AR-PACKAGE>
+      <SHORT-NAME>MICROSAR</SHORT-NAME>
+      <AR-PACKAGES>
+        <AR-PACKAGE UUID="0bdb538a-3fc2-4643-8897-171a15a4a207">
+          <SHORT-NAME>ADAPTIVE</SHORT-NAME>
+          <ELEMENTS>
+            <SDG-DEF>
+              <SHORT-NAME>BswExecutableTypeExtensionModel</SHORT-NAME>
+              <ADMIN-DATA>
+                <SDGS>
+                  <SDG GID="DvMex-version">
+                    <SD>1.0.0</SD>
+                  </SDG>
+                </SDGS>
+              </ADMIN-DATA>
+              <SDG-CLASSES>
+                <SDG-CLASS>
+                  <SHORT-NAME>BswExecutable</SHORT-NAME>
+                  <DESC>
+                    <L-2 L="EN">This model extension can be used to identify a relation between an executable and a certain type
+when other methods of identification are not sufficient.</L-2>
+                  </DESC>
+                  <EXTENDS-META-CLASS>Executable</EXTENDS-META-CLASS>
+                  <ATTRIBUTES>
+                    <SDG-PRIMITIVE-ATTRIBUTE>
+                      <SHORT-NAME>bswExecutableType</SHORT-NAME>
+                      <DESC>
+                        <L-2 L="FOR-ALL">This attribute indicates that an Executable is of a certain type</L-2>
+                      </DESC>
+                      <CATEGORY>ENUMERATION</CATEGORY>
+                      <ADMIN-DATA>
+                        <SDGS>
+                          <SDG GID="literals">
+                            <SD>DIAGNOSTIC_MANAGER</SD>
+                            <SD>EXECUTION_MANAGER</SD>
+                            <SD>PASSTHROUGH_MANAGER</SD>
+                            <SD>NETWORK_MANAGER</SD>
+                            <SD>UPDATE_MANAGER</SD>
+                            <SD>HEALTH_MANAGER</SD>
+                            <SD>SOMEIP_DAEMON</SD>
+                            <SD>TIMESYNC_DAEMON</SD>
+                            <SD>STATE_MANAGER</SD>
+                            <SD>UDPIPCGATEWAY</SD>
+                            <SD>CRYPTO_DAEMON</SD>
+                          </SDG>
+                        </SDGS>
+                      </ADMIN-DATA>
+                      <LOWER-MULTIPLICITY>0</LOWER-MULTIPLICITY>
+                      <UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+                    </SDG-PRIMITIVE-ATTRIBUTE>
+                  </ATTRIBUTES>
+                </SDG-CLASS>
+              </SDG-CLASSES>
+            </SDG-DEF>
+          </ELEMENTS>
+        </AR-PACKAGE>
+      </AR-PACKAGES>
+    </AR-PACKAGE>
+  </AR-PACKAGES>
+</AUTOSAR>

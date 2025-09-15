@@ -1,0 +1,10 @@
+/*
+ * Project wide settings 
+ */
+project.version = '1.0.0'
+project.ext.automationClasses = [
+        "MyScript"
+]
+
+// Please specify the parent folder of AutomationInterface.
+project.ext.dvCfgInstallation = new File("<PARENT_FOLDER_OF_AUTOMATION_INTERFACE> e.g. /home/vector/DvDevAdaptive/ or /home/vector/BSWPackage/CLI/Core")

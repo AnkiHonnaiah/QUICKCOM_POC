@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<AUTOSAR xmlns="http://autosar.org/schema/r4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://autosar.org/schema/r4.0 AUTOSAR_00049.xsd">
+  <AR-PACKAGES>
+    <AR-PACKAGE>
+      <SHORT-NAME>MICROSAR</SHORT-NAME>
+      <AR-PACKAGES>
+        <AR-PACKAGE UUID="0bdb538a-3fc2-4643-8897-171a15a4a207">
+          <SHORT-NAME>ADAPTIVE</SHORT-NAME>
+          <ELEMENTS>
+            <SDG-DEF UUID="b90fca76-61c5-49eb-98ae-3f49c1154a70">
+              <SHORT-NAME>BswVersionedApiExtensionModel</SHORT-NAME>
+              <ADMIN-DATA>
+                <SDGS>
+                  <SDG GID="DvMex-version">
+                    <SD>1.0.0</SD>
+                  </SDG>
+                </SDGS>
+              </ADMIN-DATA>
+              <SDG-CLASSES>
+                <SDG-CLASS UUID="bd175393-8b6e-400a-a8d7-823ddb8b86bf">
+                  <SHORT-NAME>BswVersionedApi</SHORT-NAME>
+                  <DESC>
+                    <L-2 L="EN">Usage of this extension model shall denote which respective version of ara::core and ara::com
+is used by a MICROSAR Adaptive application.</L-2>
+                  </DESC>
+                  <EXTENDS-META-CLASS>Executable</EXTENDS-META-CLASS>
+                  <ATTRIBUTES>
+                    <SDG-PRIMITIVE-ATTRIBUTE UUID="5cf9fb6f-969f-4bc3-a43e-4018bec4fb8e">
+                      <SHORT-NAME>amsrAraCoreApi</SHORT-NAME>
+                      <DESC>
+                        <L-2 L="EN">Specifies the ara::core API version.</L-2>
+                      </DESC>
+                      <CATEGORY>ENUMERATION</CATEGORY>
+                      <ADMIN-DATA>
+                        <SDGS>
+                          <SDG GID="literals">
+                            <SD>r19_03</SD>
+                            <SD>r20_11</SD>
+                          </SDG>
+                        </SDGS>
+                      </ADMIN-DATA>
+                      <LOWER-MULTIPLICITY>0</LOWER-MULTIPLICITY>
+                      <UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+                    </SDG-PRIMITIVE-ATTRIBUTE>
+                    <SDG-PRIMITIVE-ATTRIBUTE UUID="c97aadec-91da-490f-bd0a-50be0ee66e02">
+                      <SHORT-NAME>amsrAraComApi</SHORT-NAME>
+                      <DESC>
+                        <L-2 L="EN">Specifies the ara::com API version.</L-2>
+                      </DESC>
+                      <CATEGORY>ENUMERATION</CATEGORY>
+                      <ADMIN-DATA>
+                        <SDGS>
+                          <SDG GID="literals">
+                            <SD>r18_03</SD>
+                            <SD>r20_11</SD>
+                          </SDG>
+                        </SDGS>
+                      </ADMIN-DATA>
+                      <LOWER-MULTIPLICITY>0</LOWER-MULTIPLICITY>
+                      <UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+                    </SDG-PRIMITIVE-ATTRIBUTE>
+                  </ATTRIBUTES>
+                </SDG-CLASS>
+              </SDG-CLASSES>
+            </SDG-DEF>
+          </ELEMENTS>
+        </AR-PACKAGE>
+      </AR-PACKAGES>
+    </AR-PACKAGE>
+  </AR-PACKAGES>
+</AUTOSAR>
