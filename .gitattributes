@@ -1,27 +1,22 @@
 # Normalize text files to LF in the repo
 * text=auto eol=lf
-
 # Source code files (force LF)
 *.c     text eol=lf
 *.cpp   text eol=lf
 *.h     text eol=lf
 *.hpp   text eol=lf
-
 # Scripts
 *.sh    text eol=lf
 *.bat   text eol=crlf
 *.ps1   text eol=crlf
-
 # Config / JSON / XML
 *.json  text eol=lf
 *.xml   text eol=lf
 *.yaml  text eol=lf
 *.yml   text eol=lf
-
 # Markdown / Documentation
 *.md    text eol=lf
 *.txt   text eol=lf
-
 # Binary files (keep as-is, no line-ending conversion)
 *.png   binary
 *.jpg   binary
@@ -35,3 +30,4 @@
 *.zip   binary
 *.tar   binary
 *.gz    binary
+*.jar filter=lfs diff=lfs merge=lfs -text
