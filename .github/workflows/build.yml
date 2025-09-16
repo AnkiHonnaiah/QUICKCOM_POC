@@ -21,13 +21,13 @@ jobs:
           sudo apt install -y build-essential cmake gcc g++ git
 
       - name: Run generators
-        working-directory: Examples/SpeedLimitWarning/scripts
+        working-directory: Examples/SpeedLimitMonitor/scripts
         run: |
           chmod +x 1_runGenerators.sh
           ./1_runGenerators.sh
 
       - name: Build application
-        working-directory: Examples/SpeedLimitWarning/scripts
+        working-directory: Examples/SpeedLimitMonitor/scripts
         run: |
           chmod +x 2_buildApplication.sh
           ./2_buildApplication.sh
