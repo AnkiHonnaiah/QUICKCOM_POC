@@ -9,11 +9,29 @@ on:
 jobs:
   build:
     name: Build Speed Limit Monitor Example
-    runs-on: self-hosted   # 👈 Now uses your WSL runner
+    runs-on: ubuntu-latest
 
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
+
+      - name: Install dependencies
+        run: |
+          sudo apt update
+          sudo apt install -y build-essential cmake gcc g++ git openjdk-17-jre
+
+      - name: Debug SDK contents
+        run: |
+          pwd
+          ls -l
+          ls -l SDK/CLI/Core | head
+          ls -l SDK/CLI/Core/plugins | head
+
+      - name: Sanity check DVACfgCmd
+        run: |
+          chmod +x SDK/CLI/Core/DVACfgCmd
+          cd SDK/CLI/Core
+          ./DVACfgCmd -help || true
 
       - name: Run generators
         working-directory: Examples/SpeedLimitMonitor/scripts
