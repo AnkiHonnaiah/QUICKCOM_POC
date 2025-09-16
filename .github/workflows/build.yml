@@ -9,20 +9,25 @@ on:
 jobs:
   build:
     name: Build Speed Limit Monitor Example
-    runs-on: self-hosted
+    runs-on: self-hosted   # not ubuntu-latest since you’re using your machine
 
     steps:
-      - name: Checkout repository
+      - name: Checkout repository (with LFS)
         uses: actions/checkout@v4
         with:
           lfs: true
 
-      - name: Debug SDK contents
+      - name: Ensure LFS files are pulled
         run: |
-          pwd
-          ls -l
-          ls -l SDK/CLI/Core | head
-          ls -l SDK/CLI/Core/plugins | head
+          git lfs pull
+          git lfs checkout
+          echo "Check jar sizes:"
+          ls -lh SDK/CLI/Core/plugins | head
+
+      - name: Install dependencies
+        run: |
+          sudo apt update
+          sudo apt install -y build-essential cmake gcc g++ git
 
       - name: Sanity check DVACfgCmd
         run: |
