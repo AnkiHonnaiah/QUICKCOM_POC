@@ -8,20 +8,12 @@ on:
 
 jobs:
   build:
-    name: Build Speed Limit Warning Example
-    runs-on: ubuntu-latest
+    name: Build Speed Limit Monitor Example
+    runs-on: self-hosted   # 👈 Now uses your WSL runner
 
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
-
-      - name: Install dependencies
-        run: |
-          sudo apt update
-          sudo apt install -y build-essential cmake gcc g++ git
-      
-      - name: Ensure DVACfgCmd is executable
-        run: chmod + attempted to execute the file ../../../SDK/CLIx ../../../SDK/CLI/Core/DVACfgCmd
 
       - name: Run generators
         working-directory: Examples/SpeedLimitMonitor/scripts
