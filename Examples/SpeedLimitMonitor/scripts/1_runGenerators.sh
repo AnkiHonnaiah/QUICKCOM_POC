@@ -14,7 +14,8 @@ SRC_GEN_DIR=../tmp/src-gen
 
 
 # Do not modify
-"$SDK_DIR/CLI/Core/DVACfgCmd" \
+cd "$SDK_DIR/CLI/Core" && \
+  ./DVACfgCmd \
     -data "../tmp/workspace" \
     --bswPackageRootPath "$SDK_DIR" \
     --scriptLocations  "$MODELBUILDER_DIR" \
