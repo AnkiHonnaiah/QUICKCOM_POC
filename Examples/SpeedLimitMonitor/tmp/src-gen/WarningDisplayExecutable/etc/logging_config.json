@@ -1,0 +1,16 @@
+
+{
+  "version" : "1.00.00",
+  "app" : {
+    "name" : "Prc_App_ModelBuilderApplication_WarningDisplayExecutable",
+    "id" : "AP01",
+    "descr" : "Missing description",
+    "version" : "1.0.0",
+    "level" : "info"
+  },
+  "sinks" : {
+    "console" : {
+      "enabled" : true
+    }
+  }
+}

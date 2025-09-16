@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<AUTOSAR xmlns="http://autosar.org/schema/r4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://autosar.org/schema/r4.0 AUTOSAR_00049.xsd">
+  <AR-PACKAGES>
+    <AR-PACKAGE UUID="e80c01af-7369-4b10-802f-d18f6b9e25b7">
+      <SHORT-NAME>ServiceInterfaces</SHORT-NAME>
+      <AR-PACKAGES>
+        <AR-PACKAGE UUID="b81d8519-8c6b-4722-a2cc-16aabe945186">
+          <SHORT-NAME>PkgSpeedLimitService</SHORT-NAME>
+          <AR-PACKAGES>
+            <AR-PACKAGE UUID="35e4b357-ba51-47ed-b7fa-7119cf1d6bc6">
+              <SHORT-NAME>Latest</SHORT-NAME>
+              <ELEMENTS>
+                <SERVICE-INTERFACE UUID="1ee2193d-4e50-45eb-b355-9302deb8913f">
+                  <SHORT-NAME>SpeedLimitService</SHORT-NAME>
+                  <NAMESPACES>
+                    <SYMBOL-PROPS>
+                      <SHORT-NAME>ns0</SHORT-NAME>
+                      <SYMBOL>services</SYMBOL>
+                    </SYMBOL-PROPS>
+                    <SYMBOL-PROPS>
+                      <SHORT-NAME>ns1</SHORT-NAME>
+                      <SYMBOL>speedlimitservice</SYMBOL>
+                    </SYMBOL-PROPS>
+                  </NAMESPACES>
+                  <EVENTS>
+                    <VARIABLE-DATA-PROTOTYPE UUID="cc5391d1-d349-4e7a-bb3a-22064ffe06ac">
+                      <SHORT-NAME>SpeedOverLimitEvent</SHORT-NAME>
+                      <TYPE-TREF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/Datatypes/OverLimitEnum</TYPE-TREF>
+                    </VARIABLE-DATA-PROTOTYPE>
+                  </EVENTS>
+                </SERVICE-INTERFACE>
+              </ELEMENTS>
+              <AR-PACKAGES>
+                <AR-PACKAGE UUID="89fa6729-5d4a-4845-a954-2790cd7ecd99">
+                  <SHORT-NAME>PkgDeployment</SHORT-NAME>
+                  <ELEMENTS>
+                    <USER-DEFINED-SERVICE-INTERFACE-DEPLOYMENT UUID="2cf8e7e8-bce9-4000-ad87-a1f069ecac05">
+                      <SHORT-NAME>IpcSvcIfDeploy_SpeedLimitService</SHORT-NAME>
+                      <ADMIN-DATA>
+                        <SDGS>
+                          <SDG GID="DvMex:IpcBindingServiceInterfaceDeploymentExtension">
+                            <SDG GID="userDefinedIpcBinding">
+                              <SDG GID="IpcBindingServiceInterfaceDeployment">
+                                <SD GID="serviceInterfaceId">5000</SD>
+                                <SDG GID="serviceInterfaceVersion">
+                                  <SDG GID="Version">
+                                    <SD GID="major">1</SD>
+                                    <SD GID="minor">0</SD>
+                                  </SDG>
+                                </SDG>
+                              </SDG>
+                            </SDG>
+                          </SDG>
+                        </SDGS>
+                      </ADMIN-DATA>
+                      <EVENT-DEPLOYMENTS>
+                        <USER-DEFINED-EVENT-DEPLOYMENT UUID="99e82de0-43e9-45bc-bc09-92135bdde86e">
+                          <SHORT-NAME>IpcEventDeploy_SpeedOverLimitEvent</SHORT-NAME>
+                          <ADMIN-DATA>
+                            <SDGS>
+                              <SDG GID="DvMex:IpcBindingEventDeploymentExtension">
+                                <SDG GID="userDefinedIpcBinding">
+                                  <SDG GID="IpcBindingEventDeployment">
+                                    <SD GID="eventId">400</SD>
+                                  </SDG>
+                                </SDG>
+                              </SDG>
+                            </SDGS>
+                          </ADMIN-DATA>
+                          <EVENT-REF DEST="VARIABLE-DATA-PROTOTYPE">/ServiceInterfaces/PkgSpeedLimitService/Latest/SpeedLimitService/SpeedOverLimitEvent</EVENT-REF>
+                        </USER-DEFINED-EVENT-DEPLOYMENT>
+                      </EVENT-DEPLOYMENTS>
+                      <SERVICE-INTERFACE-REF DEST="SERVICE-INTERFACE">/ServiceInterfaces/PkgSpeedLimitService/Latest/SpeedLimitService</SERVICE-INTERFACE-REF>
+                    </USER-DEFINED-SERVICE-INTERFACE-DEPLOYMENT>
+                  </ELEMENTS>
+                </AR-PACKAGE>
+              </AR-PACKAGES>
+            </AR-PACKAGE>
+          </AR-PACKAGES>
+        </AR-PACKAGE>
+      </AR-PACKAGES>
+    </AR-PACKAGE>
+  </AR-PACKAGES>
+</AUTOSAR>

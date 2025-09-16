@@ -1,0 +1,749 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<AUTOSAR xmlns="http://autosar.org/schema/r4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://autosar.org/schema/r4.0 AUTOSAR_00049.xsd">
+  <AR-PACKAGES>
+    <AR-PACKAGE UUID="d873f59e-882d-4220-b10d-a032fb024b50">
+      <SHORT-NAME>AppDeployment</SHORT-NAME>
+      <ELEMENTS>
+        <ETHERNET-CLUSTER UUID="5b9de654-325b-4303-af83-d5ae77a3c311">
+          <SHORT-NAME>EthCluster_AppLocalNetwork</SHORT-NAME>
+          <ETHERNET-CLUSTER-VARIANTS>
+            <ETHERNET-CLUSTER-CONDITIONAL>
+              <PHYSICAL-CHANNELS>
+                <ETHERNET-PHYSICAL-CHANNEL UUID="1ff3e634-a319-4fa9-8031-3d0cc490b56c">
+                  <SHORT-NAME>EthernetChannel_AppLocalNetwork</SHORT-NAME>
+                  <NETWORK-ENDPOINTS>
+                    <NETWORK-ENDPOINT UUID="44b28eb3-0753-4da4-9fd0-33fcf118457c">
+                      <SHORT-NAME>TcpEndpoint_AppLocalNetwork</SHORT-NAME>
+                      <NETWORK-ENDPOINT-ADDRESSES>
+                        <IPV-4-CONFIGURATION>
+                          <IPV-4-ADDRESS>127.0.0.1</IPV-4-ADDRESS>
+                          <IPV-4-ADDRESS-SOURCE>FIXED</IPV-4-ADDRESS-SOURCE>
+                          <NETWORK-MASK>255.255.255.0</NETWORK-MASK>
+                          <TTL>5</TTL>
+                        </IPV-4-CONFIGURATION>
+                      </NETWORK-ENDPOINT-ADDRESSES>
+                    </NETWORK-ENDPOINT>
+                    <NETWORK-ENDPOINT UUID="44505245-de24-4cc4-a763-f56e81e42917">
+                      <SHORT-NAME>UdpEndpoint_AppLocalNetwork</SHORT-NAME>
+                      <NETWORK-ENDPOINT-ADDRESSES>
+                        <IPV-4-CONFIGURATION>
+                          <IPV-4-ADDRESS>224.0.0.17</IPV-4-ADDRESS>
+                        </IPV-4-CONFIGURATION>
+                      </NETWORK-ENDPOINT-ADDRESSES>
+                    </NETWORK-ENDPOINT>
+                  </NETWORK-ENDPOINTS>
+                  <VLAN UUID="2b643511-f4a4-4805-90c9-1d9c260a560c">
+                    <SHORT-NAME>Vlan_AppLocalNetwork</SHORT-NAME>
+                    <VLAN-IDENTIFIER>12</VLAN-IDENTIFIER>
+                  </VLAN>
+                </ETHERNET-PHYSICAL-CHANNEL>
+              </PHYSICAL-CHANNELS>
+            </ETHERNET-CLUSTER-CONDITIONAL>
+          </ETHERNET-CLUSTER-VARIANTS>
+        </ETHERNET-CLUSTER>
+        <MODE-DECLARATION-GROUP UUID="a0a1f937-adeb-4ad4-8e6e-35ee9e55168a">
+          <SHORT-NAME>Default_ProcessStates</SHORT-NAME>
+          <INITIAL-MODE-REF DEST="MODE-DECLARATION">/AppDeployment/Default_ProcessStates/Running</INITIAL-MODE-REF>
+          <MODE-DECLARATIONS>
+            <MODE-DECLARATION UUID="99d2f85d-9c6d-4140-ba48-497bffcb9ad7">
+              <SHORT-NAME>Running</SHORT-NAME>
+              <VALUE>0</VALUE>
+            </MODE-DECLARATION>
+            <MODE-DECLARATION UUID="64fa526a-327e-455c-b706-01ffd6ab4c14">
+              <SHORT-NAME>Terminating</SHORT-NAME>
+              <VALUE>1</VALUE>
+            </MODE-DECLARATION>
+          </MODE-DECLARATIONS>
+        </MODE-DECLARATION-GROUP>
+        <MODE-DECLARATION-GROUP UUID="e148ac18-81da-415b-9cf3-d006e4df0032">
+          <SHORT-NAME>Default_MachineStates</SHORT-NAME>
+          <INITIAL-MODE-REF DEST="MODE-DECLARATION">/AppDeployment/Default_MachineStates/Off</INITIAL-MODE-REF>
+          <MODE-DECLARATIONS>
+            <MODE-DECLARATION UUID="f2e78c83-4d29-4825-82cf-70b3e08aa17c">
+              <SHORT-NAME>Off</SHORT-NAME>
+              <VALUE>0</VALUE>
+            </MODE-DECLARATION>
+            <MODE-DECLARATION UUID="31602cfb-fd35-479c-b2bc-a3d525a11ce7">
+              <SHORT-NAME>Startup</SHORT-NAME>
+              <VALUE>1</VALUE>
+            </MODE-DECLARATION>
+            <MODE-DECLARATION UUID="9d70ba67-ad40-4e29-bd9d-6738aa1f890c">
+              <SHORT-NAME>Running</SHORT-NAME>
+              <VALUE>2</VALUE>
+            </MODE-DECLARATION>
+            <MODE-DECLARATION UUID="8eebe4b7-d621-4ac6-af9e-26aea053debb">
+              <SHORT-NAME>Shutdown</SHORT-NAME>
+              <VALUE>3</VALUE>
+            </MODE-DECLARATION>
+            <MODE-DECLARATION UUID="bfa2ec13-b63c-4708-a831-39b04ed4ef09">
+              <SHORT-NAME>Restart</SHORT-NAME>
+              <VALUE>4</VALUE>
+            </MODE-DECLARATION>
+            <MODE-DECLARATION UUID="6e888df7-2e44-4625-86e3-c912abb5d0fa">
+              <SHORT-NAME>Suspended</SHORT-NAME>
+              <VALUE>5</VALUE>
+            </MODE-DECLARATION>
+            <MODE-DECLARATION UUID="5aad2f68-4350-4486-bd7b-60ac0e03762e">
+              <SHORT-NAME>Failsafe</SHORT-NAME>
+              <VALUE>6</VALUE>
+            </MODE-DECLARATION>
+            <MODE-DECLARATION UUID="6a7230b4-8f56-44d4-8b0f-bbff6dda4ba9">
+              <SHORT-NAME>RunningSafe</SHORT-NAME>
+              <VALUE>7</VALUE>
+            </MODE-DECLARATION>
+            <MODE-DECLARATION UUID="c737f7fa-a2eb-4c55-8374-cf0e73b5093d">
+              <SHORT-NAME>RunningLowPower</SHORT-NAME>
+              <VALUE>8</VALUE>
+            </MODE-DECLARATION>
+            <MODE-DECLARATION UUID="79c09fb7-2e16-437e-b93d-2525a28bb9e6">
+              <SHORT-NAME>Verify</SHORT-NAME>
+              <VALUE>9</VALUE>
+            </MODE-DECLARATION>
+          </MODE-DECLARATIONS>
+        </MODE-DECLARATION-GROUP>
+        <MODE-DECLARATION-GROUP UUID="c4886b96-8d76-4edb-a154-2f4184c2e959">
+          <SHORT-NAME>Default_PlatformApplicationStates</SHORT-NAME>
+          <INITIAL-MODE-REF DEST="MODE-DECLARATION">/AppDeployment/Default_PlatformApplicationStates/Off</INITIAL-MODE-REF>
+          <MODE-DECLARATIONS>
+            <MODE-DECLARATION UUID="dcfffb2f-005e-45ca-86c4-d7c6522e7ce4">
+              <SHORT-NAME>Off</SHORT-NAME>
+              <VALUE>0</VALUE>
+            </MODE-DECLARATION>
+            <MODE-DECLARATION UUID="bf0f4d2e-04e7-4203-82e9-1e98fac5c6aa">
+              <SHORT-NAME>Startup</SHORT-NAME>
+              <VALUE>1</VALUE>
+            </MODE-DECLARATION>
+            <MODE-DECLARATION UUID="3ca2b61f-803d-4709-8b43-fca97739e415">
+              <SHORT-NAME>Running</SHORT-NAME>
+              <VALUE>2</VALUE>
+            </MODE-DECLARATION>
+            <MODE-DECLARATION UUID="8c6ad1d2-5597-41be-8de8-2568a3d60c66">
+              <SHORT-NAME>Shutdown</SHORT-NAME>
+              <VALUE>3</VALUE>
+            </MODE-DECLARATION>
+            <MODE-DECLARATION UUID="b90d6b27-bae8-4b9f-ad73-9f40592897c3">
+              <SHORT-NAME>Restart</SHORT-NAME>
+              <VALUE>4</VALUE>
+            </MODE-DECLARATION>
+            <MODE-DECLARATION UUID="b44b6c5b-7dbb-4b1c-ac0b-fbc190446071">
+              <SHORT-NAME>Suspended</SHORT-NAME>
+              <VALUE>5</VALUE>
+            </MODE-DECLARATION>
+            <MODE-DECLARATION UUID="0bca7881-b337-4599-ab28-1352fcd13abd">
+              <SHORT-NAME>Failsafe</SHORT-NAME>
+              <VALUE>6</VALUE>
+            </MODE-DECLARATION>
+            <MODE-DECLARATION UUID="e7b7c847-5f28-41a4-b60a-8dd5c112e27c">
+              <SHORT-NAME>RunningSafe</SHORT-NAME>
+              <VALUE>7</VALUE>
+            </MODE-DECLARATION>
+            <MODE-DECLARATION UUID="2e529f12-4ff3-4aa5-9c69-49b8dcfaa552">
+              <SHORT-NAME>RunningLowPower</SHORT-NAME>
+              <VALUE>8</VALUE>
+            </MODE-DECLARATION>
+            <MODE-DECLARATION UUID="548106d9-95c1-4922-a40a-344ed3dbbf8b">
+              <SHORT-NAME>Verify</SHORT-NAME>
+              <VALUE>9</VALUE>
+            </MODE-DECLARATION>
+          </MODE-DECLARATIONS>
+        </MODE-DECLARATION-GROUP>
+        <MODE-DECLARATION-GROUP UUID="59d04140-dd99-4478-9e51-e887a78cb52f">
+          <SHORT-NAME>Default_ApplicationStates</SHORT-NAME>
+          <INITIAL-MODE-REF DEST="MODE-DECLARATION">/AppDeployment/Default_ApplicationStates/Off</INITIAL-MODE-REF>
+          <MODE-DECLARATIONS>
+            <MODE-DECLARATION UUID="cd386db9-8a8e-4f57-9c69-eaa287838ef4">
+              <SHORT-NAME>Off</SHORT-NAME>
+              <VALUE>0</VALUE>
+            </MODE-DECLARATION>
+            <MODE-DECLARATION UUID="dd00bce6-0b70-44c6-a307-85b57d47d2a5">
+              <SHORT-NAME>Startup</SHORT-NAME>
+              <VALUE>1</VALUE>
+            </MODE-DECLARATION>
+            <MODE-DECLARATION UUID="c6e4a716-73ec-4946-93b2-8d90185d5ff2">
+              <SHORT-NAME>Running</SHORT-NAME>
+              <VALUE>2</VALUE>
+            </MODE-DECLARATION>
+            <MODE-DECLARATION UUID="70076c36-a59d-4c65-b14f-8075ebbf0476">
+              <SHORT-NAME>Shutdown</SHORT-NAME>
+              <VALUE>3</VALUE>
+            </MODE-DECLARATION>
+            <MODE-DECLARATION UUID="c4056bd8-0508-43cc-91d7-c3fae33dabc0">
+              <SHORT-NAME>Restart</SHORT-NAME>
+              <VALUE>4</VALUE>
+            </MODE-DECLARATION>
+            <MODE-DECLARATION UUID="65aaf5c4-2f11-4310-837e-48595804d296">
+              <SHORT-NAME>Suspended</SHORT-NAME>
+              <VALUE>5</VALUE>
+            </MODE-DECLARATION>
+            <MODE-DECLARATION UUID="3689f742-4c8e-4c0b-a503-7b5231f12304">
+              <SHORT-NAME>Failsafe</SHORT-NAME>
+              <VALUE>6</VALUE>
+            </MODE-DECLARATION>
+            <MODE-DECLARATION UUID="3f243e58-52c9-4cf7-ac10-1e5267c94e7a">
+              <SHORT-NAME>RunningSafe</SHORT-NAME>
+              <VALUE>7</VALUE>
+            </MODE-DECLARATION>
+            <MODE-DECLARATION UUID="92ad4664-ee42-4f0e-9894-1e00a5aa274c">
+              <SHORT-NAME>RunningLowPower</SHORT-NAME>
+              <VALUE>8</VALUE>
+            </MODE-DECLARATION>
+            <MODE-DECLARATION UUID="43fc4984-3299-4b0f-b47f-7be19217e1b8">
+              <SHORT-NAME>Verify</SHORT-NAME>
+              <VALUE>9</VALUE>
+            </MODE-DECLARATION>
+          </MODE-DECLARATIONS>
+        </MODE-DECLARATION-GROUP>
+        <MODE-DECLARATION-GROUP UUID="77d94d28-8d62-4372-9569-6af207139920">
+          <SHORT-NAME>Default_TestStubStates</SHORT-NAME>
+          <INITIAL-MODE-REF DEST="MODE-DECLARATION">/AppDeployment/Default_TestStubStates/Off</INITIAL-MODE-REF>
+          <MODE-DECLARATIONS>
+            <MODE-DECLARATION UUID="34c80f75-fb96-4d42-b104-f02693e7a255">
+              <SHORT-NAME>Off</SHORT-NAME>
+              <VALUE>0</VALUE>
+            </MODE-DECLARATION>
+            <MODE-DECLARATION UUID="3cc27c91-99a4-4c3d-8e91-937f8ca3ce68">
+              <SHORT-NAME>Startup</SHORT-NAME>
+              <VALUE>1</VALUE>
+            </MODE-DECLARATION>
+            <MODE-DECLARATION UUID="42187680-0429-4114-a1fb-5b84f19f527c">
+              <SHORT-NAME>Running</SHORT-NAME>
+              <VALUE>2</VALUE>
+            </MODE-DECLARATION>
+            <MODE-DECLARATION UUID="8d6acad0-5821-4fc9-833f-4269206822f5">
+              <SHORT-NAME>Shutdown</SHORT-NAME>
+              <VALUE>3</VALUE>
+            </MODE-DECLARATION>
+            <MODE-DECLARATION UUID="41824352-dbf9-431b-a504-c891a90d5a5b">
+              <SHORT-NAME>Restart</SHORT-NAME>
+              <VALUE>4</VALUE>
+            </MODE-DECLARATION>
+            <MODE-DECLARATION UUID="a9976d49-2ea0-4117-91a8-66037546f0f3">
+              <SHORT-NAME>Suspended</SHORT-NAME>
+              <VALUE>5</VALUE>
+            </MODE-DECLARATION>
+            <MODE-DECLARATION UUID="3c088349-7bf7-475f-98a0-dc4a6e424295">
+              <SHORT-NAME>Failsafe</SHORT-NAME>
+              <VALUE>6</VALUE>
+            </MODE-DECLARATION>
+            <MODE-DECLARATION UUID="54f7416c-fb63-49ff-841c-02a1d176b86b">
+              <SHORT-NAME>RunningSafe</SHORT-NAME>
+              <VALUE>7</VALUE>
+            </MODE-DECLARATION>
+            <MODE-DECLARATION UUID="f635933e-c52f-4c11-a4fd-7afd8e798510">
+              <SHORT-NAME>RunningLowPower</SHORT-NAME>
+              <VALUE>8</VALUE>
+            </MODE-DECLARATION>
+            <MODE-DECLARATION UUID="4b4194a8-c1bc-4e17-82ec-dfbdc53aeb24">
+              <SHORT-NAME>Verify</SHORT-NAME>
+              <VALUE>9</VALUE>
+            </MODE-DECLARATION>
+          </MODE-DECLARATIONS>
+        </MODE-DECLARATION-GROUP>
+        <FUNCTION-GROUP-SET UUID="37cd39df-a895-4019-b795-4670a9ba5b55">
+          <SHORT-NAME>FuncGrpSet_AppLocalMachine</SHORT-NAME>
+          <FUNCTION-GROUPS>
+            <MODE-DECLARATION-GROUP-PROTOTYPE UUID="70027c22-5c66-4b89-b947-c6ceff9ae798">
+              <SHORT-NAME>MachineFG</SHORT-NAME>
+              <TYPE-TREF DEST="MODE-DECLARATION-GROUP">/AppDeployment/Default_MachineStates</TYPE-TREF>
+            </MODE-DECLARATION-GROUP-PROTOTYPE>
+            <MODE-DECLARATION-GROUP-PROTOTYPE UUID="0d0f3236-3726-462b-9c57-83109017041e">
+              <SHORT-NAME>PlatformApplicationFG</SHORT-NAME>
+              <TYPE-TREF DEST="MODE-DECLARATION-GROUP">/AppDeployment/Default_PlatformApplicationStates</TYPE-TREF>
+            </MODE-DECLARATION-GROUP-PROTOTYPE>
+            <MODE-DECLARATION-GROUP-PROTOTYPE UUID="58ccd3c7-1e48-4e20-8a5f-3fbbe92bc203">
+              <SHORT-NAME>ApplicationFG</SHORT-NAME>
+              <TYPE-TREF DEST="MODE-DECLARATION-GROUP">/AppDeployment/Default_ApplicationStates</TYPE-TREF>
+            </MODE-DECLARATION-GROUP-PROTOTYPE>
+            <MODE-DECLARATION-GROUP-PROTOTYPE UUID="697113be-996f-4af6-bf56-62d7b70bc037">
+              <SHORT-NAME>DevTestStubFG</SHORT-NAME>
+              <TYPE-TREF DEST="MODE-DECLARATION-GROUP">/AppDeployment/Default_TestStubStates</TYPE-TREF>
+            </MODE-DECLARATION-GROUP-PROTOTYPE>
+          </FUNCTION-GROUPS>
+        </FUNCTION-GROUP-SET>
+        <MACHINE-DESIGN UUID="ba814599-2385-4774-87d6-f2639f25c107">
+          <SHORT-NAME>MachineDesign_AppLocalMachine</SHORT-NAME>
+          <COMMUNICATION-CONNECTORS>
+            <ETHERNET-COMMUNICATION-CONNECTOR UUID="970ba2aa-c72f-41f9-96b3-f4d5292ea04e">
+              <SHORT-NAME>EthComConnectorName_AppLocalMachine</SHORT-NAME>
+              <UNICAST-NETWORK-ENDPOINT-REF DEST="NETWORK-ENDPOINT">/AppDeployment/EthCluster_AppLocalNetwork/EthernetChannel_AppLocalNetwork/TcpEndpoint_AppLocalNetwork</UNICAST-NETWORK-ENDPOINT-REF>
+            </ETHERNET-COMMUNICATION-CONNECTOR>
+            <USER-DEFINED-COMMUNICATION-CONNECTOR UUID="394b2d61-f912-4c57-8913-3a65263c4c8b">
+              <SHORT-NAME>UserDefCommConnector_Ipc_AppLocalMachine</SHORT-NAME>
+            </USER-DEFINED-COMMUNICATION-CONNECTOR>
+          </COMMUNICATION-CONNECTORS>
+          <SERVICE-DISCOVER-CONFIGS>
+            <SOMEIP-SERVICE-DISCOVERY>
+              <MULTICAST-SD-IP-ADDRESS-REF DEST="NETWORK-ENDPOINT">/AppDeployment/EthCluster_AppLocalNetwork/EthernetChannel_AppLocalNetwork/UdpEndpoint_AppLocalNetwork</MULTICAST-SD-IP-ADDRESS-REF>
+              <SOMEIP-SERVICE-DISCOVERY-PORT>12330</SOMEIP-SERVICE-DISCOVERY-PORT>
+            </SOMEIP-SERVICE-DISCOVERY>
+          </SERVICE-DISCOVER-CONFIGS>
+        </MACHINE-DESIGN>
+        <MACHINE UUID="74ff41ce-4ffa-43a8-a169-659394d27ff6">
+          <SHORT-NAME>AppLocalMachine</SHORT-NAME>
+          <DEFAULT-APPLICATION-TIMEOUT>
+            <ENTER-TIMEOUT-VALUE>2.33</ENTER-TIMEOUT-VALUE>
+            <EXIT-TIMEOUT-VALUE>4.56</EXIT-TIMEOUT-VALUE>
+          </DEFAULT-APPLICATION-TIMEOUT>
+          <MACHINE-DESIGN-REF DEST="MACHINE-DESIGN">/AppDeployment/MachineDesign_AppLocalMachine</MACHINE-DESIGN-REF>
+          <MODULE-INSTANTIATIONS>
+            <LOG-AND-TRACE-INSTANTIATION UUID="f779a94b-b59c-4712-badf-51f03912bdcd">
+              <SHORT-NAME>LogAndTraceModule_AppLocalMachine</SHORT-NAME>
+              <DLT-ECU-ID>ECUT</DLT-ECU-ID>
+              <DLT-LOG-CHANNELS>
+                <DLT-LOG-CHANNEL UUID="90274f65-642b-4eb8-9f8b-6665d21eade3">
+                  <SHORT-NAME>LogChannel_Prc_App_ModelBuilderApplication_SpeedMonitorExecutable</SHORT-NAME>
+                  <APPLICATION-ID>AP00</APPLICATION-ID>
+                  <CONTEXT-ID>default</CONTEXT-ID>
+                  <LOG-TRACE-DEFAULT-LOG-LEVEL>INFO</LOG-TRACE-DEFAULT-LOG-LEVEL>
+                  <LOG-TRACE-LOG-MODES>
+                    <LOG-TRACE-LOG-MODE>CONSOLE</LOG-TRACE-LOG-MODE>
+                  </LOG-TRACE-LOG-MODES>
+                </DLT-LOG-CHANNEL>
+                <DLT-LOG-CHANNEL UUID="11f0bf37-5297-4721-99cc-78f68d050b37">
+                  <SHORT-NAME>LogChannel_Prc_App_ModelBuilderApplication_WarningDisplayExecutable</SHORT-NAME>
+                  <APPLICATION-ID>AP01</APPLICATION-ID>
+                  <CONTEXT-ID>default</CONTEXT-ID>
+                  <LOG-TRACE-DEFAULT-LOG-LEVEL>INFO</LOG-TRACE-DEFAULT-LOG-LEVEL>
+                  <LOG-TRACE-LOG-MODES>
+                    <LOG-TRACE-LOG-MODE>CONSOLE</LOG-TRACE-LOG-MODE>
+                  </LOG-TRACE-LOG-MODES>
+                </DLT-LOG-CHANNEL>
+              </DLT-LOG-CHANNELS>
+            </LOG-AND-TRACE-INSTANTIATION>
+            <OS-MODULE-INSTANTIATION UUID="87793d81-c014-4f1c-bca9-99c356cebccf">
+              <SHORT-NAME>OsModule_AppLocalMachine</SHORT-NAME>
+              <RESOURCE-GROUPS>
+                <RESOURCE-GROUP UUID="15dad0fe-fc99-4d09-aa82-ad2e15e88608">
+                  <SHORT-NAME>AppResourcGrp_AppLocalMachine_Small</SHORT-NAME>
+                  <CPU-USAGE>25</CPU-USAGE>
+                  <MEM-USAGE>10000000</MEM-USAGE>
+                </RESOURCE-GROUP>
+                <RESOURCE-GROUP UUID="9d91fd73-709c-4a81-9f3a-6b74aea7f427">
+                  <SHORT-NAME>AppResourcGrp_AppLocalMachine_Medium</SHORT-NAME>
+                  <CPU-USAGE>50</CPU-USAGE>
+                  <MEM-USAGE>50000000</MEM-USAGE>
+                </RESOURCE-GROUP>
+                <RESOURCE-GROUP UUID="b6341d51-aea3-4e12-92dc-56d70476fb89">
+                  <SHORT-NAME>AppResourcGrp_AppLocalMachine_Large</SHORT-NAME>
+                  <CPU-USAGE>75</CPU-USAGE>
+                  <MEM-USAGE>100000000</MEM-USAGE>
+                </RESOURCE-GROUP>
+              </RESOURCE-GROUPS>
+            </OS-MODULE-INSTANTIATION>
+            <CRYPTO-MODULE-INSTANTIATION UUID="6499d16f-61f7-49c1-b71d-facff26aeb03">
+              <SHORT-NAME>CryptoModule_AppLocalMachine</SHORT-NAME>
+            </CRYPTO-MODULE-INSTANTIATION>
+          </MODULE-INSTANTIATIONS>
+          <PROCESSORS>
+            <PROCESSOR UUID="96b0e4e4-0822-4b56-900a-53551ad19c75">
+              <SHORT-NAME>ProcOne</SHORT-NAME>
+              <CORES>
+                <PROCESSOR-CORE UUID="64732194-76b5-4e03-bb8b-d141b7d09ec4">
+                  <SHORT-NAME>Core0</SHORT-NAME>
+                  <CORE-ID>0</CORE-ID>
+                </PROCESSOR-CORE>
+                <PROCESSOR-CORE UUID="c5ee18fd-4756-4126-847f-c26044b98d69">
+                  <SHORT-NAME>Core1</SHORT-NAME>
+                  <CORE-ID>1</CORE-ID>
+                </PROCESSOR-CORE>
+                <PROCESSOR-CORE UUID="eefa8fb8-71bf-498e-8217-811f476e2b90">
+                  <SHORT-NAME>Core2</SHORT-NAME>
+                  <CORE-ID>2</CORE-ID>
+                </PROCESSOR-CORE>
+                <PROCESSOR-CORE UUID="dfe1c7ad-b32d-47a9-b8b8-6ced657eedf4">
+                  <SHORT-NAME>Core3</SHORT-NAME>
+                  <CORE-ID>3</CORE-ID>
+                </PROCESSOR-CORE>
+              </CORES>
+            </PROCESSOR>
+          </PROCESSORS>
+        </MACHINE>
+        <SOMEIP-SD-CLIENT-SERVICE-INSTANCE-CONFIG UUID="75e066ee-7103-4123-bc3f-75ae7f5533b2">
+          <SHORT-NAME>DefaultSomeipSdClientServiceInstanceConfig</SHORT-NAME>
+          <INITIAL-FIND-BEHAVIOR>
+            <INITIAL-DELAY-MAX-VALUE>0.1</INITIAL-DELAY-MAX-VALUE>
+            <INITIAL-DELAY-MIN-VALUE>0.01</INITIAL-DELAY-MIN-VALUE>
+            <INITIAL-REPETITIONS-BASE-DELAY>0.2</INITIAL-REPETITIONS-BASE-DELAY>
+            <INITIAL-REPETITIONS-MAX>5</INITIAL-REPETITIONS-MAX>
+          </INITIAL-FIND-BEHAVIOR>
+          <SERVICE-FIND-TIME-TO-LIVE>5</SERVICE-FIND-TIME-TO-LIVE>
+        </SOMEIP-SD-CLIENT-SERVICE-INSTANCE-CONFIG>
+        <SOMEIP-SD-CLIENT-EVENT-GROUP-TIMING-CONFIG UUID="922f81f4-06d1-483d-a6c0-9535dbebb00b">
+          <SHORT-NAME>DefaultSomeipSdClientEventGroupTimingConfig</SHORT-NAME>
+          <REQUEST-RESPONSE-DELAY>
+            <MAX-VALUE>1.5</MAX-VALUE>
+            <MIN-VALUE>1.5</MIN-VALUE>
+          </REQUEST-RESPONSE-DELAY>
+          <SUBSCRIBE-EVENTGROUP-RETRY-DELAY>5.5</SUBSCRIBE-EVENTGROUP-RETRY-DELAY>
+          <SUBSCRIBE-EVENTGROUP-RETRY-MAX>3</SUBSCRIBE-EVENTGROUP-RETRY-MAX>
+          <TIME-TO-LIVE>5</TIME-TO-LIVE>
+        </SOMEIP-SD-CLIENT-EVENT-GROUP-TIMING-CONFIG>
+        <SOMEIP-SD-SERVER-SERVICE-INSTANCE-CONFIG UUID="98d2c566-39f8-4092-bf06-05eb044a61bc">
+          <SHORT-NAME>DefaultSomeipSdServerServiceInstanceConfig</SHORT-NAME>
+          <INITIAL-OFFER-BEHAVIOR>
+            <INITIAL-DELAY-MAX-VALUE>0.1</INITIAL-DELAY-MAX-VALUE>
+            <INITIAL-DELAY-MIN-VALUE>0.01</INITIAL-DELAY-MIN-VALUE>
+            <INITIAL-REPETITIONS-BASE-DELAY>0.2</INITIAL-REPETITIONS-BASE-DELAY>
+            <INITIAL-REPETITIONS-MAX>5</INITIAL-REPETITIONS-MAX>
+          </INITIAL-OFFER-BEHAVIOR>
+          <OFFER-CYCLIC-DELAY>5</OFFER-CYCLIC-DELAY>
+          <REQUEST-RESPONSE-DELAY>
+            <MAX-VALUE>1.5</MAX-VALUE>
+            <MIN-VALUE>1.5</MIN-VALUE>
+          </REQUEST-RESPONSE-DELAY>
+          <SERVICE-OFFER-TIME-TO-LIVE>10</SERVICE-OFFER-TIME-TO-LIVE>
+        </SOMEIP-SD-SERVER-SERVICE-INSTANCE-CONFIG>
+        <SOMEIP-SD-SERVER-EVENT-GROUP-TIMING-CONFIG UUID="1f066ac3-5882-488d-9b4d-ea51a9d7a26d">
+          <SHORT-NAME>DefaultSomeipSdServerEventGroupTimingConfig</SHORT-NAME>
+          <REQUEST-RESPONSE-DELAY>
+            <MAX-VALUE>1.5</MAX-VALUE>
+            <MIN-VALUE>1.5</MIN-VALUE>
+          </REQUEST-RESPONSE-DELAY>
+        </SOMEIP-SD-SERVER-EVENT-GROUP-TIMING-CONFIG>
+        <STARTUP-CONFIG-SET UUID="e145c7a6-e795-4315-a177-5ba88398e6a5">
+          <SHORT-NAME>SCfgSet_App_ModelBuilderApplication_SpeedMonitorExecutable</SHORT-NAME>
+          <STARTUP-CONFIGS>
+            <STARTUP-CONFIG UUID="e9436bd7-e126-47f7-8dc2-5446c130d573">
+              <SHORT-NAME>StartupForStateStartup</SHORT-NAME>
+              <PROCESS-ARGUMENTS>
+                <PROCESS-ARGUMENT>
+                  <ARGUMENT>-c</ARGUMENT>
+                </PROCESS-ARGUMENT>
+                <PROCESS-ARGUMENT>
+                  <ARGUMENT>./etc/application.json</ARGUMENT>
+                </PROCESS-ARGUMENT>
+              </PROCESS-ARGUMENTS>
+              <SCHEDULING-POLICY>SCHED_RR</SCHEDULING-POLICY>
+              <SCHEDULING-PRIORITY>32</SCHEDULING-PRIORITY>
+              <TERMINATION-BEHAVIOR>PROCESS-IS-NOT-SELF-TERMINATING</TERMINATION-BEHAVIOR>
+              <TIMEOUT>
+                <ENTER-TIMEOUT-VALUE>30</ENTER-TIMEOUT-VALUE>
+                <EXIT-TIMEOUT-VALUE>30</EXIT-TIMEOUT-VALUE>
+              </TIMEOUT>
+            </STARTUP-CONFIG>
+            <STARTUP-CONFIG UUID="222f3ffc-522c-4535-ae21-86dfa7552006">
+              <SHORT-NAME>StartupForStateRunning</SHORT-NAME>
+              <PROCESS-ARGUMENTS>
+                <PROCESS-ARGUMENT>
+                  <ARGUMENT>-c</ARGUMENT>
+                </PROCESS-ARGUMENT>
+                <PROCESS-ARGUMENT>
+                  <ARGUMENT>./etc/application.json</ARGUMENT>
+                </PROCESS-ARGUMENT>
+              </PROCESS-ARGUMENTS>
+              <SCHEDULING-POLICY>SCHED_RR</SCHEDULING-POLICY>
+              <SCHEDULING-PRIORITY>32</SCHEDULING-PRIORITY>
+              <TERMINATION-BEHAVIOR>PROCESS-IS-NOT-SELF-TERMINATING</TERMINATION-BEHAVIOR>
+              <TIMEOUT>
+                <ENTER-TIMEOUT-VALUE>30</ENTER-TIMEOUT-VALUE>
+                <EXIT-TIMEOUT-VALUE>30</EXIT-TIMEOUT-VALUE>
+              </TIMEOUT>
+            </STARTUP-CONFIG>
+          </STARTUP-CONFIGS>
+        </STARTUP-CONFIG-SET>
+        <PROCESS UUID="b8e66345-931c-44aa-9b4b-01b22666808d">
+          <SHORT-NAME>Prc_App_ModelBuilderApplication_SpeedMonitorExecutable</SHORT-NAME>
+          <DESIGN-REF DEST="PROCESS-DESIGN">/AppDesign/PrcDesign_App_ModelBuilderApplication_SpeedMonitorExecutable</DESIGN-REF>
+          <EXECUTABLE-REF DEST="EXECUTABLE">/AppDesign/SpeedMonitorExecutable</EXECUTABLE-REF>
+          <PROCESS-STATE-MACHINE UUID="0d259ef0-2493-4195-8d82-10a219b49aad">
+            <SHORT-NAME>ProcessStates</SHORT-NAME>
+            <TYPE-TREF DEST="MODE-DECLARATION-GROUP">/AppDeployment/Default_ProcessStates</TYPE-TREF>
+          </PROCESS-STATE-MACHINE>
+          <STATE-DEPENDENT-STARTUP-CONFIGS>
+            <STATE-DEPENDENT-STARTUP-CONFIG>
+              <FUNCTION-GROUP-STATE-IREFS>
+                <FUNCTION-GROUP-STATE-IREF>
+                  <CONTEXT-MODE-DECLARATION-GROUP-PROTOTYPE-REF DEST="MODE-DECLARATION-GROUP-PROTOTYPE">/AppDeployment/FuncGrpSet_AppLocalMachine/MachineFG</CONTEXT-MODE-DECLARATION-GROUP-PROTOTYPE-REF>
+                  <TARGET-MODE-DECLARATION-REF DEST="MODE-DECLARATION">/AppDeployment/Default_MachineStates/Startup</TARGET-MODE-DECLARATION-REF>
+                </FUNCTION-GROUP-STATE-IREF>
+              </FUNCTION-GROUP-STATE-IREFS>
+              <RESOURCE-GROUP-REF DEST="RESOURCE-GROUP">/AppDeployment/AppLocalMachine/OsModule_AppLocalMachine/AppResourcGrp_AppLocalMachine_Medium</RESOURCE-GROUP-REF>
+              <STARTUP-CONFIG-REF DEST="STARTUP-CONFIG">/AppDeployment/SCfgSet_App_ModelBuilderApplication_SpeedMonitorExecutable/StartupForStateStartup</STARTUP-CONFIG-REF>
+            </STATE-DEPENDENT-STARTUP-CONFIG>
+            <STATE-DEPENDENT-STARTUP-CONFIG>
+              <FUNCTION-GROUP-STATE-IREFS>
+                <FUNCTION-GROUP-STATE-IREF>
+                  <CONTEXT-MODE-DECLARATION-GROUP-PROTOTYPE-REF DEST="MODE-DECLARATION-GROUP-PROTOTYPE">/AppDeployment/FuncGrpSet_AppLocalMachine/MachineFG</CONTEXT-MODE-DECLARATION-GROUP-PROTOTYPE-REF>
+                  <TARGET-MODE-DECLARATION-REF DEST="MODE-DECLARATION">/AppDeployment/Default_MachineStates/Running</TARGET-MODE-DECLARATION-REF>
+                </FUNCTION-GROUP-STATE-IREF>
+              </FUNCTION-GROUP-STATE-IREFS>
+              <RESOURCE-GROUP-REF DEST="RESOURCE-GROUP">/AppDeployment/AppLocalMachine/OsModule_AppLocalMachine/AppResourcGrp_AppLocalMachine_Medium</RESOURCE-GROUP-REF>
+              <STARTUP-CONFIG-REF DEST="STARTUP-CONFIG">/AppDeployment/SCfgSet_App_ModelBuilderApplication_SpeedMonitorExecutable/StartupForStateRunning</STARTUP-CONFIG-REF>
+            </STATE-DEPENDENT-STARTUP-CONFIG>
+          </STATE-DEPENDENT-STARTUP-CONFIGS>
+        </PROCESS>
+        <STARTUP-CONFIG-SET UUID="03a403be-5450-4959-85da-90fc63f25891">
+          <SHORT-NAME>SCfgSet_App_ModelBuilderApplication_WarningDisplayExecutable</SHORT-NAME>
+          <STARTUP-CONFIGS>
+            <STARTUP-CONFIG UUID="ff77841d-6509-4a88-b966-8f18b18b2c74">
+              <SHORT-NAME>StartupForStateStartup</SHORT-NAME>
+              <PROCESS-ARGUMENTS>
+                <PROCESS-ARGUMENT>
+                  <ARGUMENT>-c</ARGUMENT>
+                </PROCESS-ARGUMENT>
+                <PROCESS-ARGUMENT>
+                  <ARGUMENT>./etc/application.json</ARGUMENT>
+                </PROCESS-ARGUMENT>
+              </PROCESS-ARGUMENTS>
+              <SCHEDULING-POLICY>SCHED_RR</SCHEDULING-POLICY>
+              <SCHEDULING-PRIORITY>32</SCHEDULING-PRIORITY>
+              <TERMINATION-BEHAVIOR>PROCESS-IS-NOT-SELF-TERMINATING</TERMINATION-BEHAVIOR>
+              <TIMEOUT>
+                <ENTER-TIMEOUT-VALUE>30</ENTER-TIMEOUT-VALUE>
+                <EXIT-TIMEOUT-VALUE>30</EXIT-TIMEOUT-VALUE>
+              </TIMEOUT>
+            </STARTUP-CONFIG>
+            <STARTUP-CONFIG UUID="bd73727a-b0f0-4a5a-a8ce-3fcd59c4c995">
+              <SHORT-NAME>StartupForStateRunning</SHORT-NAME>
+              <PROCESS-ARGUMENTS>
+                <PROCESS-ARGUMENT>
+                  <ARGUMENT>-c</ARGUMENT>
+                </PROCESS-ARGUMENT>
+                <PROCESS-ARGUMENT>
+                  <ARGUMENT>./etc/application.json</ARGUMENT>
+                </PROCESS-ARGUMENT>
+              </PROCESS-ARGUMENTS>
+              <SCHEDULING-POLICY>SCHED_RR</SCHEDULING-POLICY>
+              <SCHEDULING-PRIORITY>32</SCHEDULING-PRIORITY>
+              <TERMINATION-BEHAVIOR>PROCESS-IS-NOT-SELF-TERMINATING</TERMINATION-BEHAVIOR>
+              <TIMEOUT>
+                <ENTER-TIMEOUT-VALUE>30</ENTER-TIMEOUT-VALUE>
+                <EXIT-TIMEOUT-VALUE>30</EXIT-TIMEOUT-VALUE>
+              </TIMEOUT>
+            </STARTUP-CONFIG>
+          </STARTUP-CONFIGS>
+        </STARTUP-CONFIG-SET>
+        <PROCESS UUID="d4cd3cf1-7077-485a-bb99-ed2e976f5271">
+          <SHORT-NAME>Prc_App_ModelBuilderApplication_WarningDisplayExecutable</SHORT-NAME>
+          <DESIGN-REF DEST="PROCESS-DESIGN">/AppDesign/PrcDesign_App_ModelBuilderApplication_WarningDisplayExecutable</DESIGN-REF>
+          <EXECUTABLE-REF DEST="EXECUTABLE">/AppDesign/WarningDisplayExecutable</EXECUTABLE-REF>
+          <PROCESS-STATE-MACHINE UUID="45792c3a-fd98-4320-b922-e7830290651b">
+            <SHORT-NAME>ProcessStates</SHORT-NAME>
+            <TYPE-TREF DEST="MODE-DECLARATION-GROUP">/AppDeployment/Default_ProcessStates</TYPE-TREF>
+          </PROCESS-STATE-MACHINE>
+          <STATE-DEPENDENT-STARTUP-CONFIGS>
+            <STATE-DEPENDENT-STARTUP-CONFIG>
+              <FUNCTION-GROUP-STATE-IREFS>
+                <FUNCTION-GROUP-STATE-IREF>
+                  <CONTEXT-MODE-DECLARATION-GROUP-PROTOTYPE-REF DEST="MODE-DECLARATION-GROUP-PROTOTYPE">/AppDeployment/FuncGrpSet_AppLocalMachine/MachineFG</CONTEXT-MODE-DECLARATION-GROUP-PROTOTYPE-REF>
+                  <TARGET-MODE-DECLARATION-REF DEST="MODE-DECLARATION">/AppDeployment/Default_MachineStates/Startup</TARGET-MODE-DECLARATION-REF>
+                </FUNCTION-GROUP-STATE-IREF>
+              </FUNCTION-GROUP-STATE-IREFS>
+              <RESOURCE-GROUP-REF DEST="RESOURCE-GROUP">/AppDeployment/AppLocalMachine/OsModule_AppLocalMachine/AppResourcGrp_AppLocalMachine_Medium</RESOURCE-GROUP-REF>
+              <STARTUP-CONFIG-REF DEST="STARTUP-CONFIG">/AppDeployment/SCfgSet_App_ModelBuilderApplication_WarningDisplayExecutable/StartupForStateStartup</STARTUP-CONFIG-REF>
+            </STATE-DEPENDENT-STARTUP-CONFIG>
+            <STATE-DEPENDENT-STARTUP-CONFIG>
+              <FUNCTION-GROUP-STATE-IREFS>
+                <FUNCTION-GROUP-STATE-IREF>
+                  <CONTEXT-MODE-DECLARATION-GROUP-PROTOTYPE-REF DEST="MODE-DECLARATION-GROUP-PROTOTYPE">/AppDeployment/FuncGrpSet_AppLocalMachine/MachineFG</CONTEXT-MODE-DECLARATION-GROUP-PROTOTYPE-REF>
+                  <TARGET-MODE-DECLARATION-REF DEST="MODE-DECLARATION">/AppDeployment/Default_MachineStates/Running</TARGET-MODE-DECLARATION-REF>
+                </FUNCTION-GROUP-STATE-IREF>
+              </FUNCTION-GROUP-STATE-IREFS>
+              <RESOURCE-GROUP-REF DEST="RESOURCE-GROUP">/AppDeployment/AppLocalMachine/OsModule_AppLocalMachine/AppResourcGrp_AppLocalMachine_Medium</RESOURCE-GROUP-REF>
+              <STARTUP-CONFIG-REF DEST="STARTUP-CONFIG">/AppDeployment/SCfgSet_App_ModelBuilderApplication_WarningDisplayExecutable/StartupForStateRunning</STARTUP-CONFIG-REF>
+            </STATE-DEPENDENT-STARTUP-CONFIG>
+          </STATE-DEPENDENT-STARTUP-CONFIGS>
+        </PROCESS>
+        <DLT-LOG-CHANNEL-TO-PROCESS-MAPPING UUID="616d740a-fa6d-498e-85c1-a6bbb5d513fe">
+          <SHORT-NAME>LogCh2PrcMap_Prc_App_ModelBuilderApplication_SpeedMonitorExecutable_ctxDefault</SHORT-NAME>
+          <DLT-LOG-CHANNEL-REF DEST="DLT-LOG-CHANNEL">/AppDeployment/AppLocalMachine/LogAndTraceModule_AppLocalMachine/LogChannel_Prc_App_ModelBuilderApplication_SpeedMonitorExecutable</DLT-LOG-CHANNEL-REF>
+          <PROCESS-REF DEST="PROCESS">/AppDeployment/Prc_App_ModelBuilderApplication_SpeedMonitorExecutable</PROCESS-REF>
+        </DLT-LOG-CHANNEL-TO-PROCESS-MAPPING>
+        <DLT-LOG-CHANNEL-TO-PROCESS-MAPPING UUID="91727927-3c0d-4ec3-b211-10f2e84da45c">
+          <SHORT-NAME>LogCh2PrcMap_Prc_App_ModelBuilderApplication_WarningDisplayExecutable_ctxDefault</SHORT-NAME>
+          <DLT-LOG-CHANNEL-REF DEST="DLT-LOG-CHANNEL">/AppDeployment/AppLocalMachine/LogAndTraceModule_AppLocalMachine/LogChannel_Prc_App_ModelBuilderApplication_WarningDisplayExecutable</DLT-LOG-CHANNEL-REF>
+          <PROCESS-REF DEST="PROCESS">/AppDeployment/Prc_App_ModelBuilderApplication_WarningDisplayExecutable</PROCESS-REF>
+        </DLT-LOG-CHANNEL-TO-PROCESS-MAPPING>
+        <SOFTWARE-CLUSTER UUID="3385f37a-dffe-4593-9914-a0419f0aeb97">
+          <SHORT-NAME>SwCl_App_ModelBuilderApplication</SHORT-NAME>
+          <CATEGORY>PLATFORM_CORE</CATEGORY>
+          <CLAIMED-FUNCTION-GROUP-REFS>
+            <CLAIMED-FUNCTION-GROUP-REF DEST="MODE-DECLARATION-GROUP-PROTOTYPE">/AppDeployment/FuncGrpSet_AppLocalMachine/MachineFG</CLAIMED-FUNCTION-GROUP-REF>
+          </CLAIMED-FUNCTION-GROUP-REFS>
+          <CONTAINED-PROCESS-REFS>
+            <CONTAINED-PROCESS-REF DEST="PROCESS">/AppDeployment/Prc_App_ModelBuilderApplication_SpeedMonitorExecutable</CONTAINED-PROCESS-REF>
+            <CONTAINED-PROCESS-REF DEST="PROCESS">/AppDeployment/Prc_App_ModelBuilderApplication_WarningDisplayExecutable</CONTAINED-PROCESS-REF>
+          </CONTAINED-PROCESS-REFS>
+          <DESIGN-REFS>
+            <DESIGN-REF DEST="SOFTWARE-CLUSTER-DESIGN">/AppDesign/SwClDesign_App_ModelBuilderApplication</DESIGN-REF>
+          </DESIGN-REFS>
+          <DIAGNOSTIC-ADDRESSS>
+            <SOFTWARE-CLUSTER-DOIP-DIAGNOSTIC-ADDRESS>
+              <ADDRESS-SEMANTICS>PHYSICAL-ADDRESS</ADDRESS-SEMANTICS>
+              <DIAGNOSTIC-ADDRESS>1</DIAGNOSTIC-ADDRESS>
+            </SOFTWARE-CLUSTER-DOIP-DIAGNOSTIC-ADDRESS>
+          </DIAGNOSTIC-ADDRESSS>
+          <VENDOR-ID>34</VENDOR-ID>
+          <VERSION>1.0.0</VERSION>
+        </SOFTWARE-CLUSTER>
+        <PROCESS-TO-MACHINE-MAPPING-SET UUID="6267f00d-dc34-4011-99ac-98a1ad9c6dfc">
+          <SHORT-NAME>Prc2MachMapSet_AppLocalMachine</SHORT-NAME>
+          <PROCESS-TO-MACHINE-MAPPINGS>
+            <PROCESS-TO-MACHINE-MAPPING UUID="4849e491-859c-4751-badf-578e16994dda">
+              <SHORT-NAME>Mach2ProcMap_AppLocalMachine_Prc_App_ModelBuilderApplication_SpeedMonitorExecutable</SHORT-NAME>
+              <MACHINE-REF DEST="MACHINE">/AppDeployment/AppLocalMachine</MACHINE-REF>
+              <PROCESS-REF DEST="PROCESS">/AppDeployment/Prc_App_ModelBuilderApplication_SpeedMonitorExecutable</PROCESS-REF>
+            </PROCESS-TO-MACHINE-MAPPING>
+            <PROCESS-TO-MACHINE-MAPPING UUID="df45ec86-39f3-48fb-b4d2-5db796fb6d93">
+              <SHORT-NAME>Mach2ProcMap_AppLocalMachine_Prc_App_ModelBuilderApplication_WarningDisplayExecutable</SHORT-NAME>
+              <MACHINE-REF DEST="MACHINE">/AppDeployment/AppLocalMachine</MACHINE-REF>
+              <PROCESS-REF DEST="PROCESS">/AppDeployment/Prc_App_ModelBuilderApplication_WarningDisplayExecutable</PROCESS-REF>
+            </PROCESS-TO-MACHINE-MAPPING>
+          </PROCESS-TO-MACHINE-MAPPINGS>
+        </PROCESS-TO-MACHINE-MAPPING-SET>
+        <SOMEIP-SD-CLIENT-SERVICE-INSTANCE-CONFIG UUID="d5eb508d-49de-4c7c-9aa5-b0fed8a0bffe">
+          <SHORT-NAME>SomeipSdClientSvcInstCfg_SpeedMonitorExecutable</SHORT-NAME>
+          <INITIAL-FIND-BEHAVIOR>
+            <INITIAL-DELAY-MAX-VALUE>0.1</INITIAL-DELAY-MAX-VALUE>
+            <INITIAL-DELAY-MIN-VALUE>0.01</INITIAL-DELAY-MIN-VALUE>
+            <INITIAL-REPETITIONS-BASE-DELAY>0.2</INITIAL-REPETITIONS-BASE-DELAY>
+            <INITIAL-REPETITIONS-MAX>5</INITIAL-REPETITIONS-MAX>
+          </INITIAL-FIND-BEHAVIOR>
+          <SERVICE-FIND-TIME-TO-LIVE>5</SERVICE-FIND-TIME-TO-LIVE>
+        </SOMEIP-SD-CLIENT-SERVICE-INSTANCE-CONFIG>
+        <SOMEIP-SD-CLIENT-EVENT-GROUP-TIMING-CONFIG UUID="a4bdca54-9d15-4a5a-b4b1-0d96c3753569">
+          <SHORT-NAME>SomeipSdClientEvGrpTimingCfg_SpeedMonitorExecutable</SHORT-NAME>
+          <REQUEST-RESPONSE-DELAY>
+            <MAX-VALUE>1.5</MAX-VALUE>
+            <MIN-VALUE>1.5</MIN-VALUE>
+          </REQUEST-RESPONSE-DELAY>
+          <SUBSCRIBE-EVENTGROUP-RETRY-DELAY>5.5</SUBSCRIBE-EVENTGROUP-RETRY-DELAY>
+          <SUBSCRIBE-EVENTGROUP-RETRY-MAX>3</SUBSCRIBE-EVENTGROUP-RETRY-MAX>
+          <TIME-TO-LIVE>10</TIME-TO-LIVE>
+        </SOMEIP-SD-CLIENT-EVENT-GROUP-TIMING-CONFIG>
+        <SOMEIP-SD-SERVER-SERVICE-INSTANCE-CONFIG UUID="fe0db6ad-f648-4b16-aed0-22d353553155">
+          <SHORT-NAME>SomeipSdServerSvcInstCfg__SpeedMonitorExecutable</SHORT-NAME>
+          <INITIAL-OFFER-BEHAVIOR>
+            <INITIAL-DELAY-MAX-VALUE>0.1</INITIAL-DELAY-MAX-VALUE>
+            <INITIAL-DELAY-MIN-VALUE>0.01</INITIAL-DELAY-MIN-VALUE>
+            <INITIAL-REPETITIONS-BASE-DELAY>0.2</INITIAL-REPETITIONS-BASE-DELAY>
+            <INITIAL-REPETITIONS-MAX>5</INITIAL-REPETITIONS-MAX>
+          </INITIAL-OFFER-BEHAVIOR>
+          <OFFER-CYCLIC-DELAY>5</OFFER-CYCLIC-DELAY>
+          <REQUEST-RESPONSE-DELAY>
+            <MAX-VALUE>1.5</MAX-VALUE>
+            <MIN-VALUE>1.5</MIN-VALUE>
+          </REQUEST-RESPONSE-DELAY>
+          <SERVICE-OFFER-TIME-TO-LIVE>10</SERVICE-OFFER-TIME-TO-LIVE>
+        </SOMEIP-SD-SERVER-SERVICE-INSTANCE-CONFIG>
+        <SOMEIP-SD-SERVER-EVENT-GROUP-TIMING-CONFIG UUID="15777641-a759-4a18-b23d-25d012578aa8">
+          <SHORT-NAME>SomeipSdServerEvGrpTimingCfg_SpeedMonitorExecutable</SHORT-NAME>
+          <REQUEST-RESPONSE-DELAY>
+            <MAX-VALUE>1.5</MAX-VALUE>
+            <MIN-VALUE>1.5</MIN-VALUE>
+          </REQUEST-RESPONSE-DELAY>
+        </SOMEIP-SD-SERVER-EVENT-GROUP-TIMING-CONFIG>
+        <PROVIDED-USER-DEFINED-SERVICE-INSTANCE UUID="254066ea-4fa1-4e60-8eb7-c6fccaec9696">
+          <SHORT-NAME>PrvIpcSvcInst_SpeedMonitorExecutable_From_PPort_SpeedLimitMonitor_Provide</SHORT-NAME>
+          <ADMIN-DATA>
+            <SDGS>
+              <SDG GID="DvMex:ProvidedIpcBindingServiceInstanceExtension">
+                <SDG GID="userDefinedIpcBinding">
+                  <SDG GID="ProvidedIpcBindingServiceInstance">
+                    <SD GID="serviceInstanceId">1500</SD>
+                    <SD GID="domain">55</SD>
+                    <SD GID="port">23000</SD>
+                  </SDG>
+                </SDG>
+              </SDG>
+            </SDGS>
+          </ADMIN-DATA>
+          <SERVICE-INTERFACE-DEPLOYMENT-REF DEST="USER-DEFINED-SERVICE-INTERFACE-DEPLOYMENT">/ServiceInterfaces/PkgSpeedLimitService/Latest/PkgDeployment/IpcSvcIfDeploy_SpeedLimitService</SERVICE-INTERFACE-DEPLOYMENT-REF>
+        </PROVIDED-USER-DEFINED-SERVICE-INSTANCE>
+        <SERVICE-INSTANCE-TO-PORT-PROTOTYPE-MAPPING UUID="1073a7fb-f2af-4387-bbdd-eb1eccaf93f4">
+          <SHORT-NAME>PrvIpcSvcInst2PortPMap_PrvIpcSvcInst_SpeedMonitorExecutable_From_PPort_SpeedLimitMonitor_Provide</SHORT-NAME>
+          <ENABLES-LOG-TRACE>true</ENABLES-LOG-TRACE>
+          <PORT-PROTOTYPE-IREF>
+            <CONTEXT-ROOT-SW-COMPONENT-PROTOTYPE-REF DEST="ROOT-SW-COMPONENT-PROTOTYPE">/AppDesign/SpeedMonitorExecutable/RootSwcPrototype</CONTEXT-ROOT-SW-COMPONENT-PROTOTYPE-REF>
+            <TARGET-PORT-PROTOTYPE-REF DEST="P-PORT-PROTOTYPE">/AppDesign/AASwCompType_App_ModelBuilderApplication_SpeedMonitorExecutable/SpeedLimitMonitor_Provide</TARGET-PORT-PROTOTYPE-REF>
+          </PORT-PROTOTYPE-IREF>
+          <PROCESS-REF DEST="PROCESS">/AppDeployment/Prc_App_ModelBuilderApplication_SpeedMonitorExecutable</PROCESS-REF>
+          <SERVICE-INSTANCE-REF DEST="PROVIDED-USER-DEFINED-SERVICE-INSTANCE">/AppDeployment/PrvIpcSvcInst_SpeedMonitorExecutable_From_PPort_SpeedLimitMonitor_Provide</SERVICE-INSTANCE-REF>
+        </SERVICE-INSTANCE-TO-PORT-PROTOTYPE-MAPPING>
+        <USER-DEFINED-SERVICE-INSTANCE-TO-MACHINE-MAPPING UUID="763afdd6-db7f-4907-a906-5282ce58f948">
+          <SHORT-NAME>PrvIpcSvcInst2MM_PrvIpcSvcInst_SpeedMonitorExecutable_From_PPort_SpeedLimitMonitor_Provide</SHORT-NAME>
+          <COMMUNICATION-CONNECTOR-REF DEST="USER-DEFINED-COMMUNICATION-CONNECTOR">/AppDeployment/MachineDesign_AppLocalMachine/UserDefCommConnector_Ipc_AppLocalMachine</COMMUNICATION-CONNECTOR-REF>
+          <SERVICE-INSTANCE-REFS>
+            <SERVICE-INSTANCE-REF DEST="PROVIDED-USER-DEFINED-SERVICE-INSTANCE">/AppDeployment/PrvIpcSvcInst_SpeedMonitorExecutable_From_PPort_SpeedLimitMonitor_Provide</SERVICE-INSTANCE-REF>
+          </SERVICE-INSTANCE-REFS>
+        </USER-DEFINED-SERVICE-INSTANCE-TO-MACHINE-MAPPING>
+        <SOMEIP-SD-CLIENT-SERVICE-INSTANCE-CONFIG UUID="3b7c5c72-fdec-46d2-8904-e9a224755431">
+          <SHORT-NAME>SomeipSdClientSvcInstCfg_WarningDisplayExecutable</SHORT-NAME>
+          <INITIAL-FIND-BEHAVIOR>
+            <INITIAL-DELAY-MAX-VALUE>0.1</INITIAL-DELAY-MAX-VALUE>
+            <INITIAL-DELAY-MIN-VALUE>0.01</INITIAL-DELAY-MIN-VALUE>
+            <INITIAL-REPETITIONS-BASE-DELAY>0.2</INITIAL-REPETITIONS-BASE-DELAY>
+            <INITIAL-REPETITIONS-MAX>5</INITIAL-REPETITIONS-MAX>
+          </INITIAL-FIND-BEHAVIOR>
+          <SERVICE-FIND-TIME-TO-LIVE>5</SERVICE-FIND-TIME-TO-LIVE>
+        </SOMEIP-SD-CLIENT-SERVICE-INSTANCE-CONFIG>
+        <SOMEIP-SD-CLIENT-EVENT-GROUP-TIMING-CONFIG UUID="22e5a7ae-ce8d-4c3b-a8c2-7d88972dcd60">
+          <SHORT-NAME>SomeipSdClientEvGrpTimingCfg_WarningDisplayExecutable</SHORT-NAME>
+          <REQUEST-RESPONSE-DELAY>
+            <MAX-VALUE>1.5</MAX-VALUE>
+            <MIN-VALUE>1.5</MIN-VALUE>
+          </REQUEST-RESPONSE-DELAY>
+          <SUBSCRIBE-EVENTGROUP-RETRY-DELAY>5.5</SUBSCRIBE-EVENTGROUP-RETRY-DELAY>
+          <SUBSCRIBE-EVENTGROUP-RETRY-MAX>3</SUBSCRIBE-EVENTGROUP-RETRY-MAX>
+          <TIME-TO-LIVE>10</TIME-TO-LIVE>
+        </SOMEIP-SD-CLIENT-EVENT-GROUP-TIMING-CONFIG>
+        <SOMEIP-SD-SERVER-SERVICE-INSTANCE-CONFIG UUID="dac6effc-e048-41d8-9b56-f1193f6e038f">
+          <SHORT-NAME>SomeipSdServerSvcInstCfg__WarningDisplayExecutable</SHORT-NAME>
+          <INITIAL-OFFER-BEHAVIOR>
+            <INITIAL-DELAY-MAX-VALUE>0.1</INITIAL-DELAY-MAX-VALUE>
+            <INITIAL-DELAY-MIN-VALUE>0.01</INITIAL-DELAY-MIN-VALUE>
+            <INITIAL-REPETITIONS-BASE-DELAY>0.2</INITIAL-REPETITIONS-BASE-DELAY>
+            <INITIAL-REPETITIONS-MAX>5</INITIAL-REPETITIONS-MAX>
+          </INITIAL-OFFER-BEHAVIOR>
+          <OFFER-CYCLIC-DELAY>5</OFFER-CYCLIC-DELAY>
+          <REQUEST-RESPONSE-DELAY>
+            <MAX-VALUE>1.5</MAX-VALUE>
+            <MIN-VALUE>1.5</MIN-VALUE>
+          </REQUEST-RESPONSE-DELAY>
+          <SERVICE-OFFER-TIME-TO-LIVE>10</SERVICE-OFFER-TIME-TO-LIVE>
+        </SOMEIP-SD-SERVER-SERVICE-INSTANCE-CONFIG>
+        <SOMEIP-SD-SERVER-EVENT-GROUP-TIMING-CONFIG UUID="5c139f99-cf9e-4b51-b5e2-dde91ce0517f">
+          <SHORT-NAME>SomeipSdServerEvGrpTimingCfg_WarningDisplayExecutable</SHORT-NAME>
+          <REQUEST-RESPONSE-DELAY>
+            <MAX-VALUE>1.5</MAX-VALUE>
+            <MIN-VALUE>1.5</MIN-VALUE>
+          </REQUEST-RESPONSE-DELAY>
+        </SOMEIP-SD-SERVER-EVENT-GROUP-TIMING-CONFIG>
+        <REQUIRED-USER-DEFINED-SERVICE-INSTANCE UUID="bf8a3fb8-f42e-4366-b381-8164b692c1d9">
+          <SHORT-NAME>ReqIpcSvcInst_WarningDisplayExecutable_From_RPort_SpeedLimitMonitor_Require</SHORT-NAME>
+          <ADMIN-DATA>
+            <SDGS>
+              <SDG GID="DvMex:RequiredIpcBindingServiceInstanceExtension">
+                <SDG GID="userDefinedIpcBinding">
+                  <SDG GID="RequiredIpcBindingServiceInstance">
+                    <SD GID="serviceInstanceId">1500</SD>
+                    <SD GID="minorVersion">ANY</SD>
+                    <SD GID="expectedServerIntegrityLevel">QM</SD>
+                  </SDG>
+                </SDG>
+              </SDG>
+            </SDGS>
+          </ADMIN-DATA>
+          <SERVICE-INTERFACE-DEPLOYMENT-REF DEST="USER-DEFINED-SERVICE-INTERFACE-DEPLOYMENT">/ServiceInterfaces/PkgSpeedLimitService/Latest/PkgDeployment/IpcSvcIfDeploy_SpeedLimitService</SERVICE-INTERFACE-DEPLOYMENT-REF>
+        </REQUIRED-USER-DEFINED-SERVICE-INSTANCE>
+        <SERVICE-INSTANCE-TO-PORT-PROTOTYPE-MAPPING UUID="7f0c8691-11f0-4f68-b75b-be7bef2cf725">
+          <SHORT-NAME>ReqIpcSvcInst2PortPMap_ReqIpcSvcInst_WarningDisplayExecutable_From_RPort_SpeedLimitMonitor_Require</SHORT-NAME>
+          <ENABLES-LOG-TRACE>true</ENABLES-LOG-TRACE>
+          <PORT-PROTOTYPE-IREF>
+            <CONTEXT-ROOT-SW-COMPONENT-PROTOTYPE-REF DEST="ROOT-SW-COMPONENT-PROTOTYPE">/AppDesign/WarningDisplayExecutable/RootSwcPrototype</CONTEXT-ROOT-SW-COMPONENT-PROTOTYPE-REF>
+            <TARGET-PORT-PROTOTYPE-REF DEST="R-PORT-PROTOTYPE">/AppDesign/AASwCompType_App_ModelBuilderApplication_WarningDisplayExecutable/SpeedLimitMonitor_Require</TARGET-PORT-PROTOTYPE-REF>
+          </PORT-PROTOTYPE-IREF>
+          <PROCESS-REF DEST="PROCESS">/AppDeployment/Prc_App_ModelBuilderApplication_WarningDisplayExecutable</PROCESS-REF>
+          <SERVICE-INSTANCE-REF DEST="REQUIRED-USER-DEFINED-SERVICE-INSTANCE">/AppDeployment/ReqIpcSvcInst_WarningDisplayExecutable_From_RPort_SpeedLimitMonitor_Require</SERVICE-INSTANCE-REF>
+        </SERVICE-INSTANCE-TO-PORT-PROTOTYPE-MAPPING>
+        <USER-DEFINED-SERVICE-INSTANCE-TO-MACHINE-MAPPING UUID="f019054c-93da-4977-a8de-8c150832f684">
+          <SHORT-NAME>ReqIpcSvcInst2MM_ReqIpcSvcInst_WarningDisplayExecutable_From_RPort_SpeedLimitMonitor_Require</SHORT-NAME>
+          <COMMUNICATION-CONNECTOR-REF DEST="USER-DEFINED-COMMUNICATION-CONNECTOR">/AppDeployment/MachineDesign_AppLocalMachine/UserDefCommConnector_Ipc_AppLocalMachine</COMMUNICATION-CONNECTOR-REF>
+          <SERVICE-INSTANCE-REFS>
+            <SERVICE-INSTANCE-REF DEST="REQUIRED-USER-DEFINED-SERVICE-INSTANCE">/AppDeployment/ReqIpcSvcInst_WarningDisplayExecutable_From_RPort_SpeedLimitMonitor_Require</SERVICE-INSTANCE-REF>
+          </SERVICE-INSTANCE-REFS>
+        </USER-DEFINED-SERVICE-INSTANCE-TO-MACHINE-MAPPING>
+      </ELEMENTS>
+    </AR-PACKAGE>
+  </AR-PACKAGES>
+</AUTOSAR>

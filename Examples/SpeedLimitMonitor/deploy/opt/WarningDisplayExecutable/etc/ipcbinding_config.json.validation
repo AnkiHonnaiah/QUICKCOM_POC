@@ -1,0 +1,16 @@
+
+{
+  "format_version" : "1.00.00",
+  "target" : "/AppDeployment/Prc_App_ModelBuilderApplication_WarningDisplayExecutable",
+  "files" : [
+    {
+      "filename" : "ipcbinding_config.json",
+      "checksum" : [
+        4674490937333407053
+      ],
+      "algorithm" : "CRC64",
+      "block_length" : 4194304
+    }
+  ]
+}
+‚m¸D§
