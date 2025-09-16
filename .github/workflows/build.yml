@@ -24,11 +24,6 @@ jobs:
           echo "Check jar sizes:"
           ls -lh SDK/CLI/Core/plugins | head
 
-      - name: Install dependencies
-        run: |
-          sudo apt update
-          sudo apt install -y build-essential cmake gcc g++ git
-
       - name: Sanity check DVACfgCmd
         run: |
           chmod +x SDK/CLI/Core/DVACfgCmd
