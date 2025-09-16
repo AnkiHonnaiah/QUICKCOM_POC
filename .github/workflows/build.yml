@@ -9,7 +9,7 @@ on:
 jobs:
   build:
     name: Build Speed Limit Monitor Example
-    runs-on: ubuntu-latest
+    runs-on: self-hosted
 
     steps:
       - name: Checkout repository
@@ -18,7 +18,7 @@ jobs:
       - name: Install dependencies
         run: |
           sudo apt update
-          sudo apt install -y build-essential cmake gcc g++ git openjdk-17-jre
+          sudo apt install -y build-essential cmake gcc g++ git 
 
       - name: Debug SDK contents
         run: |
