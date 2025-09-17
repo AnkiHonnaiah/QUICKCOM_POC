@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+
+<!-- Include="jquery.js" --><script src="html/generator/js/jquery.js"></script><!-- END Include -->
+<!-- Include="reportTreeBase.css"--><link rel="stylesheet" type="text/css"	href="html.generator.css.reportTreeBase.css"><!-- END Include -->
+<!-- Include="reportTree.css"--><link rel="stylesheet" type="text/css"	href="html.generator.css.reportTree.css"><!-- END Include -->
+<!-- Include="template.css"--><link rel="stylesheet" type="text/css"	href="html.generator.css.template.css"><!-- END Include -->
+
+
+<link id="faviconLink" rel="shortcut icon"
+    href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAABgklEQVR4nKWTPWtUURCGnzkf+wNiCgVJEKMBtdgivZ0gBAT1D9goWEi6bSysbQwIFtrYaBUQS/0LIgsWRhCxt7jbeL1sdu+8Fnez7mXvqpCBYc4pzjvPO4cxSZwk0uJlc+3mEwthDwIWmiRGLEQsRizGO1+/PX/ZUpA0z81Tt+TucndVVaWyLDUajXRw8E4Xtu7p4vZ9bV960F98ExbFzCJ1XVMUBT/LkrKqOJo64/EYS4nDz0+xnIeXdwb9TgsWE5L4sH6tbfTVI0LOXNkZEHLGUhoCtiyQEpPJZGlQGxuneTi4iixAiDx+9rF7iJYS7k7/x3scQxIOuAJnt85TY0gQXnzqFgg5I4kzb9aXKI7jy26B5d6fN10Ef4taTaOVBADfbxS4hKtBrgEBLqNW06h7BrmHu3Pu7dpKguH1UYugZSHkTP0fFlYShJyZOhzuFtSibUEzG/zDwq+jKVN6SNZ8IeBqqmbV4mqC/dt3X+9ZTM3ypFmdL1M4Pu/Pm550nX8DLAyzrHyDVlcAAAAASUVORK5CYII=">
+
+</head>
+<!--
+    ##############################################################################################################################
+    ##                                            PLAIN HTML CODE                                                               ##
+    ##                                                                                                                          ##
+    ##                                   Basic HTML Frame styled in Vector style                                                ##
+    ##                                                                                                                          ##
+    ##                      Defines Global Table with headlines, infos, trees and Vector footer                                 ##
+    ##                                                                                                                          ##
+    ##############################################################################################################################
+    -->
+<body>
+
+
+    <div id="header" >
+        <div id="logo" class="icon-logo"></div>
+        <div id="title" class="HEADER h1"></div>    
+        <div id="nav">
+            <div class="h3 OPTIONS">Options</div>
+            <input id="expand" type="button" class="optionBtn collapseOpenNodes" value="expand" onclick="checkExpandNodes('expand')"/>
+                <input id="fold" type="button" class="optionBtn collapseOpenNodes" value="fold" onclick="checkExpandNodes('fold')"/>
+                <div class="filterGroup">
+                    Sort by:
+                    <input id="rootObj" type="button" class="optionBtn filterButton selectedFilter" value="Root Objects" filtervalue="rootObj" onClick="filterNodes(this)" />
+                    <!-- <input id="funcDomain" type="button" class="optionBtn filterButton" value="Functional Domains" filtervalue="funcDomain" onClick="filterNodes(this)" /> -->
+                    <input id="generator" type="button" class="optionBtn filterButton" value="Generators" filtervalue="generator" onClick="filterNodes(this)" />
+                </div>
+        </div>
+    </div>
+
+
+    <div class="globalTables">
+        <div id="validation-header">
+            <div class="h3 MODULEHEAD">Validation Results</div>
+        </div>
+        <div id='validation-result'>
+            <div class="pointer node rootNode space-to-icon close-node-icon node-width inline">
+                <span class="icon-ValidationView elem inline">Validation Result</span>
+            </div>
+        </div>
+                
+        <div id="generation-header">
+            <div class="h3 MODULEHEAD">Generation Results</div>
+        </div>
+        <div id='generation-result'>
+            <div class="pointer node rootNode space-to-icon close-node-icon node-width inline">
+                <span class="icon-ValidationView elem inline">Generation Process Result</span>
+            </div>
+        </div>
+    </div>
+
+<table class="globalTables" cellspacing="0" cellpadding="0">
+    <!-- Copyright -->
+    <tr><td align="left" class="FOOTER">Vector Informatik GmbH</td>
+        <td align="right" class="FOOTER"><a href="https://www.vector.com"><span class="FOOTER_LINK">www.vector.com</span></a></td>
+    </tr>
+</table>
+
+    <!-- Include="json.js" -->  <script src="html/generator/html/json.js"></script><!-- END Include -->
+	<!-- Include="reportTree.js" --><script src="html/generator/js/reportTree.js"></script><!-- END Include -->
+	</body>
+</html>

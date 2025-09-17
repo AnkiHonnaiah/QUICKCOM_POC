@@ -1,0 +1,479 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"title": "Schema for Model Builder",
+	"type": "object",
+	"properties": {
+		"DatatypeConfig": {
+			"description": "Container for the configuration of datatypes.",
+			"$ref": "#/$defs/DatatypeConfig"
+		},
+		"ServiceConfig": {
+			"description": "Container for the configuration of services.",
+			"$ref": "#/$defs/ServiceConfig"
+		},
+		"ExecutableConfig": {
+			"description": "Container for the configuration of executables.",
+			"$ref": "#/$defs/ExecutableConfig"
+		},
+		"DeploymentConfig": {
+			"description": "Container for the configuration of deployment information.",
+			"$ref": "#/$defs/DeploymentConfig"
+		}
+	},
+	"additionalProperties": false,
+	"$defs": {
+		"DatatypeConfig": {
+			"type": "object",
+			"properties": {
+				"Strings": {
+					"description": "List of String datatypes.",
+					"type": "array",
+					"uniqueItems": true,
+					"items": {
+						"type": "object",
+						"properties": {
+							"Name": {
+								"type": "string"
+							}
+						},
+						"required": [
+							"Name"
+						],
+						"additionalProperties": false
+					}
+				},
+				"Arrays": {
+					"description": "List of Array datatypes.",
+					"type": "array",
+					"uniqueItems": true,
+					"items": {
+						"type": "object",
+						"properties": {
+							"Name": {
+								"type": "string"
+							},
+							"Size": {
+								"description": "The size of the array.",
+								"type": "integer"
+							},
+							"TypeRef": {
+								"description": "Reference to the datatype of the items that populate the array.",
+								"type": "string"
+							}
+						},
+						"required": [
+							"Name",
+							"Size",
+							"TypeRef"
+						],
+						"additionalProperties": false
+					}
+				},
+				"Vectors": {
+					"description": "List of Vector (dynamic arrays) datatypes.",
+					"type": "array",
+					"uniqueItems": true,
+					"items": {
+						"type": "object",
+						"properties": {
+							"Name": {
+								"type": "string"
+							},
+							"Size": {
+								"description": "The maximun size of the array.",
+								"type": "integer"
+							},
+							"TypeRef": {
+								"description": "Reference to a datatype of the items that populate the array.",
+								"type": "string"
+							}
+						},
+						"required": [
+							"Name",
+							"Size",
+							"TypeRef"
+						],
+						"additionalProperties": false
+					}
+				},
+				"Maps": {
+					"description": "List of Map (key,value) datatypes.",
+					"type": "array",
+					"uniqueItems": true,
+					"items": {
+						"type": "object",
+						"properties": {
+							"Name": {
+								"type": "string"
+							},
+							"KeyTypeRef": {
+								"description": "Reference to a datatype for the Key of the Map.",
+								"type": "string"
+							},
+							"ValueTypeRef": {
+								"description": "Reference to a datatype for the Value of the Map.",
+								"type": "string"
+							}
+						},
+						"required": [
+							"Name",
+							"KeyTypeRef",
+							"ValueTypeRef"
+						],
+						"additionalProperties": false
+					}
+				},
+				"Structs": {
+					"description": "List of Struct datatypes.",
+					"type": "array",
+					"uniqueItems": true,
+					"items": {
+						"type": "object",
+						"properties": {
+							"Name": {
+								"type": "string"
+							},
+							"SubElements": {
+								"description": "List of SubElements of the struct.",
+								"type": "array",
+								"uniqueItems": true,
+								"items": {
+									"type": "object",
+									"properties": {
+										"SubElemName": {
+											"type": "string"
+										},
+										"SubElemTypeRef": {
+											"description": "Reference to a datatype for the struct subelement.",
+											"type": "string"
+										}
+									},
+									"required": [
+										"SubElemName",
+										"SubElemTypeRef"
+									],
+									"additionalProperties": false
+								}
+							}
+						},
+						"required": [
+							"Name",
+							"SubElements"
+						],
+						"additionalProperties": false
+					}
+				},
+				"Enums": {
+					"description": "List of Enumeration datatypes.",
+					"type": "array",
+					"uniqueItems": true,
+					"items": {
+						"type": "object",
+						"properties": {
+							"Name": {
+								"type": "string"
+							},
+							"Literals": {
+								"description": "List of literals (label, value) of the Enumeration.",
+								"type": "array",
+								"items": {
+									"type": "object",
+									"properties": {
+										"Label": {
+											"description": "The enumeration label (string).",
+											"type": "string"
+										},
+										"Value": {
+											"description": "The enumeration value (integer).",
+											"type": "integer"
+										}
+									},
+									"required": [
+										"Label",
+										"Value"
+									],
+									"additionalProperties": false
+								}
+							}
+						},
+						"required": [
+							"Name",
+							"Literals"
+						],
+						"additionalProperties": false
+					}
+				},
+				"TypeRefs": {
+					"description": "List of TypeRef datatypes.",
+					"type": "array",
+					"uniqueItems": true,
+					"items": {
+						"type": "object",
+						"properties": {
+							"Name": {
+								"type": "string"
+							},
+							"TypeRef": {
+								"description": "Reference to a datatype for the struct subelement.",
+								"type": "string"
+							}
+						},
+						"required": [
+							"Name",
+							"TypeRef"
+						],
+						"additionalProperties": false
+					}
+				}
+			},
+			"additionalProperties": false
+		},
+		"DeploymentConfig": {
+			"type": "object",
+			"properties": {
+				"NetworkConfig": {
+					"description": "Container for the network configuration",
+					"type": "object",
+					"properties": {
+						"UnicastIpAddress": {
+							"description": "The IPv4 address that will be used by services for communication. Default: 127.0.0.1",
+							"type": "string",
+							"pattern": "^(\\b25[0-5]|\\b2[0-4][0-9]|\\b[01]?[0-9][0-9]?)(\\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)){3}$"
+						},
+						"ServiceDiscoveryIpAddress": {
+							"description": "The IPv4 Multicast address that will be used for service discovery. Default: 224.0.0.17",
+							"type": "string",
+							"pattern": "^(\\b25[0-5]|\\b2[0-4][0-9]|\\b[01]?[0-9][0-9]?)(\\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)){3}$"
+						}
+					},
+					"required": [
+						"UnicastIpAddress",
+						"ServiceDiscoveryIpAddress"
+					],
+					"additionalProperties": false
+				},
+				"ServiceDeploymentConfig": {
+					"description": "Container for the configuration of deployment of services.",
+					"type": "object",
+					"properties": {
+						"DefaultDeploymentType": {
+							"description": "The default deployment type for Services. Default: IPC",
+							"type": "string",
+							"enum": [
+								"SOMEIP",
+								"IPC"
+							]
+						}
+					},
+					"additionalProperties": false
+				}
+			},
+			"additionalProperties": false
+		},
+		"ExecutableConfig": {
+			"type": "object",
+			"properties": {
+				"Executables": {
+					"type": "array",
+					"uniqueItems": true,
+					"items": {
+						"type": "object",
+						"properties": {
+							"Name": {
+								"type": "string"
+							},
+							"ProvidedPorts": {
+								"type": "array",
+								"uniqueItems": true,
+								"items": {
+									"type": "object",
+									"properties": {
+										"Name": {
+											"type": "string"
+										},
+										"ServiceInterfaceRef": {
+											"description": "Reference to the Service provided by this port.",
+											"type": "string"
+										}
+									},
+									"required": [
+										"Name",
+										"ServiceInterfaceRef"
+									],
+									"additionalProperties": false
+								}
+							},
+							"RequiredPorts": {
+								"type": "array",
+								"uniqueItems": true,
+								"items": {
+									"type": "object",
+									"properties": {
+										"Name": {
+											"type": "string"
+										},
+										"ServiceInterfaceRef": {
+											"description": "Reference to the Service required by this port.",
+											"type": "string"
+										}
+									},
+									"required": [
+										"Name",
+										"ServiceInterfaceRef"
+									],
+									"additionalProperties": false
+								}
+							}
+						},
+						"required": [
+							"Name"
+						],
+						"additionalProperties": false
+					}
+				}
+			},
+			"required": [
+				"Executables"
+			],
+			"additionalProperties": false
+		},
+		"ServiceConfig": {
+			"type": "object",
+			"properties": {
+				"ServiceInterfaces": {
+					"type": "array",
+					"uniqueItems": true,
+					"items": {
+						"type": "object",
+						"properties": {
+							"Name": {
+								"type": "string"
+							},
+							"Events": {
+								"description": "List of events of the service.",
+								"type": "array",
+								"uniqueItems": true,
+								"items": {
+									"type": "object",
+									"properties": {
+										"Name": {
+											"type": "string"
+										},
+										"TypeRef": {
+											"description": "Reference to the datatype of the event.",
+											"type": "string"
+										}
+									},
+									"required": [
+										"Name",
+										"TypeRef"
+									],
+									"additionalProperties": false
+								}
+							},
+							"Fields": {
+								"description": "List of fields of the service.",
+								"type": "array",
+								"uniqueItems": true,
+								"items": {
+									"type": "object",
+									"properties": {
+										"Name": {
+											"type": "string"
+										},
+										"TypeRef": {
+											"description": "Reference to the datatype of the field.",
+											"type": "string"
+										},
+										"HasGetter": {
+											"description": "Defines if the field has a getter function.",
+											"type": "boolean"
+										},
+										"HasSetter": {
+											"description": "Defines if the field has a setter function.",
+											"type": "boolean"
+										},
+										"HasNotifier": {
+											"description": "Defines if the field has a notifier event.",
+											"type": "boolean"
+										}
+									},
+									"required": [
+										"Name",
+										"TypeRef",
+										"HasGetter",
+										"HasSetter",
+										"HasNotifier"
+									],
+									"additionalProperties": false
+								}
+							},
+							"Methods": {
+								"description": "List of methods of the service.",
+								"type": "array",
+								"uniqueItems": true,
+								"items": {
+									"type": "object",
+									"properties": {
+										"Name": {
+											"type": "string"
+										},
+										"IsFireAndForget": {
+											"description": "Defines if the method is FireAndForget.",
+											"type": "boolean"
+										},
+										"Parameters": {
+											"description": "List of parameters of the method.",
+											"type": "array",
+											"uniqueItems": true,
+											"items": {
+												"type": "object",
+												"properties": {
+													"Name": {
+														"type": "string"
+													},
+													"TypeRef": {
+														"description": "Reference to the datatype of the parameter.",
+														"type": "string"
+													},
+													"Direction": {
+														"description": "The direction of the parameter of the method.",
+														"type": "string",
+														"enum": [
+															"IN",
+															"OUT",
+															"INOUT"
+														]
+													}
+												},
+												"required": [
+													"Name",
+													"TypeRef",
+													"Direction"
+												],
+												"additionalProperties": false
+											}
+										}
+									},
+									"required": [
+										"Name",
+										"Parameters"
+									],
+									"additionalProperties": false
+								}
+							}
+						},
+						"required": [
+							"Name"
+						],
+						"additionalProperties": false
+					}
+				}
+			},
+			"required": [
+				"ServiceInterfaces"
+			],
+			"additionalProperties": false
+		}
+	}
+}

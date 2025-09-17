@@ -1,0 +1,91 @@
+import com.vector.cfg.model.mdf.ar4x.adaptiveplatform.applicationdesign.portinterface.MIServiceInterface
+import com.vector.cfg.model.mdf.ar4x.adaptiveplatform.serviceinstancemanifest.serviceinstancedeployment.MITransportLayerProtocolEnum
+import com.vector.cfg.model.mdf.model.autosar.base.MIARPackage
+
+import java.nio.file.Path
+
+import static com.vector.cfg.automation.api.ScriptApi.daVinci
+
+//daVinci enables the IDE code completion support
+daVinci {
+    scriptDescription "Create elements by utilizing Wizard API."
+
+    /*
+     * Task: CreatePackages
+     * Type: DV_PROJECT
+     * -------------------------------------------------------------------------------------------------------
+     * The task shows how to create a MIARPackage.
+     * For more details please refer to section "Model -> Wizard API" in the Automation Documentation.
+     * -------------------------------------------------------------------------------------------------------
+     */
+
+    scriptTask("CreatePackages", DV_PROJECT) {
+        taskDescription "Create nested AUTOSAR packages from scratch by utilizing Wizard API."
+
+        code {
+            transaction {
+                // Create a package "rootPackage1" under AUTOSAR root object in an arxml file
+                MIARPackage rootPackage1 = createPackage {
+                    name = "rootPackage1"
+                    file = project.getOrCreateArxmlFile(Path.of("rootPackage1.arxml"))
+                }
+
+                // Create a package "nestedPackage" under "rootPackage1" in another file
+                def anotherArxmlFile = project.getOrCreateArxmlFile(Path.of("nestedPackage.arxml"))
+                MIARPackage nestedPackage = createPackage {
+                    arPackage = rootPackage1
+                    name = "nestedPackage"
+                    file = anotherArxmlFile
+                }
+            }
+
+            // Save the model changes into the arxml files
+            saveProject()
+        }
+    }
+
+    /*
+     * Task: CreateServiceInterfaceDeployments
+     * Type: DV_PROJECT
+     * -------------------------------------------------------------------------------------------------------
+     * The task shows how to create a list of MIServiceInterfaceDeployment.
+     * For more details please refer to section "Model -> Wizard API" in the Automation Documentation.
+     * -------------------------------------------------------------------------------------------------------
+     */
+
+    scriptTask("CreateServiceInterfaceDeployments", DV_PROJECT) {
+        taskDescription "Create a service interface deployment from scratch by utilizing Wizard API."
+
+        code {
+            transaction {
+                // Create a package "newPackage" under AUTOSAR root object in an arxml file
+                MIARPackage newPackage = createPackage {
+                    name = "newPackage"
+                    file = project.getOrCreateArxmlFile(Path.of("first.arxml"))
+                }
+
+                // Create service interfaces
+                def arxmlFile = project.getOrCreateArxmlFile(Path.of("second.arxml"))
+                def serviceInterface1 = newPackage.element.createAndAdd(MIServiceInterface, "serviceInterface1", arxmlFile)
+                def serviceInterface2 = newPackage.element.createAndAdd(MIServiceInterface, "serviceInterface2", arxmlFile)
+
+                // Create service interfaces deployments referencing the created service interfaces
+                createServiceInterfaceDeployment {
+                    // Create a new package on the fly as the argument to createServiceInterfaceDeployment
+                    arPackage = createPackage {
+                        name = "anotherPackage"
+                        file = project.getOrCreateArxmlFile(Path.of("third.arxml"))
+                    }
+                    serviceInterfaces = [serviceInterface2, serviceInterface1]
+                    name = "ServiceInterfaceDeployment"
+                    file = project.getOrCreateArxmlFile(Path.of("third.arxml"))
+                    type = SOMEIP
+                    transportLayerProtocol = MITransportLayerProtocolEnum.TCP
+                }
+            }
+
+            // Save the model changes into the arxml files
+            saveProject()
+        }
+    }
+}

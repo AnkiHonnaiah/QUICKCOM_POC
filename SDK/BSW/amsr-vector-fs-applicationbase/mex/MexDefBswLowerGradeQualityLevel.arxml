@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<AUTOSAR xmlns="http://autosar.org/schema/r4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://autosar.org/schema/r4.0 AUTOSAR_00049.xsd">
+  <AR-PACKAGES>
+    <AR-PACKAGE>
+      <SHORT-NAME>MICROSAR</SHORT-NAME>
+      <AR-PACKAGES>
+        <AR-PACKAGE UUID="0bdb538a-3fc2-4643-8897-171a15a4a207">
+          <SHORT-NAME>ADAPTIVE</SHORT-NAME>
+          <ELEMENTS>
+            <SDG-DEF>
+              <SHORT-NAME>BswLowerGradeQualityLevelExtensionModel</SHORT-NAME>
+              <ADMIN-DATA>
+                <SDGS>
+                  <SDG GID="DvMex-version">
+                    <SD>1.0.0</SD>
+                  </SDG>
+                </SDGS>
+              </ADMIN-DATA>
+              <SDG-CLASSES>
+                <SDG-CLASS>
+                  <SHORT-NAME>BswLowerGradeQualityLevel</SHORT-NAME>
+                  <DESC>
+                    <L-2 L="EN">This extension model is used to activate source code with lower quality level than originally defined in the component.</L-2>
+                  </DESC>
+                  <EXTENDS-META-CLASS>Executable</EXTENDS-META-CLASS>
+                  <ATTRIBUTES>
+                    <SDG-PRIMITIVE-ATTRIBUTE>
+                      <SHORT-NAME>lowerGradeQualityLevel</SHORT-NAME>
+                      <DESC>
+                        <L-2 L="EN">Activates lower grade quality code equal to the selected quality level</L-2>
+                      </DESC>
+                      <CATEGORY>ENUMERATION</CATEGORY>
+                      <ADMIN-DATA>
+                        <SDGS>
+                          <SDG GID="literals">
+                            <SD>QM</SD>
+                            <SD>BETA</SD>
+                            <SD>BETA_QM</SD>
+                          </SDG>
+                        </SDGS>
+                      </ADMIN-DATA>
+                      <LOWER-MULTIPLICITY>0</LOWER-MULTIPLICITY>
+                      <UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+                    </SDG-PRIMITIVE-ATTRIBUTE>
+                  </ATTRIBUTES>
+                </SDG-CLASS>
+              </SDG-CLASSES>
+            </SDG-DEF>
+          </ELEMENTS>
+        </AR-PACKAGE>
+      </AR-PACKAGES>
+    </AR-PACKAGE>
+  </AR-PACKAGES>
+</AUTOSAR>

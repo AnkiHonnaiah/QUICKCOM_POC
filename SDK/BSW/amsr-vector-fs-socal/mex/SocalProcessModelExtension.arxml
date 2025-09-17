@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<AUTOSAR xmlns="http://autosar.org/schema/r4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://autosar.org/schema/r4.0 AUTOSAR_00049.xsd">
+  <AR-PACKAGES>
+    <AR-PACKAGE>
+      <SHORT-NAME>MICROSAR</SHORT-NAME>
+      <AR-PACKAGES>
+        <AR-PACKAGE>
+          <SHORT-NAME>ADAPTIVE</SHORT-NAME>
+          <ELEMENTS>
+            <SDG-DEF>
+              <SHORT-NAME>SocalModelExtension</SHORT-NAME>
+              <SDG-CLASSES>
+                <SDG-CLASS>
+                  <SHORT-NAME>SocalProcessModelExtension</SHORT-NAME>
+                  <EXTENDS-META-CLASS>Process</EXTENDS-META-CLASS>
+                  <ATTRIBUTES>
+                    <SDG-AGGREGATION-WITH-VARIATION>
+                      <SHORT-NAME>araComThreadPool</SHORT-NAME>
+                      <DESC>
+                        <L-2 L="FOR-ALL">User-defined thread pools container.</L-2>
+                      </DESC>
+                      <LOWER-MULTIPLICITY>0</LOWER-MULTIPLICITY>
+                      <UPPER-MULTIPLICITY-INFINITE>true</UPPER-MULTIPLICITY-INFINITE>
+                      <SUB-SDG-REF DEST="SDG-CLASS">/MICROSAR/ADAPTIVE/SocalModelExtension/ThreadPool</SUB-SDG-REF>
+                    </SDG-AGGREGATION-WITH-VARIATION>
+                    <SDG-AGGREGATION-WITH-VARIATION>
+                      <SHORT-NAME>pPortDefaultThreadPool</SHORT-NAME>
+                      <DESC>
+                        <L-2 L="FOR-ALL">Shared default thread pool for ara::com skeletons of the process.</L-2>
+                      </DESC>
+                      <LOWER-MULTIPLICITY>0</LOWER-MULTIPLICITY>
+                      <UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+                      <SUB-SDG-REF DEST="SDG-CLASS">/MICROSAR/ADAPTIVE/SocalModelExtension/DefaultThreadPool</SUB-SDG-REF>
+                    </SDG-AGGREGATION-WITH-VARIATION>
+                    <SDG-AGGREGATION-WITH-VARIATION>
+                      <SHORT-NAME>rPortDefaultThreadPool</SHORT-NAME>
+                      <DESC>
+                        <L-2 L="FOR-ALL">Shared default thread pool for ara::com proxies of the process.</L-2>
+                      </DESC>
+                      <LOWER-MULTIPLICITY>0</LOWER-MULTIPLICITY>
+                      <UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+                      <SUB-SDG-REF DEST="SDG-CLASS">/MICROSAR/ADAPTIVE/SocalModelExtension/DefaultThreadPool</SUB-SDG-REF>
+                    </SDG-AGGREGATION-WITH-VARIATION>
+                  </ATTRIBUTES>
+                </SDG-CLASS>
+                <SDG-CLASS>
+                  <SHORT-NAME>ThreadPool</SHORT-NAME>
+                  <DESC>
+                    <L-2 L="FOR-ALL">Definition of a user-defined thread pool to handle incoming method requests.</L-2>
+                  </DESC>
+                  <ATTRIBUTES>
+                    <SDG-PRIMITIVE-ATTRIBUTE>
+                      <SHORT-NAME>numberOfThreads</SHORT-NAME>
+                      <DESC>
+                        <L-2 L="FOR-ALL">Number of worker threads in the pool.</L-2>
+                      </DESC>
+                      <CATEGORY>INTEGER</CATEGORY>
+                      <LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+                      <UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+                      <MAX>4294967295</MAX>
+                      <MIN>1</MIN>
+                    </SDG-PRIMITIVE-ATTRIBUTE>
+                    <SDG-PRIMITIVE-ATTRIBUTE>
+                      <SHORT-NAME>maxNumberOfTasks</SHORT-NAME>
+                      <DESC>
+                        <L-2 L="FOR-ALL">Maximum queue size for incoming tasks.</L-2>
+                      </DESC>
+                      <CATEGORY>INTEGER</CATEGORY>
+                      <LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+                      <UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+                      <MAX>4294967295</MAX>
+                      <MIN>1</MIN>
+                    </SDG-PRIMITIVE-ATTRIBUTE>
+                    <SDG-AGGREGATION-WITH-VARIATION>
+                      <SHORT-NAME>assignedPPortPrototype</SHORT-NAME>
+                      <DESC>
+                        <L-2 L="FOR-ALL">All PPortPrototypes that shall be handled within this thread pool.</L-2>
+                      </DESC>
+                      <LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+                      <UPPER-MULTIPLICITY-INFINITE>true</UPPER-MULTIPLICITY-INFINITE>
+                      <SUB-SDG-REF DEST="SDG-CLASS">/MICROSAR/ADAPTIVE/SocalModelExtension/PPortThreadPoolAssignment</SUB-SDG-REF>
+                    </SDG-AGGREGATION-WITH-VARIATION>
+                    <SDG-REFERENCE>
+                      <SHORT-NAME>bswThreadConfigurationRef</SHORT-NAME>
+                      <DESC>
+                        <L-2 L="FOR-ALL">Reference to the thread configuration the user-defined thread pool thread(s) shall be created for.</L-2>
+                      </DESC>
+                      <LOWER-MULTIPLICITY>0</LOWER-MULTIPLICITY>
+                      <UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+                      <DEST-SDG-REF DEST="SDG-CLASS">/MICROSAR/ADAPTIVE/BswThreadConfigExtensionModel/BswThreadConfiguration</DEST-SDG-REF>
+                    </SDG-REFERENCE>
+                  </ATTRIBUTES>
+                </SDG-CLASS>
+                <SDG-CLASS>
+                  <SHORT-NAME>DefaultThreadPool</SHORT-NAME>
+                  <DESC>
+                    <L-2 L="FOR-ALL">Definition of a default thread pool for ara::com proxies or skeletons.</L-2>
+                  </DESC>
+                  <ATTRIBUTES>
+                    <SDG-PRIMITIVE-ATTRIBUTE>
+                      <SHORT-NAME>maxNumberOfTasks</SHORT-NAME>
+                      <DESC>
+                        <L-2 L="FOR-ALL">Maximum queue size for incoming tasks.</L-2>
+                      </DESC>
+                      <CATEGORY>INTEGER</CATEGORY>
+                      <LOWER-MULTIPLICITY>0</LOWER-MULTIPLICITY>
+                      <UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+                      <MAX>4294967295</MAX>
+                      <MIN>1</MIN>
+                    </SDG-PRIMITIVE-ATTRIBUTE>
+                    <SDG-REFERENCE>
+                      <SHORT-NAME>bswThreadConfigurationRef</SHORT-NAME>
+                      <DESC>
+                        <L-2 L="FOR-ALL">Reference to the thread configuration the default thread pool (rPortDefaultThreadPool or pPortDefaultThreadPool) thread shall be created for.</L-2>
+                      </DESC>
+                      <LOWER-MULTIPLICITY>0</LOWER-MULTIPLICITY>
+                      <UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+                      <DEST-SDG-REF DEST="SDG-CLASS">/MICROSAR/ADAPTIVE/BswThreadConfigExtensionModel/BswThreadConfiguration</DEST-SDG-REF>
+                    </SDG-REFERENCE>
+                  </ATTRIBUTES>
+                </SDG-CLASS>
+                <SDG-CLASS>
+                  <SHORT-NAME>PPortThreadPoolAssignment</SHORT-NAME>
+                  <DESC>
+                    <L-2 L="FOR-ALL">Deﬁnition of a PPortPrototype-to-ThreadPool assignment.</L-2>
+                  </DESC>
+                  <ATTRIBUTES>
+                    <SDG-FOREIGN-REFERENCE>
+                      <SHORT-NAME>pPortPrototype</SHORT-NAME>
+                      <DESC>
+                        <L-2 L="FOR-ALL">Stores a reference to a PPortPrototype.</L-2>
+                      </DESC>
+                      <LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+                      <UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+                      <DEST-META-CLASS>PPortPrototype</DEST-META-CLASS>
+                    </SDG-FOREIGN-REFERENCE>
+                  </ATTRIBUTES>
+                </SDG-CLASS>
+              </SDG-CLASSES>
+            </SDG-DEF>
+          </ELEMENTS>
+        </AR-PACKAGE>
+      </AR-PACKAGES>
+    </AR-PACKAGE>
+  </AR-PACKAGES>
+</AUTOSAR>

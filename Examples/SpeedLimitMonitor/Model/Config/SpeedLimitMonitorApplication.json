@@ -1,0 +1,64 @@
+{
+    "$schema": "../../../../ModelBuilder/schema/quickcom.schema.json",
+    "DatatypeConfig": {
+        "Enums": [
+            {
+                "Name": "OverLimitEnum",
+                "Literals": [
+                    {
+                        "Label": "NOT_OVER",
+                        "Value": 0
+                    },
+                    {
+                        "Label": "OVER_LOW",
+                        "Value": 1
+                    },
+                    {
+                        "Label": "OVER_HIGH",
+                        "Value": 2
+                    }
+                ]
+            }
+        ]
+    },
+    "ServiceConfig": {
+        "ServiceInterfaces": [
+            {
+                "Name": "SpeedLimitService",
+                "Events": [
+                    {
+                        "Name": "SpeedOverLimitEvent",
+                        "TypeRef": "OverLimitEnum"
+                    }
+                ]
+            }
+        ]
+    },
+    "ExecutableConfig": {
+        "Executables": [
+            {
+                "Name": "SpeedMonitorExecutable",
+                "ProvidedPorts": [
+                    {
+                        "Name": "SpeedLimitMonitor_Provide",
+                        "ServiceInterfaceRef": "SpeedLimitService"
+                    }
+                ]
+            },
+            {
+                "Name": "WarningDisplayExecutable",
+                "RequiredPorts": [
+                    {
+                        "Name": "SpeedLimitMonitor_Require",
+                        "ServiceInterfaceRef": "SpeedLimitService"
+                    }
+                ]
+            }
+        ]
+    },
+    "DeploymentConfig": {
+        "ServiceDeploymentConfig": {
+            "DefaultDeploymentType": "IPC"
+        }
+    }
+}

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<AUTOSAR xmlns="http://autosar.org/schema/r4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://autosar.org/schema/r4.0 AUTOSAR_00049.xsd">
+  <AR-PACKAGES>
+    <AR-PACKAGE>
+      <SHORT-NAME>MICROSAR</SHORT-NAME>
+      <AR-PACKAGES>
+        <AR-PACKAGE>
+          <SHORT-NAME>ADAPTIVE</SHORT-NAME>
+          <ELEMENTS>
+            <SDG-DEF>
+              <SHORT-NAME>ApSomeipTransformationPropsExtension</SHORT-NAME>
+              <SDG-CLASSES>
+                <SDG-CLASS>
+                  <SHORT-NAME>ApSomeipTransformationPropsExtended</SHORT-NAME>
+                  <GID>DvMex:ApSomeipTransformationPropsExtended</GID>
+                  <EXTENDS-META-CLASS>ApSomeipTransformationProps</EXTENDS-META-CLASS>
+                  <ATTRIBUTES>
+                    <SDG-PRIMITIVE-ATTRIBUTE>
+                      <SHORT-NAME>staticArrayHasLengthField</SHORT-NAME>
+                      <DESC>
+                        <L-2 L="FOR-ALL">Inconditionally disables the length field for static (fixed-size) arrays.</L-2>
+                      </DESC>
+                      <CATEGORY>BOOLEAN</CATEGORY>
+                      <LOWER-MULTIPLICITY>0</LOWER-MULTIPLICITY>
+                      <UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+                      <UPPER-MULTIPLICITY-INFINITE>false</UPPER-MULTIPLICITY-INFINITE>
+                    </SDG-PRIMITIVE-ATTRIBUTE>
+                  </ATTRIBUTES>
+                </SDG-CLASS>
+              </SDG-CLASSES>
+            </SDG-DEF>
+          </ELEMENTS>
+        </AR-PACKAGE>
+      </AR-PACKAGES>
+    </AR-PACKAGE>
+  </AR-PACKAGES>
+</AUTOSAR>

@@ -1,0 +1,68 @@
+{
+    "SPDXID": "SPDXRef-DOCUMENT",
+    "spdxVersion": "SPDX-2.3",
+    "creationInfo": {
+        "created": "2024-05-22T13:17:52Z",
+        "creators": ["Organization: Vector Informatik (support@vector.com)", "Tool: Black Duck Hub-2024.1.1"],
+        "licenseListVersion": "3.13"
+    },
+    "name": "PES_DvDevA_ProjectInfo-1.2.1",
+    "dataLicense": "CC0-1.0",
+    "hasExtractedLicensingInfos": [],
+    "documentDescribes": ["SPDXRef-package-7c7fb960-c48a-479e-93dc-2a8d9c07ec50"],
+    "documentNamespace": "https://blackducksoftware.github.io/spdx/PES_DvDevA_ProjectInfo-813f5ee7-35b1-4b23-a9fe-7e237aa1222b",
+    "packages": [{
+            "SPDXID": "SPDXRef-package-747a8a15-c069-4c6e-8ba1-442061b1af80",
+            "copyrightText": "NOASSERTION",
+            "downloadLocation": "NOASSERTION",
+            "externalRefs": [{
+                    "referenceCategory": "OTHER",
+                    "referenceLocator": "db59e2b1-0f14-4912-92bb-6a41dfd5f6e0",
+                    "referenceType": "BlackDuck-Component"
+                }, {
+                    "referenceCategory": "OTHER",
+                    "referenceLocator": "747a8a15-c069-4c6e-8ba1-442061b1af80",
+                    "referenceType": "BlackDuck-ComponentVersion"
+                }, {
+                    "referenceCategory": "OTHER",
+                    "referenceLocator": "2ac5e41c-d033-4e52-8000-bd0f2ccea960",
+                    "referenceType": "BlackDuck-ComponentOrigin"
+                }, {
+                    "referenceCategory": "PACKAGE-MANAGER",
+                    "referenceLocator": "pkg:maven/commons-cli/commons-cli@1.7.0",
+                    "referenceType": "purl"
+                }
+            ],
+            "filesAnalyzed": false,
+            "licenseConcluded": "Apache-2.0",
+            "licenseDeclared": "Apache-2.0",
+            "name": "Apache Commons CLI",
+            "originator": "Organization: maven",
+            "supplier": "Organization: maven",
+            "versionInfo": "1.7.0"
+        }, {
+            "SPDXID": "SPDXRef-package-7c7fb960-c48a-479e-93dc-2a8d9c07ec50",
+            "copyrightText": "NOASSERTION",
+            "downloadLocation": "NOASSERTION",
+            "externalRefs": [{
+                    "referenceCategory": "OTHER",
+                    "referenceLocator": "7c7fb960-c48a-479e-93dc-2a8d9c07ec50",
+                    "referenceType": "BlackDuck-Version"
+                }
+            ],
+            "filesAnalyzed": false,
+            "licenseConcluded": "(LicenseRef-e345ae80-932e-4b87-b5b2-9274a1d38207)",
+            "licenseDeclared": "(LicenseRef-e345ae80-932e-4b87-b5b2-9274a1d38207)",
+            "name": "PES_DvDevA_ProjectInfo",
+            "originator": "NOASSERTION",
+            "supplier": "NOASSERTION",
+            "versionInfo": "1.2.1"
+        }
+    ],
+    "relationships": [{
+            "spdxElementId": "SPDXRef-package-7c7fb960-c48a-479e-93dc-2a8d9c07ec50",
+            "relationshipType": "DYNAMIC_LINK",
+            "relatedSpdxElement": "SPDXRef-package-747a8a15-c069-4c6e-8ba1-442061b1af80"
+        }
+    ]
+}

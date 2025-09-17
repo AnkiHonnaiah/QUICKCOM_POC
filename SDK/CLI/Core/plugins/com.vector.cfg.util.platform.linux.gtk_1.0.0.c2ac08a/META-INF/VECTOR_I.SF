@@ -1,0 +1,19 @@
+Signature-Version: 1.0
+Created-By: 11.0.10 (Oracle Corporation)
+SHA-256-Digest-Manifest: dOai0rdQsgc1RmyJllx8vclTTGT0hF8LV9ySEtOcN5U=
+SHA-256-Digest-Manifest-Main-Attributes: AZIh0EyrYbtGURhsqOGKhVff4AerXyC
+ KbePjPce3zMc=
+
+Name: com/vector/cfg/util/platform/files/FileOpenHandlerLinux$1.class
+SHA-256-Digest: AIlox9F70CRy25war9gUkGjBsNsC+1o9o/JvFg5XXYA=
+
+Name: about.html
+SHA-256-Digest: SdcAJ2UJo03vgJxSq4CMiIEXGcZXbUzIMFSMNNHDOGw=
+
+Name: com/vector/cfg/util/platform/intellij/IntelliJInstallationFinderLi
+ nux.class
+SHA-256-Digest: MjrJhOIazOAbH8zVxVb7oIbmp+IXq13ys8TqwvYPJWU=
+
+Name: com/vector/cfg/util/platform/files/FileOpenHandlerLinux.class
+SHA-256-Digest: KP0iQXHag06Tkq4lxdTQmPv9s6LyTvyidlf+KCInW7U=
+

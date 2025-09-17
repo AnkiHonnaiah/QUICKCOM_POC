@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<AUTOSAR xmlns="http://autosar.org/schema/r4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://autosar.org/schema/r4.0 AUTOSAR_00049.xsd">
+  <AR-PACKAGES>
+    <AR-PACKAGE UUID="1d8b2def-82f2-4b24-8304-c4da0804a067">
+      <SHORT-NAME>Datatypes</SHORT-NAME>
+      <ELEMENTS>
+        <COMPU-METHOD UUID="51b44f1a-5900-43c8-be82-862029de3474">
+          <SHORT-NAME>CompuMethod_OverLimitEnum</SHORT-NAME>
+          <CATEGORY>TEXTTABLE</CATEGORY>
+          <COMPU-INTERNAL-TO-PHYS>
+            <COMPU-SCALES>
+              <COMPU-SCALE>
+                <SYMBOL>NOT_OVER</SYMBOL>
+                <LOWER-LIMIT>0</LOWER-LIMIT>
+                <UPPER-LIMIT>0</UPPER-LIMIT>
+              </COMPU-SCALE>
+              <COMPU-SCALE>
+                <SYMBOL>OVER_LOW</SYMBOL>
+                <LOWER-LIMIT>1</LOWER-LIMIT>
+                <UPPER-LIMIT>1</UPPER-LIMIT>
+              </COMPU-SCALE>
+              <COMPU-SCALE>
+                <SYMBOL>OVER_HIGH</SYMBOL>
+                <LOWER-LIMIT>2</LOWER-LIMIT>
+                <UPPER-LIMIT>2</UPPER-LIMIT>
+              </COMPU-SCALE>
+            </COMPU-SCALES>
+          </COMPU-INTERNAL-TO-PHYS>
+        </COMPU-METHOD>
+        <STD-CPP-IMPLEMENTATION-DATA-TYPE UUID="0c44778d-18c6-4d46-ab0c-652188cdcbc8">
+          <SHORT-NAME>OverLimitEnum</SHORT-NAME>
+          <CATEGORY>TYPE_REFERENCE</CATEGORY>
+          <SW-DATA-DEF-PROPS>
+            <SW-DATA-DEF-PROPS-VARIANTS>
+              <SW-DATA-DEF-PROPS-CONDITIONAL>
+                <COMPU-METHOD-REF DEST="COMPU-METHOD">/Datatypes/CompuMethod_OverLimitEnum</COMPU-METHOD-REF>
+              </SW-DATA-DEF-PROPS-CONDITIONAL>
+            </SW-DATA-DEF-PROPS-VARIANTS>
+          </SW-DATA-DEF-PROPS>
+          <NAMESPACES>
+            <SYMBOL-PROPS>
+              <SHORT-NAME>ns0</SHORT-NAME>
+              <SYMBOL>datatypes</SYMBOL>
+            </SYMBOL-PROPS>
+          </NAMESPACES>
+          <TYPE-EMITTER>TYPE_EMITTER_ARA</TYPE-EMITTER>
+          <TYPE-REFERENCE-REF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/AUTOSAR/StdTypes/uint8_t</TYPE-REFERENCE-REF>
+        </STD-CPP-IMPLEMENTATION-DATA-TYPE>
+      </ELEMENTS>
+    </AR-PACKAGE>
+  </AR-PACKAGES>
+</AUTOSAR>

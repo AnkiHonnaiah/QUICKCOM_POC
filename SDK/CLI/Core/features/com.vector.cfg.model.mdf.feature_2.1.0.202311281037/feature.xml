@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feature id="com.vector.cfg.model.mdf.feature" label="MDF Model Feature" version="2.1.0.202311281037"
+         provider-name="Vector Informatik GmbH">
+    <description>
+        DaVinciCFG Model MDF Feature for target platform
+    </description>
+    <copyright>
+        (c) Copyright Vector Informatik GmbH. All Rights Reserved.
+    </copyright>
+    <license url="http://www.vector.com">
+        Vector Group License Agreement
+
+        This software is licensed under the terms and conditions of „Delivery and maintenance of software products” of
+        Vector Group, see www.vector.com
+    </license>
+    <plugin id="aquintos.auth.log" download-size="6" install-size="7" version="10.5.0.202311281037" unpack="false"/>
+    <plugin id="aquintos.authentication" download-size="45" install-size="98" version="10.5.0.202311281037" unpack="false"/>
+    <plugin id="aquintos.commonresources" download-size="152" install-size="255" version="10.5.0.202311281037" unpack="false"/>
+    <plugin id="aquintos.deltamodel" download-size="66" install-size="137" version="10.5.0.202311281037" unpack="false"/>
+    <plugin id="aquintos.log" download-size="115" install-size="218" version="10.5.0.202311281037" unpack="false"/>
+    <plugin id="aquintos.mdf" download-size="1705" install-size="3916" version="10.5.0.202311281037" unpack="false"/>
+    <plugin id="aquintos.mmregistry" download-size="22" install-size="43" version="10.5.0.202311281037" unpack="false"/>
+    <plugin id="aquintos.modelbridge" download-size="20" install-size="39" version="10.5.0.202311281037" unpack="false"/>
+    <plugin id="aquintos.operationsframework" download-size="254" install-size="544" version="10.5.0.202311281037" unpack="false"/>
+    <plugin id="aquintos.utilities" download-size="551" install-size="1062" version="10.5.0.202311281037" unpack="false"/>
+    <plugin id="aquintos.uuid" download-size="16" install-size="29" version="10.5.0.202311281037" unpack="false"/>
+    <plugin id="vi.annotations.nodsl.base.if" download-size="6" install-size="5" version="10.5.0.202311281037" unpack="false"/>
+    <plugin id="vi.api" download-size="11" install-size="13" version="10.5.0.202311281037" unpack="false"/>
+    <plugin id="vi.auth.api" download-size="8" install-size="8" version="10.5.0.202311281037" unpack="false"/>
+    <plugin id="vi.authentication.nodsl.base.if" download-size="8" install-size="11" version="10.5.0.202311281037" unpack="false"/>
+    <plugin id="vi.collections" download-size="16" install-size="31" version="10.5.0.202311281037" unpack="false"/>
+    <plugin id="vi.common.nodsl.base.if" download-size="8" install-size="11" version="10.5.0.202311281037" unpack="false"/>
+    <plugin id="vi.concurrency.api" download-size="4" install-size="3" version="10.5.0.202311281037" unpack="false"/>
+    <plugin id="vi.deltamodel.nodsl.modeling.if" download-size="17" install-size="30" version="10.5.0.202311281037" unpack="false"/>
+    <plugin id="vi.globalevent.nodsl.modeling.if" download-size="6" install-size="7" version="10.5.0.202311281037" unpack="false"/>
+    <plugin id="vi.info" download-size="17" install-size="25" version="10.5.0.202311281037" unpack="false"/>
+    <plugin id="vi.info.mdf" download-size="16" install-size="35" version="10.5.0.202311281037" unpack="false"/>
+    <plugin id="vi.mdf.nodsl.base.if" download-size="4" install-size="4" version="10.5.0.202311281037" unpack="false"/>
+    <plugin id="vi.mdf.nodsl.modeling.if" download-size="539" install-size="962" version="10.5.0.202311281037" unpack="false"/>
+    <plugin id="vi.mdf.nodsl.modeling.impl" download-size="3" install-size="4" version="10.5.0.202311281037" unpack="false"/>
+    <plugin id="vi.mdf.nodsl.modeling.internal.if" download-size="92" install-size="147" version="10.5.0.202311281037" unpack="false"/>
+    <plugin id="vi.mdf.nodsl.modeling.legacy.util" download-size="1419" install-size="3255" version="10.5.0.202311281037" unpack="false"/>
+    <plugin id="vi.mm.mof.modeling.impl" download-size="1" install-size="1" version="10.5.0.202311281037" unpack="false"/>
+    <plugin id="vi.mmregistry.nodsl.modeling.if" download-size="3" install-size="2" version="10.5.0.202311281037" unpack="false"/>
+    <plugin id="vi.modelbridge.nodsl.modeling.if" download-size="15" install-size="21" version="10.5.0.202311281037" unpack="false"/>
+    <plugin id="vi.monitoring.nodsl.base.facade" download-size="30" install-size="62" version="10.5.0.202311281037" unpack="false"/>
+    <plugin id="vi.monitoring.nodsl.base.if" download-size="77" install-size="145" version="10.5.0.202311281037" unpack="false"/>
+    <plugin id="vi.monitoring.nodsl.base.internal.if" download-size="3" install-size="2" version="10.5.0.202311281037"
+            unpack="false"/>
+    <plugin id="vi.monitoring.nodsl.base.util" download-size="4" install-size="6" version="10.5.0.202311281037" unpack="false"/>
+    <plugin id="vi.osgibridging.nodsl.base.facade" download-size="12" install-size="22" version="10.5.0.202311281037" unpack="false"/>
+    <plugin id="vi.osgibridging.nodsl.base.if" download-size="16" install-size="20" version="10.5.0.202311281037" unpack="false"/>
+    <plugin id="vi.osgibridging.nodsl.base.impl" download-size="7" install-size="11" version="10.5.0.202311281037" unpack="false"/>
+    <plugin id="vi.status.nodsl.base.if" download-size="6" install-size="6" version="10.5.0.202311281037" unpack="false"/>
+    <plugin id="vi.testenv.nodsl.base.util" download-size="8" install-size="13" version="10.5.0.202311281037" unpack="false"/>
+    <plugin id="vi.tracing.nodsl.base.shared.if" download-size="15" install-size="19" version="10.5.0.202311281037" unpack="false"/>
+</feature>

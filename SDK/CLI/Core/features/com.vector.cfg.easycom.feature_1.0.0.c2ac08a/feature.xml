@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feature
+      id="com.vector.cfg.easycom.feature"
+      label="EasyCom"
+      version="1.0.0.qualifier"
+      provider-name="Vector Informatik GmbH">
+
+   <description>
+       Support for the Vector MICROSAR Adaptive EasyCom usecase.
+   </description>
+
+  <copyright>
+      (c) Copyright Vector Informatik GmbH. All Rights Reserved.
+   </copyright>
+
+  <license url="https://www.vector.com/int/en/company/get-info/terms-and-conditions/">
+      Vector Group License Agreement
+
+This software is licensed under the terms and conditions of „Delivery and maintenance of software products” of Vector Group, see www.vector.com
+   </license>
+
+   <includes
+         id="com.vector.cfg.console.feature"
+         version="0.0.0"/>
+
+   <plugin
+         id="com.vector.cfg.business.easycom.impl"
+         version="0.0.0"/>
+
+</feature>

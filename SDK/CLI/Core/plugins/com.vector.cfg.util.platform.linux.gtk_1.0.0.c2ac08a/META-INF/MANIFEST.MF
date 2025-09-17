@@ -1,0 +1,28 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Platform Components Linux GTK
+Automatic-Module-Name: com.vector.cfg.util.platform.linux.gtk
+Bundle-SymbolicName: com.vector.cfg.util.platform.linux.gtk;singleton:=t
+ rue
+Bundle-Version: 1.0.0.c2ac08a
+Bundle-Vendor: Vector Informatik GmbH
+Fragment-Host: com.vector.cfg.util.platform
+Bundle-RequiredExecutionEnvironment: JavaSE-17
+Export-Package: com.vector.cfg.util.platform.files,com.vector.cfg.util.p
+ latform.intellij
+Eclipse-BundleShape: dir
+Eclipse-PlatformFilter: (& (osgi.ws=gtk) (osgi.os=linux))
+
+Name: com/vector/cfg/util/platform/files/FileOpenHandlerLinux$1.class
+SHA-256-Digest: kUTjCperVlv6bV0QbCg/OIh9UIlzAUDT6xnOXaTkjYE=
+
+Name: about.html
+SHA-256-Digest: TSS3si+yAxfH4lZQCQM5rbrTyJo+tk5tGNloxh6+fIE=
+
+Name: com/vector/cfg/util/platform/intellij/IntelliJInstallationFinderLi
+ nux.class
+SHA-256-Digest: euRe+rfSmJS8oO8IvyY9/FnzY1wYR8FpEdT0J4qoNgU=
+
+Name: com/vector/cfg/util/platform/files/FileOpenHandlerLinux.class
+SHA-256-Digest: 0wz9IDy6vmpnii3khuVKmA4KDK0Bn1cIuAnoQ49kzjU=
+

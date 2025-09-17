@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<AUTOSAR xmlns="http://autosar.org/schema/r4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://autosar.org/schema/r4.0 AUTOSAR_00049.xsd">
+  <AR-PACKAGES>
+    <AR-PACKAGE>
+      <SHORT-NAME>MICROSAR</SHORT-NAME>
+      <AR-PACKAGES>
+        <AR-PACKAGE>
+          <SHORT-NAME>ADAPTIVE</SHORT-NAME>
+          <ELEMENTS>
+            <SDG-DEF>
+              <SHORT-NAME>CryptoExtensionModel</SHORT-NAME>
+              <SDG-CLASSES>
+                <SDG-CLASS UUID="3a365f62-b5ed-4286-b546-7131e44e975c">
+                  <SHORT-NAME>CryptoModuleInstantiationExtension</SHORT-NAME>
+                  <EXTENDS-META-CLASS>GenericModuleInstantiation</EXTENDS-META-CLASS>
+                  <ATTRIBUTES>
+                    <SDG-AGGREGATION-WITH-VARIATION UUID="27b94cc4-e4ca-4bc3-98fb-633e903115aa">
+                      <SHORT-NAME>customCryptoProviderMapping</SHORT-NAME>
+                      <DESC>
+                        <L-2 L="FOR-ALL">This attribute allows to directly define the mapping of a CryptoProvider name to an UUID</L-2>
+                      </DESC>
+                      <CATEGORY>false</CATEGORY>
+                      <LOWER-MULTIPLICITY>0</LOWER-MULTIPLICITY>
+                      <UPPER-MULTIPLICITY>255</UPPER-MULTIPLICITY>
+                      <SUB-SDG-REF DEST="SDG-CLASS">/MICROSAR/ADAPTIVE/CryptoExtensionModel/CryptoProviderNameToUuidMapping</SUB-SDG-REF>
+                    </SDG-AGGREGATION-WITH-VARIATION>
+                  </ATTRIBUTES>
+                </SDG-CLASS>
+                <SDG-CLASS UUID="10daf14a-84b3-4f10-a62b-2ba93a689ea3">
+                  <SHORT-NAME>CryptoProviderNameToUuidMapping</SHORT-NAME>
+                  <ATTRIBUTES>
+                    <SDG-PRIMITIVE-ATTRIBUTE UUID="0acab10c-802c-4a39-813c-42bcbb4065d0">
+                      <SHORT-NAME>cryptoProviderName</SHORT-NAME>
+                      <DESC>
+                        <L-2 L="FOR-ALL">This is the name of CryptoProvider</L-2>
+                      </DESC>
+                      <CATEGORY>STRING</CATEGORY>
+                      <LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+                      <UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+                    </SDG-PRIMITIVE-ATTRIBUTE>
+                    <SDG-PRIMITIVE-ATTRIBUTE UUID="82db9e28-4732-47f6-895f-72a706bf8d28">
+                      <SHORT-NAME>uuid</SHORT-NAME>
+                      <DESC>
+                        <L-2 L="FOR-ALL">This attribute used to identify crypto provider with the name specified in cryptoProviderName</L-2>
+                      </DESC>
+                      <CATEGORY>STRING</CATEGORY>
+                      <LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+                      <UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+                    </SDG-PRIMITIVE-ATTRIBUTE>
+                    <SDG-PRIMITIVE-ATTRIBUTE UUID="82db9e28-4732-47f6-895f-72a706bf8d38">
+                      <SHORT-NAME>providerNamespace</SHORT-NAME>
+                      <DESC>
+                        <L-2 L="FOR-ALL">This is the namespace of CryptoProvider. Defaults to the name of the cryptoprovider.</L-2>
+                      </DESC>
+                      <CATEGORY>STRING</CATEGORY>
+                      <LOWER-MULTIPLICITY>0</LOWER-MULTIPLICITY>
+                      <UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+                    </SDG-PRIMITIVE-ATTRIBUTE>
+                  </ATTRIBUTES>
+                </SDG-CLASS>
+              </SDG-CLASSES>
+            </SDG-DEF>
+          </ELEMENTS>
+        </AR-PACKAGE>
+      </AR-PACKAGES>
+    </AR-PACKAGE>
+  </AR-PACKAGES>
+</AUTOSAR>

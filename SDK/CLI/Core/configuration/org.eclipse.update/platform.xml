@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config date="1719321556241" transient="false">
+	<site updateable="true" url="platform:/base/" enabled="true" policy="USER-EXCLUDE">
+		<feature id="com.vector.cfg.model.mdf.feature" version="2.1.0.202311281037" url="features/com.vector.cfg.model.mdf.feature_2.1.0.202311281037/">
+		</feature>
+		<feature id="com.vector.cfg.console.feature" version="1.0.0.c2ac08a" url="features/com.vector.cfg.console.feature_1.0.0.c2ac08a/">
+		</feature>
+		<feature id="com.vector.cfg.console.app.dvacfg.feature" version="1.0.0.c2ac08a" url="features/com.vector.cfg.console.app.dvacfg.feature_1.0.0.c2ac08a/">
+		</feature>
+		<feature id="com.vector.cfg.core.external.feature" version="1.0.0.c2ac08a" url="features/com.vector.cfg.core.external.feature_1.0.0.c2ac08a/">
+		</feature>
+		<feature id="com.vector.cfg.util.feature" version="1.0.0.c2ac08a" url="features/com.vector.cfg.util.feature_1.0.0.c2ac08a/">
+		</feature>
+		<feature id="com.vector.cfg.core.model.feature" version="1.0.0.c2ac08a" url="features/com.vector.cfg.core.model.feature_1.0.0.c2ac08a/">
+		</feature>
+		<feature id="com.vector.cfg.gen.published.feature" version="1.0.0.c2ac08a" url="features/com.vector.cfg.gen.published.feature_1.0.0.c2ac08a/">
+		</feature>
+		<feature id="com.vector.cfg.core.model.external.feature" version="1.0.0.c2ac08a" url="features/com.vector.cfg.core.model.external.feature_1.0.0.c2ac08a/">
+		</feature>
+		<feature id="com.vector.cfg.gen.core.feature" version="1.0.0.c2ac08a" url="features/com.vector.cfg.gen.core.feature_1.0.0.c2ac08a/">
+		</feature>
+		<feature id="com.vector.cfg.reporting.feature" version="1.4.0.c2ac08a" url="features/com.vector.cfg.reporting.feature_1.4.0.c2ac08a/">
+		</feature>
+		<feature id="com.vector.cfg.automation.amsr.feature" version="1.0.0.c2ac08a" url="features/com.vector.cfg.automation.amsr.feature_1.0.0.c2ac08a/">
+		</feature>
+		<feature id="com.vector.cfg.core.amsr.feature" version="1.0.0.c2ac08a" url="features/com.vector.cfg.core.amsr.feature_1.0.0.c2ac08a/">
+		</feature>
+		<feature id="com.vector.cfg.gen.core.amsr.feature" version="1.0.0.c2ac08a" url="features/com.vector.cfg.gen.core.amsr.feature_1.0.0.c2ac08a/">
+		</feature>
+		<feature id="com.vector.cfg.util.log.feature" version="1.0.0.c2ac08a" url="features/com.vector.cfg.util.log.feature_1.0.0.c2ac08a/">
+		</feature>
+		<feature id="com.vector.cfg.easycom.feature" version="1.0.0.c2ac08a" url="features/com.vector.cfg.easycom.feature_1.0.0.c2ac08a/">
+		</feature>
+		<feature id="com.vector.cfg.core.feature" version="1.0.0.c2ac08a" url="features/com.vector.cfg.core.feature_1.0.0.c2ac08a/">
+		</feature>
+		<feature id="com.vector.cfg.util.scripting.groovy.feature" version="1.0.0.c2ac08a" url="features/com.vector.cfg.util.scripting.groovy.feature_1.0.0.c2ac08a/">
+		</feature>
+		<feature id="com.vector.cfg.automation.feature" version="1.0.0.c2ac08a" url="features/com.vector.cfg.automation.feature_1.0.0.c2ac08a/">
+		</feature>
+		<feature id="com.vector.cfg.console.app.dvacfg.external.feature" version="1.0.0.c2ac08a" url="features/com.vector.cfg.console.app.dvacfg.external.feature_1.0.0.c2ac08a/">
+		</feature>
+	</site>
+</config>

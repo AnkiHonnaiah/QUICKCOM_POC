@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<AUTOSAR xmlns="http://autosar.org/schema/r4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://autosar.org/schema/r4.0 AUTOSAR_00049.xsd">
+  <AR-PACKAGES>
+    <AR-PACKAGE UUID="c4b30b5e-0e6e-404b-b56a-14c484e00ee2">
+      <SHORT-NAME>AppDesign</SHORT-NAME>
+      <ELEMENTS>
+        <ADAPTIVE-APPLICATION-SW-COMPONENT-TYPE UUID="772edc7e-77d6-4155-b9a4-8a7ce846828b">
+          <SHORT-NAME>AASwCompType_App_ModelBuilderApplication_SpeedMonitorExecutable</SHORT-NAME>
+          <PORTS>
+            <P-PORT-PROTOTYPE UUID="7341d214-82b5-4720-99e3-09264e485b7a">
+              <SHORT-NAME>SpeedLimitMonitor_Provide</SHORT-NAME>
+              <PROVIDED-INTERFACE-TREF DEST="SERVICE-INTERFACE">/ServiceInterfaces/PkgSpeedLimitService/Latest/SpeedLimitService</PROVIDED-INTERFACE-TREF>
+            </P-PORT-PROTOTYPE>
+          </PORTS>
+        </ADAPTIVE-APPLICATION-SW-COMPONENT-TYPE>
+        <EXECUTABLE UUID="1593840c-acb9-494f-8cb6-f80d6d6c00f8">
+          <SHORT-NAME>SpeedMonitorExecutable</SHORT-NAME>
+          <CATEGORY>APPLICATION_LEVEL</CATEGORY>
+          <ADMIN-DATA>
+            <SDGS>
+              <SDG GID="DvMex:BswVersionedApi">
+                <SD GID="amsrAraComApi">r20_11</SD>
+                <SD GID="amsrAraCoreApi">r20_11</SD>
+              </SDG>
+            </SDGS>
+          </ADMIN-DATA>
+          <ROOT-SW-COMPONENT-PROTOTYPE UUID="7c989bac-8cdb-4d49-b5cc-6a73cbcba141">
+            <SHORT-NAME>RootSwcPrototype</SHORT-NAME>
+            <APPLICATION-TYPE-TREF DEST="ADAPTIVE-APPLICATION-SW-COMPONENT-TYPE">/AppDesign/AASwCompType_App_ModelBuilderApplication_SpeedMonitorExecutable</APPLICATION-TYPE-TREF>
+          </ROOT-SW-COMPONENT-PROTOTYPE>
+          <VERSION>1.0.0</VERSION>
+        </EXECUTABLE>
+        <PROCESS-DESIGN UUID="034335c2-9dd3-4a08-be2f-9c2c5c7c3418">
+          <SHORT-NAME>PrcDesign_App_ModelBuilderApplication_SpeedMonitorExecutable</SHORT-NAME>
+          <EXECUTABLE-REF DEST="EXECUTABLE">/AppDesign/SpeedMonitorExecutable</EXECUTABLE-REF>
+        </PROCESS-DESIGN>
+        <ADAPTIVE-APPLICATION-SW-COMPONENT-TYPE UUID="305bfb90-d935-413f-9f4e-e68f97a7245a">
+          <SHORT-NAME>AASwCompType_App_ModelBuilderApplication_WarningDisplayExecutable</SHORT-NAME>
+          <PORTS>
+            <R-PORT-PROTOTYPE UUID="b9915eb5-e38a-4e28-af76-9cf76faadc82">
+              <SHORT-NAME>SpeedLimitMonitor_Require</SHORT-NAME>
+              <REQUIRED-INTERFACE-TREF DEST="SERVICE-INTERFACE">/ServiceInterfaces/PkgSpeedLimitService/Latest/SpeedLimitService</REQUIRED-INTERFACE-TREF>
+            </R-PORT-PROTOTYPE>
+          </PORTS>
+        </ADAPTIVE-APPLICATION-SW-COMPONENT-TYPE>
+        <EXECUTABLE UUID="729bd8da-cf2a-4132-acca-9d9bb9330ca4">
+          <SHORT-NAME>WarningDisplayExecutable</SHORT-NAME>
+          <CATEGORY>APPLICATION_LEVEL</CATEGORY>
+          <ADMIN-DATA>
+            <SDGS>
+              <SDG GID="DvMex:BswVersionedApi">
+                <SD GID="amsrAraComApi">r20_11</SD>
+                <SD GID="amsrAraCoreApi">r20_11</SD>
+              </SDG>
+            </SDGS>
+          </ADMIN-DATA>
+          <ROOT-SW-COMPONENT-PROTOTYPE UUID="9fc0d18a-5200-41ce-9dab-83a2201bb137">
+            <SHORT-NAME>RootSwcPrototype</SHORT-NAME>
+            <APPLICATION-TYPE-TREF DEST="ADAPTIVE-APPLICATION-SW-COMPONENT-TYPE">/AppDesign/AASwCompType_App_ModelBuilderApplication_WarningDisplayExecutable</APPLICATION-TYPE-TREF>
+          </ROOT-SW-COMPONENT-PROTOTYPE>
+          <VERSION>1.0.0</VERSION>
+        </EXECUTABLE>
+        <PROCESS-DESIGN UUID="a7df042b-60ee-4a98-b2d9-59517f52a908">
+          <SHORT-NAME>PrcDesign_App_ModelBuilderApplication_WarningDisplayExecutable</SHORT-NAME>
+          <EXECUTABLE-REF DEST="EXECUTABLE">/AppDesign/WarningDisplayExecutable</EXECUTABLE-REF>
+        </PROCESS-DESIGN>
+        <SOFTWARE-CLUSTER-DESIGN UUID="1e25de1e-f1d0-47b3-b6c4-77840e9b29f4">
+          <SHORT-NAME>SwClDesign_App_ModelBuilderApplication</SHORT-NAME>
+          <CONTAINED-PROCESS-REFS>
+            <CONTAINED-PROCESS-REF DEST="PROCESS-DESIGN">/AppDesign/PrcDesign_App_ModelBuilderApplication_SpeedMonitorExecutable</CONTAINED-PROCESS-REF>
+            <CONTAINED-PROCESS-REF DEST="PROCESS-DESIGN">/AppDesign/PrcDesign_App_ModelBuilderApplication_WarningDisplayExecutable</CONTAINED-PROCESS-REF>
+          </CONTAINED-PROCESS-REFS>
+        </SOFTWARE-CLUSTER-DESIGN>
+      </ELEMENTS>
+    </AR-PACKAGE>
+  </AR-PACKAGES>
+</AUTOSAR>

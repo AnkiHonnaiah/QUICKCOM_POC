@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<AUTOSAR xmlns="http://autosar.org/schema/r4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://autosar.org/schema/r4.0 AUTOSAR_00049.xsd">
+  <AR-PACKAGES>
+    <AR-PACKAGE>
+      <SHORT-NAME>MICROSAR</SHORT-NAME>
+      <AR-PACKAGES>
+        <AR-PACKAGE>
+          <SHORT-NAME>ADAPTIVE</SHORT-NAME>
+          <ELEMENTS>
+            <SDG-DEF>
+              <SHORT-NAME>TlsSecureComPropsExtension</SHORT-NAME>
+              <SDG-CLASSES>
+                <SDG-CLASS>
+                  <SHORT-NAME>TlsSecureComPropsExtension</SHORT-NAME>
+                  <EXTENDS-META-CLASS>TlsSecureComProps</EXTENDS-META-CLASS>
+                  <ATTRIBUTES>
+                    <SDG-PRIMITIVE-ATTRIBUTE>
+                      <SHORT-NAME>dtlsCookieVerificationEnabled</SHORT-NAME>
+                      <DESC>
+                        <L-2 L="FOR-ALL">If true, enables DTLS cookie verification for UDP secure endpoints. If it is not configured, its default value is false. If it is configured in one UDP endpoint, it must be configured with the same value in all UDP endpoints.</L-2>
+                      </DESC>
+                      <CATEGORY>BOOLEAN</CATEGORY>
+                      <LOWER-MULTIPLICITY>0</LOWER-MULTIPLICITY>
+                      <UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+                    </SDG-PRIMITIVE-ATTRIBUTE>
+                  </ATTRIBUTES>
+                </SDG-CLASS>
+              </SDG-CLASSES>
+            </SDG-DEF>
+          </ELEMENTS>
+        </AR-PACKAGE>
+      </AR-PACKAGES>
+    </AR-PACKAGE>
+  </AR-PACKAGES>
+</AUTOSAR>
