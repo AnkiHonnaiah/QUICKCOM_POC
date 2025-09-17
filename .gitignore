@@ -6,6 +6,7 @@ dist/
 out/
 Debug/
 Release/
+Examples/SpeedLimitMonitor/tmp/build/
 
 # CMake cache
 CMakeCache.txt

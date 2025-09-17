@@ -2,42 +2,35 @@ name: Build QuickCom Example
 
 on:
   push:
-    branches: [ "main" ]
+    branches: [ main ]
   pull_request:
-    branches: [ "main" ]
+    branches: [ main ]
 
 jobs:
   build:
-    name: Build Speed Limit Monitor Example
-    runs-on: self-hosted   # not ubuntu-latest since you’re using your machine
+    runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout repository (with LFS)
+      - name: Checkout repository
         uses: actions/checkout@v4
         with:
-          lfs: true
+          lfs: true   # Pull LFS objects as well
 
-      - name: Ensure LFS files are pulled
-        run: |
-          git lfs pull
-          git lfs checkout
-          echo "Check jar sizes:"
-          ls -lh SDK/CLI/Core/plugins | head
+      - name: Setup Git LFS
+        run: git lfs pull
 
-      - name: Sanity check DVACfgCmd
+      - name: Set permissions
         run: |
           chmod +x SDK/CLI/Core/DVACfgCmd
-          cd SDK/CLI/Core
-          ./DVACfgCmd -help || true
-
-      - name: Run generators
-        working-directory: Examples/SpeedLimitMonitor/scripts
-        run: |
           chmod +x 1_runGenerators.sh
+          chmod +x 2_buildApplication.sh
+
+      - name: Run Generators
+        run: |
+          export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$GITHUB_WORKSPACE/SDK/CLI/Core/jre/lib:$GITHUB_WORKSPACE/SDK/CLI/Core/jre/lib/server:$GITHUB_WORKSPACE/SDK/CLI/Core/plugins/com.vector.cfg.util.jna_4.5.1.c2ac08a/os/linux/x86_64
           ./1_runGenerators.sh
 
-      - name: Build application
-        working-directory: Examples/SpeedLimitMonitor/scripts
+      - name: Build Application
         run: |
-          chmod +x 2_buildApplication.sh
+          export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$GITHUB_WORKSPACE/SDK/CLI/Core/jre/lib:$GITHUB_WORKSPACE/SDK/CLI/Core/jre/lib/server:$GITHUB_WORKSPACE/SDK/CLI/Core/plugins/com.vector.cfg.util.jna_4.5.1.c2ac08a/os/linux/x86_64
           ./2_buildApplication.sh
